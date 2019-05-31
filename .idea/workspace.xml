@@ -1,0 +1,1453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="05070b89-f0b7-4ad1-8045-fc7cbc0ea52a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/courses/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/courses/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/courses/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/courses/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/courses/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/courses/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/courses/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/courses/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/ellada_api/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/ellada_api/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/ellada_api/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/ellada_api/db/ellada.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/ellada_api/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/ellada_api/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/ellada_api/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/ellada_api/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/ellada_api/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/home/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/home/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/home/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/home/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/home/migrations/0002_auto_20170905_0430.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/home/migrations/0003_auto_20171018_1334.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/home/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/home/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/home/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/home/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/home/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/migrations/0002_auto_20170710_1431.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/migrations/0003_auto_20170710_1433.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/migrations/0004_auto_20170715_1636.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/migrations/0005_auto_20170905_0430.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/migrations/0006_auto_20170911_1542.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/migrations/0007_quotebid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/migrations/0008_minor_active.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/minors/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0002_auto_20171208_1738.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0003_personaldata.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0004_personaldata_agreement.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0005_auto_20171216_1729.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0006_auto_20171216_1748.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0007_auto_20171218_1642.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0008_auto_20180119_1255.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0009_personaldata_another_doc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0010_quotesavailable.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0011_auto_20180119_1712.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0012_auto_20180120_1715.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0013_reportentry_raw_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0014_program_course_id.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0015_report_processed.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0016_auto_20180120_1903.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0017_auto_20180122_1746.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0018_auto_20180123_1057.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0019_auto_20180123_1307.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0020_auto_20180124_1302.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0021_auto_20180124_1304.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0022_auto_20180124_1355.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0023_personaldata_program_grade.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0024_auto_20180124_1654.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0025_auto_20180124_1654.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0026_courseusergrade.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0027_program_start.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0028_auto_20180125_1351.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0029_auto_20180125_1425.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0030_auto_20180125_1430.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0031_auto_20180125_1432.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0032_auto_20180126_1205.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0033_auto_20180126_1227.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0034_auto_20180126_1227.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0035_courseusergrade_created_at.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0036_pdavailable.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0037_simulizatordata.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0038_simulizatordata_agreement.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0039_auto_20180313_1952.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0040_auto_20180406_1753.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0041_auto_20180407_1404.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0042_personaldata_proctoring_status.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0043_auto_20180409_1414.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0044_personaldata_exam_grade.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0045_personaldata_exam_name.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0046_seminardata.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0047_auto_20180531_1355.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0048_auto_20180531_1438.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0049_auto_20180531_1515.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0050_auto_20180531_1516.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0051_auto_20180601_1038.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0052_seminardata_with_udostoverenie.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0053_auto_20180608_1631.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/0054_auto_20180621_1903.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/schema.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/openprofession/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/other/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/other/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/other/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/other/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/other/migrations/0002_auto_20180405_1738.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/other/migrations/0003_auto_20180405_1742.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/other/migrations/0004_auto_20180405_1930.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/other/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/other/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/other/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/other/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/other/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/migrations/0002_auto_20180505_1307.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/migrations/0003_auto_20180505_1324.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/migrations/0004_auto_20180505_1943.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/migrations/0005_auto_20180507_1216.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/migrations/0006_auto_20180507_1218.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/migrations/0007_auto_20180507_1230.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/migrations/0008_auto_20180507_1241.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/migrations/0009_auto_20180507_1250.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/migrations/0010_auto_20180507_1345.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/migrations/0011_auto_20180507_1358.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/migrations/0012_auto_20180531_1249.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/questionnaire/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/roo/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/roo/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/roo/decorators.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/roo/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/roo/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/roo/migrations/0002_auto_20180621_1923.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/roo/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/roo/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/roo/tasks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/roo/templatetags/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/roo/templatetags/roo_extras.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/roo/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apps/roo/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../celerybeat-schedule.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mako_templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mako_templates/courses/course.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mako_templates/courses/courses.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mako_templates/menu_block.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mako_templates/minors/bid.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mako_templates/minors/minor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mako_templates/minors/minors.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mako_templates/openprofession/show.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mako_templates/openprofession/show_old.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mako_templates/openprofession/show_test_mode.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../manager" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openedu/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openedu/celery.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openedu/celeryconfig.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openedu/mako_templates.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openedu/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openedu/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openedu/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../openedu_gunicorn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/course.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/courseware_main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/discussion.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/discussion_expansion.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/bold/OpenSans-Bold-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/bold/OpenSans-Bold-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/bold/OpenSans-Bold-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/bold/OpenSans-Bold-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/bold/open_sansbold.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/bolditalic/OpenSans-BoldItalic-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/bolditalic/OpenSans-BoldItalic-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/bolditalic/OpenSans-BoldItalic-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/bolditalic/OpenSans-BoldItalic-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/bolditalic/open_sansbold_italic.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/condbold/open_sanscondbold.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/condbold/opensans-condbold-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/condbold/opensans-condbold-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/condbold/opensans-condbold-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/condbold/opensans-condbold-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/condlight/open_sanscondlight.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/condlight/opensans-condlight-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/condlight/opensans-condlight-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/condlight/opensans-condlight-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/condlight/opensans-condlight-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/condlightitalic/open_sanscondlight_italic.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/condlightitalic/opensans-condlightitalic-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/condlightitalic/opensans-condlightitalic-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/condlightitalic/opensans-condlightitalic-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/condlightitalic/opensans-condlightitalic-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/extrabold/OpenSans-ExtraBold-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/extrabold/OpenSans-ExtraBold-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/extrabold/OpenSans-ExtraBold-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/extrabold/OpenSans-ExtraBold-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/extrabold/open_sansextrabold.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/extrabolditalic/OpenSans-ExtraBoldItalic-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/extrabolditalic/OpenSans-ExtraBoldItalic-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/extrabolditalic/OpenSans-ExtraBoldItalic-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/extrabolditalic/OpenSans-ExtraBoldItalic-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/extrabolditalic/open_sansextrabold_italic.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/italic/OpenSans-Italic-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/italic/OpenSans-Italic-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/italic/OpenSans-Italic-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/italic/OpenSans-Italic-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/italic/open_sansitalic.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/light/OpenSans-Light-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/light/OpenSans-Light-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/light/OpenSans-Light-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/light/OpenSans-Light-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/light/open_sanslight.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/lightitalic/OpenSans-LightItalic-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/lightitalic/OpenSans-LightItalic-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/lightitalic/OpenSans-LightItalic-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/lightitalic/OpenSans-LightItalic-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/lightitalic/open_sanslight_italic.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/regular/OpenSans-Regular-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/regular/OpenSans-Regular-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/regular/OpenSans-Regular-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/regular/OpenSans-Regular-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/regular/open_sansregular.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/semibold/OpenSans-Semibold-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/semibold/OpenSans-Semibold-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/semibold/OpenSans-Semibold-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/semibold/OpenSans-Semibold-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/semibold/open_sanssemibold.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/semibolditalic/OpenSans-SemiboldItalic-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/semibolditalic/OpenSans-SemiboldItalic-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/semibolditalic/OpenSans-SemiboldItalic-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/semibolditalic/OpenSans-SemiboldItalic-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/fonts/semibolditalic/open_sanssemibold_italic.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/github_theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/highlight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/main.old.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/main_expansion.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/reveal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/show.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/video.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/video.css.old" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/css/wiki.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/BerkeleyX-on-edx-logo.98b0e1f2f6fd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/BerkeleyX-on-edx-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/HarvardX-on-edx-logo.0d6a6a71fc9f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/HarvardX-on-edx-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/MITx-on-edx-logo.bdb2a6707d60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/MITx-on-edx-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/Thumbs.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/admin-actions-sprite.d0b69e91ffd2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/admin-actions-sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/amplifier-slider-handle.6219c372cd1d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/amplifier-slider-handle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/answer-icon.be9fd317a856.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/answer-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/arrow-left.d6762fe66065.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/arrow-left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/arrow-right.9eef03b25294.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/arrow-right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/article-blur.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/askbot/comment-vote-up.cbcc33680477.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/askbot/comment-vote-up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/askbot/search-icon.8dee25b708a0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/askbot/search-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/askbot/vote-arrow-down.4df127022289.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/askbot/vote-arrow-down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/askbot/vote-arrow-up.73ebd2c10418.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/askbot/vote-arrow-up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/askbot/wmd-buttons.622b7e60c8a9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/askbot/wmd-buttons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/audioplayer/pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/audioplayer/play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bg-banner-account.3c2aa612edd3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bg-banner-account.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bg-banner-example.43abe10bb28f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bg-banner-example.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bg-banner-login.b15990e32229.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bg-banner-login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bg-banner-register.df716c21f1fc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bg-banner-register.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bg-footer-divider.30c54acc64a1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bg-footer-divider.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bg-texture.ae64887d36d1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bg-texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/black90.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/blank.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/brazilstory_blog_arthur.e25380611fca.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/brazilstory_blog_arthur.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/breadcrumbs_arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/breadcrumbs_div.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/browse-icon.dfb585dbbdc5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/browse-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/browser/chrome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/browser/firefox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/browser/opera.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/browser/safari.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/FacebookIcon.5d5dfc11e0dd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/FacebookIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/FacebookIcon_gray.ec06f8735737.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/FacebookIcon_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/GooglePlusIcon.0972d18865ce.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/GooglePlusIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/GooglePlusIcon_gray.3d94e1d83657.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/GooglePlusIcon_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/LinkedInIcon.43a86b5bf413.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/LinkedInIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/LinkedInIcon_gray.15abb097f2f1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/LinkedInIcon_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/MeetupIcon.9d6b0b92e758.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/MeetupIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/MeetupIcon_gray.9851774c065c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/MeetupIcon_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/TwitterIcon.cc27fba8b76a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/TwitterIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/TwitterIcon_gray.55d662a33609.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/TwitterIcon_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/VKontakteIcon.f08418a4e475.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/VKontakteIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/VKontakteIcon_gray.6017bb5d29d3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/VKontakteIcon_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/edXHeaderImage.9a8214b22063.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bulk_email/edXHeaderImage.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bullet-closed.32d1f40d3969.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bullet-closed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bullet-open.badc3fac43a8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bullet-open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bullet-triangle.57d6735362dd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/bullet-triangle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/calc-icon.5f9f130ecea5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/calc-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/calendar-icon.962b1ddf6dbc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/calendar-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/calendar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/calendar_date_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/calendar_icon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/calendar_nav.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX2E0-3D-balls.add9b5c1f560.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX2E0-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX2E1-3D-balls.67836f33fe58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX2E1-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX2E2-3D-balls.420a5567322a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX2E2-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX2E3-3D-balls.6caf11c6e417.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX2E3-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX3E0-3D-balls.358068281bdf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX3E0-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX3E1-3D-balls.5ec3619a9233.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX3E1-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX3E2-3D-balls.1e8df8b13031.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX3E2-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX4E0-3D-balls.cea74865afa2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX4E0-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX4E1-3D-balls.57153f84c40a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX4E1-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX4E2-3D-balls.952375003ad3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX4E2-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX5E1-3D-balls.1e412b2e4a5c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX5E1-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX5E2-3D-balls.8e9e2d2904ac.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX5E2-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX6E0-3D-balls.c0426a2f795b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX6E0-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX6E1-3D-balls.8c7084af9345.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX6E1-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX7E0-3D-balls.076edc7fd2cf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX7E0-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX8E0-3D-balls.71b31e35262f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX8E0-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX9E0-3D-balls.33834f3509a0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/AX9E0-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Bent-3D-balls.3dc26e9c7017.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Bent-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Linear-3D-balls.4a887b47fc9d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Linear-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Linear-stick.a42bba7c733a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Linear-stick.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Octahedral-3D-balls.4d8ac9a8926b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Octahedral-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Octahedral-stick.b3b5bd509012.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Octahedral-stick.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Pentagonal-bipyramidal-3D-balls.cae1e8475c33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Pentagonal-bipyramidal-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Pentagonal-planar-3D-balls.85c7dcd33435.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Pentagonal-planar-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Pentagonal-pyramidal-3D-balls.255fb4de4dc5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Pentagonal-pyramidal-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Pyramidal-3D-balls.f79dd5d2c6ab.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Pyramidal-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Seesaw-3D-balls.952ab37a3a87.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Seesaw-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Square-antiprismatic-3D-balls.486ee1879820.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Square-antiprismatic-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Square-planar-3D-balls.fe8fc7f2eacc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Square-planar-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/T-shaped-3D-balls.efac0c216049.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/T-shaped-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Tetrahedral-3D-balls.d261c6c2cabc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Tetrahedral-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Tetrahedral-stick.a99be550e78d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Tetrahedral-stick.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Trigonal-3D-balls.1139b2133103.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Trigonal-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Trigonal-bipyramidal-3D-balls.833d90cf61dd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Trigonal-bipyramidal-3D-balls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Trigonal-bipyramidal-stick.78ba5639a169.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Trigonal-bipyramidal-stick.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Trigonal-planar-stick.8ebc6789d37f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/capa/vsepr/Trigonal-planar-stick.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/cc.3b29a2832d38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/cc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/check_link_reset.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/checkbox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/close-calc-icon.84b6e41dcae2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/close-calc-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/closed-arrow.54c8afeba30a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/closed-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/correct-icon.ea93859cc9ff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/correct-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/courses/circuits.537cfa75e23d.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/courses/circuits.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/courses/edx_hp_video_thumbsmall.b62b1daf7fbc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/courses/edx_hp_video_thumbsmall.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/courses/history.0fd818efdbd9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/courses/history.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/courses/math.e229a4ae80a5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/courses/math.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/courses/video-thumb.b017a9c873bb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/courses/video-thumb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/dash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/dash_thin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/dash_thin_black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/dash_thin_pink.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/dash_thin_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/discussion/loading.8dbcb694ee0c.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/discussion/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/document-download.badb2582f05a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/document-download.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/down-arrow-black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edge-logo-large.f6c57cc34953.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edge-logo-large.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edge-logo-small.42feac632f99.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edge-logo-small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edge-on-edx-logo.42feac632f99.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edge-on-edx-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edit-link.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edit-link2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx-location.c7f80e26ec59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx-location.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx-logo-large-bw.16edadea87fd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx-logo-large-bw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx-logo-large-color.4a81050ee069.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx-logo-large-color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx-openedx-logo-tag-dark.ede5fc62a5cd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx-openedx-logo-tag-dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx-openedx-logo-tag-light.e2ea8d9187c1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx-openedx-logo-tag-light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx-openedx-logo-tag.135b4ebe9383.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx-openedx-logo-tag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx.52c88bbf8460.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx_bw.1ff70d4c1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/edx_bw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/endorse-icon.ea6455f0b1a7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/endorse-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/favicon.c074c912999f.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/files/default.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/files/doc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/files/jpg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/files/pdf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/files/rar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/files/xls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/files/zip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/filter-del-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/filter-del.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/follow-dog-ear.11ccd8bd02ee.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/follow-dog-ear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/following-flag.682b5e6de354.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/following-flag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/fullscreen.4d565e2c647a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/fullscreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/graded.c943a9b6bce2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/graded.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/grading_notification.bbede8a321f5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/grading_notification.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/hd.3702b960d461.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/hd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header-logo.517a627deaad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/arr-ico.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/breadcrumbs-ico.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/help.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/help2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/home-ico.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/lang-en.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/lang-ru.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/logo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/logo1_en.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/logo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/logo3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/logo4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/logo5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/logout.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/main-menu-link-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/menu-shadow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/search-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/search-switch-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/sitemap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/header/test-drive-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/high_pass_filter.9a9cbb9d232a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/high_pass_filter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/home_bg.0aa16729e03b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/home_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/homepage-bg.839fe86b10b8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/homepage-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/homepage_interns_placeholder_2025x550.8f75a9cf7c1b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/homepage_interns_placeholder_2025x550.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/honor-ribbon.db8c5dcd596c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/honor-ribbon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/ico-tinymce-code.8eef66a921ba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/ico-tinymce-code.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/icon-id.a83ed92a53d7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/icon-id.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/incorrect-icon.016653a3c059.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/incorrect-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/info-icon-dark.0ffc6205d8a0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/info-icon-dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/info-icon.ea77eece4618.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/info-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/info.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/intro-video.762f152eaf7f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/intro-video.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/large-white-error-icon.c2e256e9d452.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/large-white-error-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/layer_close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/link-icon.bf69df5c48d4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/link-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/linkedin_add_to_profile.191501c16dfb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/linkedin_add_to_profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/load-widgets-line-light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/load-widgets-line-light2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/load-widgets-line.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/logo-edX-77x36.4a732c424bb8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/logo-edX-77x36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/logo-edx-support.ca26419dd7b3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/logo-edx-support.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/logo-placeholder.7eec09d43a49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/logo-placeholder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/logo.2bea44d84256.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/logo_bw.0f0c9609ffee.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/logo_bw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/logo_harvard_v5.cf6fc69f8dae.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/logo_harvard_v5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/media_sh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/menu/long-menu-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/menu/long-menu-bg2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/menu/main-menu-active-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/mit_dome.6fa9c53207ed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/mit_dome.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/ml_grading_icon.00975af20432.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/ml_grading_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/moderator-delete-icon.009f3dc430e7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/moderator-delete-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/moderator-edit-icon.08161ddeb404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/moderator-edit-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/mongolia_post.4c7444e62500.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/mongolia_post.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/more_arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/more_arrow_black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/mute.2e8f5f3b617b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/mute.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/nav_arr_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/nav_arr_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/nested-icon.2d2a5d89a3d9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/nested-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/new-post-icons-full.c64b8fd42832.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/new-post-icons-full.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/new-post-icons.877e485334ac.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/new-post-icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/open-arrow.bb2d4662065a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/open-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/opencourseware.9d191c7fcb92.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/opencourseware.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/overlay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/partially-correct-icon.cc15e5446ed3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/partially-correct-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/pause-icon.dee4090a7a1f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/pause-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/peer_grading_icon.bf9412f463c9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/peer_grading_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/pl-course.9b9ddade718e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/pl-course.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/pl-faculty.ffeb747183dd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/pl-faculty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/play-icon.bc74e15a2e99.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/play-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/calendar-icon.7efd89b95ce5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/calendar-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/chart-icon.170d2e567653.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/chart-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/course-info-icon.efbf4c8accca.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/course-info-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/email-icon.7f11ac29be6e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/email-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/gear-icon.d76ae10f71fe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/gear-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/home-icon.9bfadc2517cb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/home-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/info-icon.ea77eece4618.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/info-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/language-icon.86473e3f113e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/language-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/pencil-icon.ac041b75a530.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/pencil-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/prerec-icon.fc881726469c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/prerec-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/video-play-icon.cb8d22a928b7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/portal-icons/video-play-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/prev.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/print.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/profile.36dc53519d4b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/profile.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/random_grading_icon.44dfc992c5e3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/random_grading_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/resolvedflag.cc83f17e2467.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/resolvedflag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/rss_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/save_calendar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/schools.83c0171777ea.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/schools.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/scroller_nav.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/search-icon.73e634eb75b2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/search-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/search_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/section.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/select-arrow-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/select-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/select-button-trigger.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/self_assessment_icon.205ff8a0e712.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/self_assessment_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/document-icon-current.6f1ba090b144.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/document-icon-current.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/document-icon-normal.ea2ce01c2824.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/document-icon-normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/document-icon-visited.aa6105a5fcf4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/document-icon-visited.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/edit.b19950f5dd2a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/edit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/history.52713b047d35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/history.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/list-finished.3f92e1e9ea74.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/list-finished.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/list-icon-current.82c18e11bd80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/list-icon-current.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/list-icon-normal.5826a2e2e41b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/list-icon-normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/list-icon-visited.bab58990d5c7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/list-icon-visited.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/list-unfinished.4c398bdf29ff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/list-unfinished.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/list-unstarted.1894b282cc30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/list-unstarted.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/next-icon.9eef03b25294.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/next-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/previous-icon.d6762fe66065.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/previous-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/status/check.b965b1ea60c7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/status/check.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/status/dash.00f3bfbbbc8b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/status/dash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/status/not-started.f756f2a116ea.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/status/not-started.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/status/wrong.1b86541e6c02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/status/wrong.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/video-icon-current.d3b52a7b056e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/video-icon-current.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/video-icon-normal.544113ee0b54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/video-icon-normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/video-icon-visited.b4ad47f7cf7e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/video-icon-visited.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/view.4adf205b12c3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sequence-nav/view.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/show-hide-discussion-icon.21d556c224a5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/show-hide-discussion-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/show-hide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sidebar-resolved-icons.46b1fbbc138b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/sidebar-resolved-icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/simple_graph.859f84fa22d2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/simple_graph.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/single-banner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/slide-left-icon.0e8839d215fb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/slide-left-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/slide-right-icon.970f809b1961.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/slide-right-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/slider-bars.89818cfef2f1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/slider-bars.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/slider-handle.48817472776e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/slider-handle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/small-grey-arrows.fe0c2e012758.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/small-grey-arrows.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/small-header-home-icon.32c08d6ca89e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/small-header-home-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/small-header-logo.69a936249831.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/small-header-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/addthis.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/email-sharing.be14970118ea.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/email-sharing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/facebook-sharing.ef6d12f8c0ab.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/facebook-sharing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/fb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/forum.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/google-plus-sharing.947c2e39edb9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/google-plus-sharing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/ico-social-facebook.6757cc212a18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/ico-social-facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/ico-social-google.0fcff64a115e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/ico-social-google.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/ico-social-meetup.78eb0b41cc3d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/ico-social-meetup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/ico-social-twitter.59116eaa21b7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/ico-social-twitter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/ico-social-youtube.909f05910c79.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/ico-social-youtube.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/instagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/email-sharing.7580b96f5206.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/email-sharing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/facebook-sharing.6cf670298c94.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/facebook-sharing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/facebook.f6625be2a170.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/google-plus-sharing.dd34bb8dd2a2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/google-plus-sharing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/linkedin.fc2c9621d654.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/linkedin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/twitter-sharing.30d3e84f1fc5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/twitter-sharing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/twitter.04330f276ee9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/twitter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/youtube-sharing.26982e83fc98.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/lrg/youtube-sharing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/tw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/twitter-sharing.b637ddbd06cb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/twitter-sharing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/vk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/youtube-sharing.849d8165b998.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/youtube-sharing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/social/yt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/spinner-on-grey.962bf54646dd.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/spinner-on-grey.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/spinner.bc34f953403f.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/spinner.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/staff-icons.65f9cc06d57d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/staff-icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/started.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/text_blur_bottom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/text_blur_bottom_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/textbook/textbook-left.71561518b043.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/textbook/textbook-left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/textbook/textbook-right.50d935f703c0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/textbook/textbook-right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/tooltip_arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/tooltip_arrow_bottom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/treeview-default.8566196eba22.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/treeview-default.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/ui-icons_222222_256x240.ebe6b6902a40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/unanswered-icon.7714d2704ef2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/unanswered-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/up-down-arrow-black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/urfu-dudes-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/urfu-dudes-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/urfu-dudes-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/urfu-dudes-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/urfu-dudes-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/urfu-dudes-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/urfu-dudes-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/urfu-dudes-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/urfu-dudes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/vcert-ribbon-s.b9a273b0cebf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/vcert-ribbon-s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/vcert-steps.de4cef1bba09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/vcert-steps.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/vcr.1517a9542edb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/vcr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/video-image.a26a523d7dc3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/video-image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/voltage_divider.ab224329a11f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/voltage_divider.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/volume.5f73d227fb3b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/volume.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/vote-arrows.e082b2d14f66.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/vote-arrows.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/vote-plus-icon.7d5a2e779746.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/vote-plus-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/white-error-icon.97dc037801b5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/white-error-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/widget-text-banner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/widget-text-banner2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/wiki-icons.ebfb43a2d6ef.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/wiki-icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/wmd-buttons-transparent.e9d9fe51633b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/wmd-buttons-transparent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/wmd-buttons.235c6a346ad7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/images/wmd-buttons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/generic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/highlight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/jquery-dateformat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/jquery.customSelect.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/jquery.jcarousel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/jquery.min.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/jquery.pikachoose.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/jquery.placeholder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/jquery.reveal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/jquery.tmpl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/jquery.ui.checkbox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/moment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/ps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/pscore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/show.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/js/tasks_update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/.versions" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/accordion.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/accordion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/accordion.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/accordion.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/ad.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/ad.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/api.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/breadcrumb.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/breadcrumb.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/button.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/button.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/card.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/card.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/checkbox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/checkbox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/checkbox.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/checkbox.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/colorize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/colorize.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/comment.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/comment.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/container.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/container.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/dimmer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/dimmer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/dimmer.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/dimmer.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/divider.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/divider.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/dropdown.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/dropdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/dropdown.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/dropdown.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/embed.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/embed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/embed.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/embed.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/feed.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/feed.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/flag.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/flag.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/form.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/form.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/form.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/header.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/icon.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/icon.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/image.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/image.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/input.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/input.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/item.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/item.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/label.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/label.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/list.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/list.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/loader.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/loader.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/menu.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/menu.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/message.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/message.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/modal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/modal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/modal.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/modal.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/nag.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/nag.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/nag.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/nag.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/popup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/popup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/popup.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/popup.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/progress.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/progress.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/progress.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/progress.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/rail.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/rail.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/rating.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/rating.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/rating.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/rating.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/reset.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/reset.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/reveal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/reveal.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/search.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/search.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/search.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/segment.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/segment.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/shape.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/shape.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/shape.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/shape.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/sidebar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/sidebar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/sidebar.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/sidebar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/site.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/site.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/site.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/site.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/state.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/state.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/statistic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/statistic.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/step.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/step.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/sticky.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/sticky.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/sticky.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/sticky.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/tab.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/tab.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/tab.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/tab.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/table.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/transition.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/transition.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/transition.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/transition.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/video.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/video.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/video.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/video.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/visibility.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/visibility.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/visit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/components/visit.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/package.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/semantic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/semantic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/semantic.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/semantic.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/brand-icons.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/icons.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/outline-icons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/outline-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/outline-icons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/outline-icons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/fonts/outline-icons.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-CSS-master/themes/default/assets/images/flags.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-Calendar/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-Calendar/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-Calendar/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-Calendar/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-Calendar/gulpfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-Calendar/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-Calendar/src/definitions/modules/calendar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-Calendar/src/definitions/modules/calendar.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-Calendar/src/theme.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-Calendar/src/theme.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-Calendar/src/themes/default/modules/calendar.overrides" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/Semantic-UI-Calendar/src/themes/default/modules/calendar.variables" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/dataTables.fixedHeader.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/dataTables.semanticui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/fixedHeader.semanticui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/HELP-US-OUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/less/animated.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/less/bordered-pulled.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/less/core.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/less/fixed-width.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/less/font-awesome.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/less/icons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/less/larger.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/less/list.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/less/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/less/path.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/less/rotated-flipped.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/less/screen-reader.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/less/stacked.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/less/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/scss/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/scss/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/scss/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/scss/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/scss/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/scss/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/scss/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/scss/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/scss/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/scss/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/scss/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/font-awesome-4.7.0/scss/font-awesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/jquery.dataTables.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/vendor/jquery.dataTables.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/home/page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/menu_block.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/minors/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/minors/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/openprofession/personaldata_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/openprofession/seminar_thanks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/openprofession/sim_personaldata_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/openprofession/sim_thanks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/openprofession/thanks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/openprofession/upload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/other/file_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/questionnaire/EIOS.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/questionnaire/thanks.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/base_simple.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/close.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/course_update_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/courses.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/courses_base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/courses_edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/data.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/expertise_update_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/expertise_update_form1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/expertises.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/expertises_edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/merge.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/teacher_update_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/roo/upload_from_json.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../templates/seminar/seminar_form.html" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bot.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="735">
+              <caret line="49" column="25" lean-forward="true" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+              <folding>
+                <element signature="e#22#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.venv/lib/python3.6/site-packages/telebot/util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-113521093/builtins.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="2927" column="8" selection-start-line="2927" selection-start-column="8" selection-end-line="2927" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="39" column="61" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="61" />
+              <folding>
+                <element signature="e#99#113#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/messages.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+              <folding>
+                <element signature="e#22#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.venv/lib/python3.6/site-packages/telebot/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="689">
+              <caret line="1006" column="112" selection-start-line="1006" selection-start-column="40" selection-end-line="1006" selection-end-column="112" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/msg.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>register_next_step_handler</find>
+      <find>enable_save_next_step_handlers</find>
+      <find>load_next_step_handlers</find>
+      <find>callback_query</find>
+      <find>chat</find>
+      <find>user</find>
+      <find>isdigit</find>
+      <find>answer_callback_query</find>
+      <find>inl</find>
+      <find>вот тебе стикер</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/msg.json" />
+        <option value="$PROJECT_DIR$/bot.py" />
+        <option value="$PROJECT_DIR$/messages.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="262" />
+    <option name="y" value="237" />
+    <option name="width" value="1836" />
+    <option name="height" value="1138" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="testBot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testBot" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.messages">
+    <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="testBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="messages" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="testBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/messages.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="testBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.messages" />
+        <item itemvalue="Python.bot" />
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="05070b89-f0b7-4ad1-8045-fc7cbc0ea52a" name="Default Changelist" comment="" />
+      <created>1559298221023</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559298221023</updated>
+      <workItem from="1559298223267" duration="15924000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="15924000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="262" y="237" width="1836" height="1138" extended-state="0" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1877095" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29435083" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39941406" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/testBot$test.coverage" NAME="test Coverage Results" MODIFIED="1559308911059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/testBot$messages.coverage" NAME="messages Coverage Results" MODIFIED="1559314996867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/testBot$bot.coverage" NAME="bot Coverage Results" MODIFIED="1559314757100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.venv/lib/python3.6/site-packages/telebot/types.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="837" column="8" selection-start-line="837" selection-start-column="8" selection-end-line="837" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.venv/lib/python3.6/site-packages/telebot/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="689">
+          <caret line="1006" column="112" selection-start-line="1006" selection-start-column="40" selection-end-line="1006" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="39" column="61" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="61" />
+          <folding>
+            <element signature="e#99#113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2019.1/system/python_stubs/-113521093/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="2927" column="8" selection-start-line="2927" selection-start-column="8" selection-end-line="2927" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.venv/lib/python3.6/site-packages/telebot/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msg.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/messages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <element signature="e#22#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="25" lean-forward="true" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+          <folding>
+            <element signature="e#22#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
