@@ -1,6 +1,6 @@
 {
-  'content_type': 'text',
-  'message_id': 354,
+  'content_type': 'sticker',
+  'message_id': 749,
   'from_user': {
     'id': 392010010,
     'is_bot': False,
@@ -9,7 +9,7 @@
     'last_name': 'Vesloguzov',
     'language_code': 'ru'
   },
-  'date': 1559313215,
+  'date': 1559385030,
   'chat': {
     'type': 'private',
     'last_name': 'Vesloguzov',
@@ -32,13 +32,25 @@
   'edit_date': None,
   'media_group_id': None,
   'author_signature': None,
-  'text': 'вапав',
+  'text': None,
   'entities': None,
   'caption_entities': None,
   'audio': None,
   'document': None,
   'photo': None,
-  'sticker': None,
+  'sticker': {
+    'file_id': 'CAADAgADEAADijc4AAESVXqKiwYE2wI',
+    'width': 512,
+    'height': 398,
+    'thumb': <telebot.types.PhotoSize
+    object
+    at
+    0x7f1d13be2128>,
+    'emoji': '🐟',
+    'set_name': 'readfish',
+    'mask_position': None,
+    'file_size': 43274
+  },
   'video': None,
   'video_note': None,
   'voice': None,
@@ -62,7 +74,7 @@
   'successful_payment': None,
   'connected_website': None,
   'json': {
-    'message_id': 354,
+    'message_id': 749,
     'from': {
       'id': 392010010,
       'is_bot': False,
@@ -78,13 +90,20 @@
       'username': 'vesloguzov',
       'type': 'private'
     },
-    'date': 1559313215,
-    'text': 'вапав'
+    'date': 1559385030,
+    'sticker': {
+      'width': 512,
+      'height': 398,
+      'emoji': '🐟',
+      'set_name': 'readfish',
+      'thumb': {
+        'file_id': 'AAQCABO30YUqAASt8uyCsal7kOU2AAIC',
+        'file_size': 5054,
+        'width': 128,
+        'height': 99
+      },
+      'file_id': 'CAADAgADEAADijc4AAESVXqKiwYE2wI',
+      'file_size': 43274
+    }
   }
-}
-{
-  392010010: <__main__.User
-  object
-  at
-  0x7f87a9d23160>
 }

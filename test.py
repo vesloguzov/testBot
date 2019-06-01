@@ -1,86 +1,73 @@
-# -*- coding: utf-8 -*-
-"""
-This Example will show you how to use register_next_step handler.
-"""
+import logging
+import sys
+import time
 
 import telebot
 from telebot import types
 
-API_TOKEN = '880951017:AAGnnIXaKShR8umg7FhOcXhj4TPl4yu-FhI'
+API_TOKEN = '880951017:AAFjaPFXl363dTEXKGokJUZ7yLAOWnf3awc'
 
 bot = telebot.TeleBot(API_TOKEN)
-
-user_dict = {}
-
-
-class User:
-    def __init__(self, ):
-        self.name = None
-        self.age = None
-        self.sex = None
+telebot.logger.setLevel(logging.DEBUG)
 
 
-# Handle '/start' and '/help'
-@bot.message_handler(commands=['help', 'start'])
-def send_welcome(message):
-    msg = bot.reply_to(message, """\
-Hi there, I am Example bot.
-What's your name?
-""")
-    bot.register_next_step_handler(msg, process_name_step)
-
-
-def process_name_step(message):
+@bot.inline_handler(lambda query: query.query == 'text')
+def query_text(inline_query):
     try:
-        chat_id = message.chat.id
-        name = message.text
-        user = User(name)
-        user_dict[chat_id] = user
-        msg = bot.reply_to(message, 'How old are you?')
-        bot.register_next_step_handler(msg, process_age_step)
+        r = types.InlineQueryResultArticle('1', 'Result1', types.InputTextMessageContent('hi'))
+        r2 = types.InlineQueryResultArticle('2', 'Result2', types.InputTextMessageContent('hi'))
+        bot.answer_inline_query(inline_query.id, [r, r2])
     except Exception as e:
-        bot.reply_to(message, 'oooops')
+        print(e)
 
 
-def process_age_step(message):
+@bot.inline_handler(lambda query: query.query == 'photo1')
+def query_photo(inline_query):
     try:
-        chat_id = message.chat.id
-        age = message.text
-        if not age.isdigit():
-            msg = bot.reply_to(message, 'Age should be a number. How old are you?')
-            bot.register_next_step_handler(msg, process_age_step)
-            return
-        user = user_dict[chat_id]
-        user.age = age
-        markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
-        markup.add('Male', 'Female')
-        msg = bot.reply_to(message, 'What is your gender', reply_markup=markup)
-        bot.register_next_step_handler(msg, process_sex_step)
+        r = types.InlineQueryResultPhoto('1',
+                                         'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/kitten.jpg',
+                                         'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/kitten.jpg',
+                                         input_message_content=types.InputTextMessageContent('hi'))
+        r2 = types.InlineQueryResultPhoto('2',
+                                          'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/rooster.jpg',
+                                          'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/rooster.jpg')
+        bot.answer_inline_query(inline_query.id, [r, r2], cache_time=1)
     except Exception as e:
-        bot.reply_to(message, 'oooops3')
+        print(e)
 
 
-def process_sex_step(message):
+@bot.inline_handler(lambda query: query.query == 'video')
+def query_video(inline_query):
     try:
-        chat_id = message.chat.id
-        sex = message.text
-        user = user_dict[chat_id]
-        if (sex == u'Male') or (sex == u'Female'):
-            user.sex = sex
-        else:
-            raise Exception()
-        bot.send_message(chat_id, 'Nice to meet you ' + user.name + '\n Age:' + str(user.age) + '\n Sex:' + user.sex)
+        r = types.InlineQueryResultVideo('1',
+                                         'https://github.com/eternnoir/pyTelegramBotAPI/blob/master/tests/test_data/test_video.mp4?raw=true',
+                                         'video/mp4', 'Video',
+                                         'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/rooster.jpg',
+                                         'Title'
+                                         )
+        bot.answer_inline_query(inline_query.id, [r])
     except Exception as e:
-        bot.reply_to(message, 'oooops')
+        print(e)
 
 
-# Enable saving next step handlers to file "./.handlers-saves/step.save".
-# Delay=2 means that after any change in next step handlers (e.g. calling register_next_step_handler())
-# saving will hapen after delay 2 seconds.
-bot.enable_save_next_step_handlers(delay=2)
+@bot.inline_handler(lambda query: len(query.query) is 0)
+def default_query(inline_query):
+    try:
+        r = types.InlineQueryResultArticle('1', 'default', types.InputTextMessageContent('default'))
+        bot.answer_inline_query(inline_query.id, [r])
+    except Exception as e:
+        print(e)
 
-# Load next_step_handlers from save file (default "./.handlers-saves/step.save")
-# WARNING It will work only if enable_save_next_step_handlers was called!
-bot.load_next_step_handlers()
 
-bot.polling()
+def main_loop():
+    bot.polling(True)
+    while 1:
+        time.sleep(3)
+
+
+if __name__ == '__main__':
+    try:
+        main_loop()
+    except KeyboardInterrupt:
+        print('\nExiting by user request.\n')
+        sys.exit(0)
