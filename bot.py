@@ -395,10 +395,10 @@ class User:
         self.sex = None
 
 
-TOKEN = '880951017:AAFjaPFXl363dTEXKGokJUZ7yLAOWnf3awc'
-# r = requests.get(f'https://api.telegram.org/bot{TOKEN}/Update')
-#
-# print(r.json())
+TOKEN = '880951017:AAH30x9yHfvlrnojD1ONe11MD1vmkZkdkRk'
+r = requests.get(f'https://api.telegram.org/bot{TOKEN}/getUpdates')
+
+print(r.json())
 
 bot = telebot.TeleBot(TOKEN)
 
@@ -543,3 +543,6 @@ bot.polling(timeout=60)
 # MAIN_URL = f'https://api.telegram.org/bot{TOKEN}'
 # r = requests.get(f'{MAIN_URL}/getUpdates')
 # print(r.json())
+
+
+print('end')
