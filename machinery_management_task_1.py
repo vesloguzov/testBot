@@ -157,9 +157,9 @@ cells_1_len = len(cells_1_correct[0])
 cells_2_len = len(cells_2_correct[0])
 cells_3_len = len(cells_3_correct[0])
 
-# print(cells_1_correct)
-# print(cells_2_correct)
-# print(cells_3_correct)
+print(cells_1_correct)
+print(cells_2_correct)
+print(cells_3_correct)
 
 # print(cells_1_len, 800/cells_1_len)
 # print(cells_2_len, 800/cells_2_len)
