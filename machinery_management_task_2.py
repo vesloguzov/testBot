@@ -72,7 +72,7 @@ structure = {
             "type": "node",
             "id": "node_3",
             "duration": 6,
-            "title": "Узел 3",
+            "title": u"Узел 3",
             "children": [
                 {
                     "type": "detail",
@@ -202,7 +202,7 @@ def get_element_children(student_obj, element):
     ret_list = []
     # print(element)
     for k in student_obj.keys():
-        if (student_obj[k]['x'] + student_obj[k]['width'] == element['x']) and (student_obj[k]['y'] >= element['y'] and student_obj[k]['y'] + student_obj[k]['height'] <= element['y'] + element['height']):
+        if (student_obj[k]['x'] + student_obj[k]['width'] == element['x']) and (student_obj[k]['y'] >= element['y'] and element['y'] + element['height'] >= student_obj[k]['y'] + student_obj[k]['height']):
             ret_list.append(student_obj[k])
     # print("children: ", [x["id"] for x in ret_list])
     # print("_________________________________________________")
@@ -222,7 +222,7 @@ def intersects(a, b):
         "x1": b['x'] + b['width'],
         "y1": area_height - b['y'] - b['height'],
     }
-    return not (a_coords['y'] <= b_coords['y1'] or a_coords['y1'] >= b_coords['y'] or a_coords['x1'] <= b_coords['x'] or a_coords['x'] >= b_coords['x1'])
+    return not (b_coords['y1'] >= a_coords['y'] or a_coords['y1'] >= b_coords['y'] or b_coords['x'] >= a_coords['x1'] or a_coords['x'] >= b_coords['x1'])
 
 
 def check_children_intersections(children_list):
@@ -266,6 +266,7 @@ def check_children_equal(student_children, correct_children):
             problem_elements.append(problem)
         return False
 
+student_data_json = json.dumps(student_data, ensure_ascii=False).replace("\"", "'")
 
 def check_answer(exp, ans):
     answer_obj = json.loads(ans)["answer"]
@@ -305,6 +306,8 @@ def check_answer(exp, ans):
     else:
         return {'input_list': [{'ok': 'Partial', 'msg': msg, 'grade_decimal': grade}]}
 
+
+student_data_json = json.dumps(student_data, ensure_ascii=False).replace("\"", "'")
 
 answer_str = '{"answer":{"detail_6":{"type":"detail","id":"detail_6","title":"Деталь 6","height":1,"width":3,"x":17,"y":12},"detail_5":{"type":"detail","id":"detail_5","title":"Деталь 5","height":1,"width":3,"x":17,"y":13},"detail_4_3":{"type":"detail","id":"detail_4_3","title":"Деталь 4.3","height":1,"width":3,"x":14,"y":6},"detail_4_2":{"type":"detail","id":"detail_4_2","title":"Деталь 4.2","height":1,"width":2,"x":15,"y":7},"detail_4_1":{"type":"detail","id":"detail_4_1","title":"Деталь 4.1","height":1,"width":3,"x":14,"y":8},"node_4":{"type":"node","id":"node_4","title":"Узел 4","height":3,"width":3,"x":17,"y":6},"detail_3_3":{"type":"detail","id":"detail_3_3","title":"Деталь 3.3","height":1,"width":4,"x":10,"y":11},"detail_3_2":{"type":"detail","id":"detail_3_2","title":"Деталь 3.2","height":1,"width":1,"x":13,"y":10},"detail_3_1":{"type":"detail","id":"detail_3_1","title":"Деталь 3.1","height":1,"width":2,"x":12,"y":9},"node_3":{"type":"node","id":"node_3","title":"Узел 3","height":3,"width":6,"x":14,"y":9},"detail_2_3":{"type":"detail","id":"detail_2_3","title":"Деталь 2.3","height":1,"width":3,"x":8,"y":2},"detail_2_2":{"type":"detail","id":"detail_2_2","title":"Деталь 2.2","height":1,"width":3,"x":8,"y":1},"detail_2_1":{"type":"detail","id":"detail_2_1","title":"Деталь 2.1","height":1,"width":4,"x":7,"y":0},"node_2":{"type":"node","id":"node_2","title":"Узел 2","height":3,"width":5,"x":11,"y":0},"detail_1_3":{"type":"detail","id":"detail_1_3","title":"Деталь 1.3","height":1,"width":4,"x":8,"y":3},"detail_1_2":{"type":"detail","id":"detail_1_2","title":"Деталь 1.2","height":1,"width":2,"x":10,"y":5},"detail_1_1":{"type":"detail","id":"detail_1_1","title":"Деталь 1.1","height":1,"width":3,"x":9,"y":4},"node_1":{"type":"node","id":"node_1","title":"Узел 1","height":3,"width":4,"x":12,"y":3},"aggregate_1":{"type":"aggregate","id":"aggregate_1","title":"Аггрегат 1","height":6,"width":4,"x":16,"y":0},"machine_1":{"type":"machine","id":"machine_1","title":"Машина 1","height":14,"width":6,"x":20,"y":0}}}'
 print(check_answer(1, answer_str))
