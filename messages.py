@@ -1,74 +1,66 @@
-class Bin:
-    def __init__(self):
-        self.list = []
-
-    def addItem(self, item):
-        self.list.append(item)
-
-    def removeItem(self, item):
-        self.list.remove(item)
-
-    def sum(self):
-        total = 0
-        for elem in self.list:
-            total += elem
-        return total
-
-    def show(self):
-        return self.list
-
 
 def first_fit(list_items, max_size):
-    """ Returns list of bins with input items inside. """
-    list_bins = []
-    list_bins.append(Bin())  # Add first empty bin to list
+    class Bin:
+        def __init__(self):
+            self.list = []
+
+        def addItem(self, item):
+            self.list.append(item)
+
+        def removeItem(self, item):
+            self.list.remove(item)
+
+        def sum(self):
+            total = 0
+            for elem in self.list:
+                total += elem['congestion']
+            return total
+
+        def show(self):
+            return self.list
+
+    list_items = sorted(list_items, key=lambda i: i['congestion'], reverse=True)
+    list_bins = [Bin()]
 
     for item in list_items:
 
         alloc_flag = False
 
-        for bin in list_bins:
-            if bin.sum() + item <= max_size:
-                bin.addItem(item)
+        for b in list_bins:
+            if b.sum() + item['congestion'] <= max_size:
+                b.addItem(item)
                 alloc_flag = True
                 break
 
-        # If item not allocated in bins in list, create new bin
-        # and allocate it to it.
-        if alloc_flag == False:
-            newBin = Bin()
-            newBin.addItem(item)
-            list_bins.append(newBin)
+        if not alloc_flag:
+            new_bin = Bin()
+            new_bin.addItem(item)
+            list_bins.append(new_bin)
 
-    # Turn bins into list of items and return
     list_items = []
-    for bin in list_bins:
-        list_items.append(bin.show())
+    for b in list_bins:
+        list_items.append(b.show())
 
-    return (list_items)
-
-
-def first_fit_dec(list_items, max_size):
-    """ Returns list of bins with input items inside. """
-    # Sort list in decreasing order
-    list_items.sort(reverse=True)
-
-    # Apply first-fit algorith
-    return (first_fit(list_items, max_size))
+    return list_items
 
 
-items = [8, 16, 12, 8, 45, 18, 30, 7, 10, 14, 9, 9, 52, 88]
-bin_height = 60
+items_lol = [{'type': 'turning', 'workplace_num': 0, 'congestion': 100, 'work_time': 240.0}, {'type': 'turning', 'workplace_num': 1, 'congestion': 18.75, 'work_time': 45.0}, {'type': 'drilling', 'workplace_num': 0, 'congestion': 68.75, 'work_time': 165.0}, {'type': 'milling', 'workplace_num': 0, 'congestion': 100, 'work_time': 240.0}, {'type': 'milling', 'workplace_num': 1, 'congestion': 31.25, 'work_time': 75.0}, {'type': 'grinding', 'workplace_num': 0, 'congestion': 81.25, 'work_time': 195.0}]
+items_lol = [{'type': 'turning', 'workplace_num': 0, 'congestion': 100, 'work_time': 240.0}, {'type': 'turning', 'workplace_num': 1, 'congestion': 33.33, 'work_time': 80.0}, {'type': 'turning', 'workplace_num': 0, 'congestion': 100, 'work_time': 240.0}, {'type': 'turning', 'workplace_num': 1, 'congestion': 41.66, 'work_time': 100.0}, {'type': 'drilling', 'workplace_num': 0, 'congestion': 100, 'work_time': 240.0}, {'type': 'drilling', 'workplace_num': 1, 'congestion': 8.33, 'work_time': 20.0}, {'type': 'milling', 'workplace_num': 0, 'congestion': 100, 'work_time': 240.0}, {'type': 'milling', 'workplace_num': 1, 'congestion': 100, 'work_time': 240.0}, {'type': 'milling', 'workplace_num': 2, 'congestion': 66.65, 'work_time': 160.0}, {'type': 'grinding', 'workplace_num': 0, 'congestion': 100, 'work_time': 240.0}, {'type': 'grinding', 'workplace_num': 1, 'congestion': 100, 'work_time': 240.0}, {'type': 'grinding', 'workplace_num': 2, 'congestion': 24.99, 'work_time': 60.0}]
 
 
-items = [100, 18.75, 68.75, 100, 31.25, 81.25]
 
-items = [100, 33.33, 100, 41.67, 100, 8.33, 100, 100, 66.67, 100, 100, 25]
+
+
+# sorted(items_lol, key=lambda i: i['congestion'], reverse=True)
 
 bin_height = 100
 
+# print(items_lol)
+# bin_height = 100
+
 # First-fit Algorithm
-print(first_fit(items, bin_height))
+for t in first_fit(items_lol, bin_height):
+    print(t)
 
 # First-fit Decreasing Algorithm
-print(first_fit_dec(items, bin_height))
+# print(first_fit_dec(items, bin_height))
