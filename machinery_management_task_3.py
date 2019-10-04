@@ -30,7 +30,7 @@ def first_fit(list_items, max_size=100):
         alloc_flag = False
 
         for b in list_bins:
-            if b.sum() + item['congestion'] <= max_size:
+            if max_size >= b.sum() + item['congestion']:
                 b.addItem(item)
                 alloc_flag = True
                 break
@@ -47,39 +47,44 @@ def first_fit(list_items, max_size=100):
     return list_items
 
 
+def get_overlap(a, b):
+    if max(0, min(a[1], b[1]) - max(a[0], b[0])) > 0:
+        return True
+    return False
+
 # turning - Токарная
 # drilling - Сверлильная
 # milling - Фрезерная
 # grinding - Шлифовальная
-pass
+
 operations = [
     {
         "id": "operation_1",
-        "title": "Токарная 1",
+        "title": u"Токарная 1",
         "duration": 1.6,
         "type": "turning",
     },
     {
         "id": "operation_2",
-        "title": "Токарная 2",
+        "title": u"Токарная 2",
         "duration": 1.7,
-        "type": "turning",
+        "type": "turning_1",
     },
     {
         "id": "operation_3",
-        "title": "Сверлильная",
+        "title": u"Сверлильная",
         "duration": 1.3,
         "type": "drilling",
     },
     {
         "id": "operation_4",
-        "title": "Фрезерная",
+        "title": u"Фрезерная",
         "duration": 3.2,
         "type": "milling",
     },
     {
         "id": "operation_5",
-        "title": "Шлифовальная",
+        "title": u"Шлифовальная",
         "duration": 2.7,
         "type": "grinding",
     }
@@ -87,6 +92,9 @@ operations = [
 
 operations_weight = {
     "turning": {
+        "weight": 0
+    },
+    "turning_1": {
         "weight": 0
     },
     "drilling": {
@@ -100,89 +108,89 @@ operations_weight = {
     },
 }
 
-# operations = [
-#     {
-#         "id": "operation_1",
-#         "title": "Токарная",
-#         "duration": 1.9,
-#         "type": "turning",
-#     },
-#     {
-#         "id": "operation_2",
-#         "title": "Сверлильная",
-#         "duration": 1.1,
-#         "type": "drilling",
-#     },
-#     {
-#         "id": "operation_3",
-#         "title": "Фрезерная",
-#         "duration": 2.1,
-#         "type": "milling",
-#     },
-#     {
-#         "id": "operation_4",
-#         "title": "Шлифовальная",
-#         "duration": 1.3,
-#         "type": "grinding",
-#     }
-# ]
+operations = [
+    {
+        "id": "operation_1",
+        "title": u"Токарная",
+        "duration": 1.9,
+        "type": "turning",
+    },
+    {
+        "id": "operation_2",
+        "title": u"Сверлильная",
+        "duration": 1.1,
+        "type": "drilling",
+    },
+    {
+        "id": "operation_3",
+        "title": u"Фрезерная",
+        "duration": 2.1,
+        "type": "milling",
+    },
+    {
+        "id": "operation_4",
+        "title": u"Шлифовальная",
+        "duration": 1.3,
+        "type": "grinding",
+    }
+]
 
 employees = {
     "employee_1": {
         "id": "employee_1",
-        "title": "Сашка",
+        "title": u"Сашка",
     },
     "employee_2": {
         "id": "employee_2",
-        "title": "Женьдос",
+        "title": u"Женьдос",
     },
     "employee_3": {
         "id": "employee_3",
-        "title": "Славик",
+        "title": u"Славик",
     },
     "employee_4": {
         "id": "employee_4",
-        "title": "Колян",
+        "title": u"Колян",
     },
     "employee_5": {
         "id": "employee_5",
-        "title": "Лёха",
+        "title": u"Лёха",
     },
     "employee_6": {
         "id": "employee_6",
-        "title": "Паша",
+        "title": u"Паша",
     },
     "employee_7": {
         "id": "employee_7",
-        "title": "Работник 1",
+        "title": u"Работник 1",
     },
     "employee_8": {
         "id": "employee_8",
-        "title": "Работник 2",
+        "title": u"Работник 2",
     },
     "employee_9": {
         "id": "employee_9",
-        "title": "Работник 3",
+        "title": u"Работник 3",
     },
     "employee_10": {
         "id": "employee_10",
-        "title": "Работник 4",
+        "title": u"Работник 4",
     },
     "employee_11": {
         "id": "employee_11",
-        "title": "Работник 5",
+        "title": u"Работник 5",
     },
     "employee_12": {
         "id": "employee_12",
-        "title": "Работник 6",
+        "title": u"Работник 6",
     },
     "employee_13": {
         "id": "employee_13",
-        "title": "Работник 7",
+        "title": u"Работник 7",
     },
     "employee_14": {
         "id": "employee_14",
-        "title": "Работник 8",
+        "title": u"Работник 8",
     }
 }
 
@@ -193,16 +201,17 @@ work_day = 2  # количество смен
 work_shift = 8  # количество часов в смене
 half_shift = 0.5  # пол смены
 defect_percent = 16  # процентов
-N_out =  16799.98966  #12600  # количество выпуск. деталей (N выпуска)
+N_out = 12600  # 16799.98966  #  количество выпуск. деталей (N выпуска)
 tact = (month * work_day * work_shift * 60) / N_out  # такт мин/шт
-safety_stock = 5
+# safety_stock = 5
 #  N_in = N_out/(1-defect_percent*100)  # количество запуск. деталей (N запуска) это еще разобраться как считать
 
 max_time = work_shift * half_shift * 60  # узнать как назвать переменную
 
 workplaces = []
 
-for op in operations:
+for index, op in enumerate(operations):
+    op["weight"] = operations_weight[op["type"]]["weight"]
     op_workplace_len = math.ceil(op["duration"] / tact)
     for workplace_num in list(range(0, op_workplace_len)):
         workplace_congestion = round(op["duration"] / tact, 4)
@@ -211,15 +220,15 @@ for op in operations:
             workplace_congestion = 1
         else:
             workplace_congestion = workplace_congestion - workplace_num
-        # workplace_item["weight"] =
         workplace_item = {
-            "weight": operations_weight[op["type"]]["weight"],
+            "weight": op["weight"],
             "type": op["type"],
             # "workplace_num": workplace_num,
             "congestion": round(workplace_congestion * 100, 2),  # загрузка рабочего места в процентах
             "work_time": round(workplace_congestion * max_time, 0)
         }
         workplaces.append(workplace_item)
+
 
 workplaces_groups = first_fit(workplaces)
 
@@ -244,18 +253,58 @@ for idx, w in enumerate(workplaces_groups):
 # период неизменной работы - ПНР
 
 # 0 45 165 240
+periods_vals = sorted(periods_vals)
 periods = []
-print(sorted(periods_vals))
-for i, p in enumerate(sorted(periods_vals)):
-    if i > 0: periods.append(p - sorted(periods_vals)[i - 1])
+for i, p in enumerate(periods_vals):
+    if i > 0:
+        periods.append(p - sorted(periods_vals)[i - 1])
 
 
-print(periods)
+# print(sorted(periods_vals))
+# print(periods)
 
 
+workplaces = []
 for index, l in enumerate(workplaces_groups):
-    print("______________________________________")
-    print("Рабочий", index + 1, " - ", l[0]['employee_title'])
+    # print("______________________________________")
+    # print("Рабочий", index + 1, " - ", l[0]['employee_title'])
     for g in l:
-        print(g)
+        workplaces.append(g)
+        # print(g)
 
+operations_pairs = []
+for idx, operation in enumerate(operations):
+    if idx > 0:
+        new_item = {}
+        pair = {operations[idx - 1]['type']: {}, operation['type']: {}}
+
+        pair[operations[idx - 1]['type']]["KPPM"] = []
+        pair[operation['type']]["KPPM"] = []
+        pair[operations[idx - 1]['type']]["out"] = []
+        pair[operation['type']]["out"] = []
+        new_item['change'] = []
+
+        current_workplaces_0 = [v for v in workplaces if (v["type"] == list(pair.keys())[0])]
+        current_workplaces_1 = [v for v in workplaces if (v["type"] == list(pair.keys())[1])]
+
+        for p_index, period in enumerate(periods_vals):
+            if p_index > 0:
+                op_count_0 = len([o for o in current_workplaces_0 if get_overlap([periods_vals[p_index-1], period], [o["op_start"], o["op_end"]])])
+                pair[operations[idx - 1]['type']]["KPPM"].append(op_count_0)
+                op_count_1 = len([o for o in current_workplaces_1 if get_overlap([periods_vals[p_index-1], period], [o["op_start"], o["op_end"]])])
+                pair[operation['type']]["KPPM"].append(op_count_1)
+                out_0 = round(periods[p_index-1] / operations[idx-1]["duration"] * op_count_0, 3)
+                out_1 = round(periods[p_index-1] / operation["duration"] * op_count_1, 3)
+
+                pair[operations[idx - 1]['type']]["out"].append(out_0)
+                pair[operation['type']]["out"].append(out_1)
+                new_item['change'].append(round(out_0-out_1, 3))
+                # print()
+
+        new_item["pair"] = pair
+        operations_pairs.append(new_item)
+
+
+for x in operations_pairs:
+    print(x)
+#
