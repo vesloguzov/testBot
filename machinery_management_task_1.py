@@ -110,61 +110,54 @@ t_list = [t1, t2, t3, t4, t5]
 
 t = len(t_list)
 
-
 if any(x - int(x) for x in t_list):
     t_list[:] = [int(x * 2) for x in t_list]
-print("groups_len: ", groups_len)
-print("t: ", t)
-cells_1_max = int(sum(t_list))
-print("cells_1_max: ", cells_1_max)
+
+sum_before_max = sum(t_list[:t_list.index(max(t_list))])
+sum_after_max = sum(t_list[t_list.index(max(t_list))+1:])
+cells_sum = int(sum(t_list))
+
 # filling table 1
-cells_1_correct = np.zeros(t * cells_1_max).reshape(t, cells_1_max)
+cells_1_correct = np.zeros(t * cells_sum).reshape(t, cells_sum)
 for i in list(range(0, t)):
     for j in range(0, t_list[i]):
         cells_1_correct[i][j + sum(t_list[:int(i)])] = 1
 
 # filling table 2
-cells_2_correct = np.zeros(t * (cells_1_max + max(t_list) * 2)).reshape(t, (cells_1_max + max(t_list) * 2))
+cells_2_len = (sum_before_max + (max(t_list)) * groups_len + sum_after_max)
+cells_2_correct = np.zeros(t * cells_2_len).reshape(t, cells_2_len)
 
-print(max(t_list))
-# print(cells_1_max + max(t_list) +  )
-
-print(cells_2_correct)
 for i in list(range(0, t)):
     for j in range(0, t_list[i]):
-        cells_2_correct[i][j + sum(t_list[:int(i)])] = 1
-        cells_2_correct[i][j + sum(t_list[:int(i)]) + max(t_list)] = 2
-        cells_2_correct[i][j + sum(t_list[:int(i)]) + 2 * max(t_list)] = 3
-print("--------------------------------------------------------------------------------------")
+        for x in range(0, groups_len):
+            cells_2_correct[i][j + sum(t_list[:int(i)]) + max(t_list) * x] = x + 1
 
-print(cells_2_correct)
 # filling table 3
-# cells_3_correct = np.zeros(t * (cells_1_max + max(t_list) * 4)).reshape(t, (cells_1_max + max(t_list) * 4))
-# for i in list(range(0, t)):
-#     for j in range(0, t_list[i]):
-#         cells_3_correct[i][j] = 1
-#         cells_3_correct[i][j + t_list[i]] = 2
-#         cells_3_correct[i][j + t_list[i] * 2] = 3
-#
-# for row_num in list(range(1, t)):
-#     roll_candidates = []
-#     for g in list(range(1, groups_len + 1)):
-#         previous_indexes = np.where(cells_3_correct[row_num - 1] == g)[0]
-#         current_indexes = np.where(cells_3_correct[row_num] == g)[0]
-#         if previous_indexes[-1] >= current_indexes[0]:
-#             roll_candidates.append((previous_indexes[-1] - current_indexes[0]) + 1)
-#     roll = 0
-#     if len(roll_candidates):
-#         roll = max(roll_candidates)
-#         cells_3_correct[row_num] = np.roll(cells_3_correct[row_num], roll)
-#
-# tmp_cells_3_correct = np.transpose(cells_3_correct)
-# tmp_cells_3_correct = tmp_cells_3_correct[~(tmp_cells_3_correct == 0).all(1)]
-# cells_3_correct = np.transpose(tmp_cells_3_correct)
-#
-# cells_1_len = len(cells_1_correct[0])
-# cells_2_len = len(cells_2_correct[0])
-# cells_3_len = len(cells_3_correct[0])
+cells_3_correct = np.zeros(t * (cells_sum * 5)).reshape(t, (cells_sum * 5))
+for i in list(range(0, t)):
+    for j in range(0, t_list[i]):
+        for x in range(0, groups_len):
+            cells_3_correct[i][j + (t_list[i] * x)] = x + 1
+
+for row_num in list(range(1, t)):
+    roll_candidates = []
+    for g in list(range(1, groups_len + 1)):
+        previous_indexes = np.where(cells_3_correct[row_num - 1] == g)[0]
+        current_indexes = np.where(cells_3_correct[row_num] == g)[0]
+        if previous_indexes[-1] >= current_indexes[0]:
+            roll_candidates.append((previous_indexes[-1] - current_indexes[0]) + 1)
+    roll = 0
+    if len(roll_candidates):
+        roll = max(roll_candidates)
+        cells_3_correct[row_num] = np.roll(cells_3_correct[row_num], roll)
+
+tmp_cells_3_correct = np.transpose(cells_3_correct)
+tmp_cells_3_correct = tmp_cells_3_correct[~(tmp_cells_3_correct == 0).all(1)]
+cells_3_correct = np.transpose(tmp_cells_3_correct)
+
+cells_1_len = len(cells_1_correct[0])
+cells_2_len = len(cells_2_correct[0])
+cells_3_len = len(cells_3_correct[0])
 
 # print(cells_1_correct)
 # print(cells_2_correct)
