@@ -95,36 +95,36 @@ operations = [
     }
 ]
 
-operations = [
-    {
-        "id": "operation_1",
-        "title": u"Токарная",
-        "duration": 1.9,
-        "type": "turning",
-         "weight": 0,
-    },
-    {
-        "id": "operation_2",
-        "title": u"Сверлильная",
-        "duration": 1.1,
-        "type": "drilling",
-        "weight": 1,
-    },
-    {
-        "id": "operation_3",
-        "title": u"Фрезерная",
-        "duration": 2.1,
-        "type": "milling",
-        "weight": 2
-    },
-    {
-        "id": "operation_4",
-        "title": u"Шлифовальная",
-        "duration": 1.3,
-        "type": "grinding",
-        "weight": 3
-    }
-]
+# operations = [
+#     {
+#         "id": "operation_1",
+#         "title": u"Токарная",
+#         "duration": 1.9,
+#         "type": "turning",
+#          "weight": 0,
+#     },
+#     {
+#         "id": "operation_2",
+#         "title": u"Сверлильная",
+#         "duration": 1.1,
+#         "type": "drilling",
+#         "weight": 1,
+#     },
+#     {
+#         "id": "operation_3",
+#         "title": u"Фрезерная",
+#         "duration": 2.1,
+#         "type": "milling",
+#         "weight": 2
+#     },
+#     {
+#         "id": "operation_4",
+#         "title": u"Шлифовальная",
+#         "duration": 1.3,
+#         "type": "grinding",
+#         "weight": 3
+#     }
+# ]
 
 employees = {
     "employee_1": {
@@ -192,15 +192,12 @@ work_day = 2  # количество смен
 work_shift = 8  # количество часов в смене
 half_shift = 0.5  # пол смены
 defect_percent = 16  # процентов
-N_out = 12600  # 6799.98966 # количество выпуск. деталей (N выпуска)
+N_out = 16799.98966 # 12600  #  количество выпуск. деталей (N выпуска)
 tact = (month * work_day * work_shift * 60) / N_out  # такт мин/шт
 safety_stock = 5
 #  N_in = N_out/(1-defect_percent*100)  # количество запуск. деталей (N запуска) это еще разобраться как считать
 
 max_time = work_shift * half_shift * 60  # узнать как назвать переменную
-
-
-
 
 
 workplaces = []
@@ -316,7 +313,7 @@ for idx, operation in enumerate(operations):
 
 
 
-for y in workplaces_groups:
+for y in operations_pairs:
     print(y)
 
 print("----------------------------------------------------")
@@ -341,4 +338,4 @@ student_data = {
     "periods_len": len(periods),
     "operations_pairs": [list(y['pair'].keys()) for y in operations_pairs],
 }
-print(student_data)
+# print(student_data)
