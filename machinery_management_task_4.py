@@ -3,38 +3,38 @@ import json
 subdivision_functions_count = 20
 subdivision_count = 12
 
-scheme = [[1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
-          [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
-          [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
-          [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
-          [1, 1, 1, 1, 1, 1, 1, 1, 0, -1, -1, -1],
-          [1, 1, 1, 1, 1, 1, 1, 1, 0, -1, -1, -1],
-          [1, 1, 1, 1, 1, 1, 0, -1, -1, -1, -1, -1],
-          [1, 1, 1, 1, 1, 1, 0, -1, -1, -1, -1, -1],
-          [1, 1, 1, 1, 1, 1, 0, -1, -1, -1, -1, -1],
-          [1, 1, 1, 1, 1, 1, 0, -1, -1, -1, -1, -1],
-          [1, 1, 1, 1, 1, 0, -1, -1, -1, -1, -1, -1],
-          [1, 1, 1, 1, 1, 0, -1, -1, -1, -1, -1, -1],
-          [1, 1, 1, 1, 1, 0, -1, -1, -1, -1, -1, -1],
-          [1, 1, 1, 1, 1, 0, -1, -1, -1, -1, -1, -1],
-          [1, 1, 1, 0, -1, -1, -1, -1, -1, -1, -1, -1],
-          [1, 1, 1, 0, -1, -1, -1, -1, -1, -1, -1, -1],
-          [0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1],
-          [0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1],
-          [0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1],
-          [0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1]]
+scheme = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+[1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, -1],
+[1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, -1],
+[1, 1, 1, 1, 1, 1, 1, 1, 0, -1,-1,-1],
+[1, 1, 1, 1, 1, 1, 1, 1, 0, -1,-1,-1],
+[1, 1, 1, 1, 1, 1, 0, -1,-1,-1,-1,-1],
+[1, 1, 1, 1, 1, 1, 0, -1,-1,-1,-1,-1],
+[1, 1, 1, 1, 1, 1, 0, -1,-1,-1,-1,-1],
+[1, 1, 1, 1, 1, 1, 0, -1,-1,-1,-1,-1],
+[1, 1, 1, 1, 1, 0, -1,-1,-1,-1,-1,-1],
+[1, 1, 1, 1, 1, 0, -1,-1,-1,-1,-1,-1],
+[1, 1, 1, 1, 1, 0, -1,-1,-1,-1,-1,-1],
+[1, 1, 1, 1, 1, 0, -1,-1,-1,-1,-1,-1],
+[1, 1, 1, 0, -1,-1,-1,-1,-1,-1,-1,-1],
+[1, 1, 1, 0, -1,-1,-1,-1,-1,-1,-1,-1],
+[1, 0, 0, 0, -1,-1,-1,-1,-1,-1,-1,-1],
+[1, 0, 0, 0, -1,-1,-1,-1,-1,-1,-1,-1],
+[0, 0, 0, -1,-1,-1,-1,-1,-1,-1,-1,-1],
+[0, 0, -1,-1,-1,-1,-1,-1,-1,-1,-1,-1]]
 
 # выше диагонали - 1
 c = {
     "letter": "c",
-    "name": "ц",
+    "name": u"c",
     "above_diag": 0,
     "below_diag": 0,
     "sum": 0,
 }
 r = {
     "letter": "r",
-    "name": "р",
+    "name": u"r",
     "above_diag": 0,
     "below_diag": 0,
     "sum": 0,
@@ -43,14 +43,14 @@ r = {
 # ниже диагонали - 0
 p = {
     "letter": "p",
-    "name": "п",
+    "name": u"p",
     "above_diag": 0,
     "below_diag": 0,
     "sum": 0,
 }
 i = {
     "letter": "i",
-    "name": "и",
+    "name": u"i",
     "above_diag": 0,
     "below_diag": 0,
     "sum": 0,
@@ -59,20 +59,21 @@ i = {
 # без разницы где
 u = {
     "letter": "u",
-    "name": "у",
+    "name": u"u",
     "above_diag": 0,
     "below_diag": 0,
     "sum": 0,
 }
 s = {
     "letter": "s",
-    "name": "с",
+    "name": u"s",
     "above_diag": 0,
     "below_diag": 0,
     "sum": 0,
 }
 
-min_every_letters_count = (subdivision_functions_count * subdivision_count) / 10
+# минимально требуемуе количество каждой буквы
+min_every_letters_count = (subdivision_functions_count * subdivision_count) / 15
 
 correct_percent_count_ranges = [
     {
@@ -86,11 +87,10 @@ correct_percent_count_ranges = [
         "coefficient": 0.5,
     },
     # {
-    #     "start": 40,
+    #     "start": 0,
     #     "end": 60,
     #     "coefficient": 0.25,
     # },
-
     {
         "start": 0,
         "end": 60,
@@ -98,7 +98,7 @@ correct_percent_count_ranges = [
     }
 ]
 
-print(min_every_letters_count)
+# print(min_every_letters_count)
 
 in_every_row = [c, r, p, i]
 
@@ -111,25 +111,31 @@ def calculate_percent(obj, direction):
     """
 
     direction_name = "above_diag" if direction == "above" else "below_diag"
-    percent = round(obj[direction_name] / obj["sum"] * 100, 1)
+    if obj["sum"] > 0:
+        percent = round(obj[direction_name] / obj["sum"] * 100, 1)
+    else:
+        percent = 0
     # print("percent: ", percent)
     return percent
 
 
-def print_object(obj):
-    print("Буква:", obj["name"].upper(), "Всего букв в таблице: ", obj["sum"], "  |  ", calculate_percent(obj, "above"),
-          "% выше диагонали,", calculate_percent(obj, "below"), "% ниже диагонали")
+# def print_object(obj):
+#     print("Буква:", obj["name"].upper(), "Всего букв в таблице: ", obj["sum"], "  |  ", calculate_percent(obj, "above"), "% выше диагонали,", calculate_percent(obj, "below"), "% ниже диагонали")
 
 
 def get_coefficient(percent):
-    for range in correct_percent_count_ranges:
-        if range["start"] <= percent and range["end"] >= percent:
-            return range["coefficient"]
+    if percent > 100:
+        return 1
+    for r in correct_percent_count_ranges:
+        if percent >= r["start"] and r["end"] >= percent:
+            return r["coefficient"]
     return 0
 
 
 def check_answer(exp, ans):
     student_answer = json.loads(ans)["answer"]
+
+    task_grade = 100
 
     max_grade_1 = subdivision_functions_count
     grade_1 = 0
@@ -150,7 +156,7 @@ def check_answer(exp, ans):
                 c["sum"] = c["sum"] + 1
                 if scheme[row_num][letter_index] > 0:
                     c["above_diag"] = c["above_diag"] + 1
-                elif scheme[row_num][letter_index] < 0:
+                elif 0 > scheme[row_num][letter_index]:
                     c["below_diag"] = c["below_diag"] + 1
                 else:
 
@@ -159,7 +165,7 @@ def check_answer(exp, ans):
                 r["sum"] = r["sum"] + 1
                 if scheme[row_num][letter_index] > 0:
                     r["above_diag"] = r["above_diag"] + 1
-                elif scheme[row_num][letter_index] < 0:
+                elif 0 > scheme[row_num][letter_index]:
                     r["below_diag"] = r["below_diag"] + 1
                 else:
 
@@ -168,7 +174,7 @@ def check_answer(exp, ans):
                 p["sum"] = p["sum"] + 1
                 if scheme[row_num][letter_index] > 0:
                     p["above_diag"] = p["above_diag"] + 1
-                elif scheme[row_num][letter_index] < 0:
+                elif 0 > scheme[row_num][letter_index]:
                     p["below_diag"] = p["below_diag"] + 1
                 else:
 
@@ -177,7 +183,7 @@ def check_answer(exp, ans):
                 i["sum"] = i["sum"] + 1
                 if scheme[row_num][letter_index] > 0:
                     i["above_diag"] = i["above_diag"] + 1
-                elif scheme[row_num][letter_index] < 0:
+                elif 0 > scheme[row_num][letter_index]:
                     i["below_diag"] = i["below_diag"] + 1
                 else:
 
@@ -186,7 +192,7 @@ def check_answer(exp, ans):
                 u["sum"] = u["sum"] + 1
                 if scheme[row_num][letter_index] > 0:
                     u["above_diag"] = u["above_diag"] + 1
-                elif scheme[row_num][letter_index] < 0:
+                elif 0 > scheme[row_num][letter_index]:
                     u["below_diag"] = u["below_diag"] + 1
                 else:
 
@@ -195,7 +201,7 @@ def check_answer(exp, ans):
                 s["sum"] = s["sum"] + 1
                 if scheme[row_num][letter_index] > 0:
                     s["above_diag"] = s["above_diag"] + 1
-                elif scheme[row_num][letter_index] < 0:
+                elif 0 > scheme[row_num][letter_index]:
                     s["below_diag"] = s["below_diag"] + 1
                 else:
 
@@ -207,28 +213,24 @@ def check_answer(exp, ans):
                 pass
 
     max_grade_2 = len(in_every_row) * 5
+    max_grade_2_criteria_1 = max_grade_2/2
+    max_grade_2_criteria_2 = max_grade_2/2
     grade_2_base = max_grade_2 / len(in_every_row) / 2
-    print("grade_2_base: ", grade_2_base)
+
+    coeff_to_hundred = task_grade/(max_grade_2 + max_grade_1)
+
     grade_2 = 0
 
-    msg += 'ЦРПИ в каждой строке: {} строк из {} верно'.format(grade_1, max_grade_1)
+    msg += u'ЦРПИ в каждой строке: {} строк из {} верно'.format(grade_1, max_grade_1)
 
     for x in in_every_row:
-
-        # msg += '\nБукв {} содержится {} при минимальном количестве {} '.format(x["name"].upper(), x["sum"], min_every_letters_count)
-
         curr_grade = 0
-
         if x["sum"] > min_every_letters_count:
-            curr_grade = max_grade_2 / len(in_every_row) / 2
-
-        response["grade_2"][x["letter"]]["criteria_2"] = str((curr_grade/max_grade_2)*100) + ' так как размещено букв ' + str(x["name"]).upper() + " " + str(x["sum"]) + " штук при минимальном требовании " + str(min_every_letters_count)
-            # msg += "Правильно"
-
+            curr_grade = max_grade_2_criteria_2 / len(in_every_row)
+        response["grade_2"][x["letter"]]["criteria_2"] = str(curr_grade*coeff_to_hundred) + u' так как размещено букв ' + str(x["name"]).upper() + " " + str(x["sum"]) + u" штук при минимальном требовании " + str(min_every_letters_count)
         grade_2 += curr_grade
-
-        # else:
-            # msg += "Неправильно"
+        response["grade_2"][x["letter"]]["criteria_2_grade"] = curr_grade*coeff_to_hundred
+        # print("curr_grade: ", curr_grade)
 
     grade_2_c = grade_2_base * get_coefficient(calculate_percent(c, "above"))
     grade_2_r = grade_2_base * get_coefficient(calculate_percent(r, "above"))
@@ -237,41 +239,48 @@ def check_answer(exp, ans):
 
     grade_2 += grade_2_c + grade_2_r + grade_2_p + grade_2_i
 
-    print("Оценка 1: ", grade_1, "/", max_grade_1)
-    print("Оценка 2: ", grade_2, "/", max_grade_2)
+    # print("Оценка 1: ", grade_1, "/", max_grade_1)
+    # print("Оценка 2: ", grade_2, "/", max_grade_2)
 
     result_max_grade = max_grade_1 + max_grade_2
     result_grade = (grade_1 + grade_2) / result_max_grade
 
+    # print("Итоговая оценка: ", (grade_1 + grade_2), " из ", (max_grade_1 + max_grade_2), " ИЛИ", result_grade * 100, " из 100")
 
+    response["max_grade"] = result_max_grade * coeff_to_hundred
+    response["max_grade_1"] = max_grade_1 * coeff_to_hundred
+    response["max_grade_2"] = max_grade_2 * coeff_to_hundred
 
-    print("Итоговая оценка: ", (grade_1 + grade_2), " из ", (max_grade_1 + max_grade_2), " ИЛИ", result_grade * 100," из 100")
+    response["grade_1"] = u"За ЦРПИ в каждой строке набрано " + str(grade_1 * coeff_to_hundred) + u". Строк верно: " + str(grade_1) + u" из " + str(max_grade_1)
+    response["grade_2"]["c"]["criteria_1"] = str(grade_2_c*coeff_to_hundred) + u" так как попало " + str(calculate_percent(c, "above")) + u"% всех размещенных букв примерно выше диагонали " + c["name"].upper()
+    response["grade_2"]["c"]["criteria_1_grade"] = grade_2_c*coeff_to_hundred
+    response["grade_2"]["r"]["criteria_1"] = str(grade_2_r*coeff_to_hundred) + u" так как попало " + str(calculate_percent(r, "above")) + u"% всех размещенных букв примерно выше диагонали " + r["name"].upper()
+    response["grade_2"]["r"]["criteria_1_grade"] = grade_2_r*coeff_to_hundred
+    response["grade_2"]["p"]["criteria_1"] = str(grade_2_p*coeff_to_hundred) + u" так как попало " + str(calculate_percent(p, "below")) + u"% всех размещенных букв примерно ниже диагонали " + p["name"].upper()
+    response["grade_2"]["p"]["criteria_1_grade"] = grade_2_p*coeff_to_hundred
+    response["grade_2"]["i"]["criteria_1"] = str(grade_2_i*coeff_to_hundred) + u" так как попало " + str(calculate_percent(i, "below")) + u"% всех размещенных букв примерно ниже диагонали " + i["name"].upper()
+    response["grade_2"]["i"]["criteria_1_grade"] = grade_2_i*coeff_to_hundred
 
-    response["grade_1"] = "За ЦРПИ в каждой строке набрано " + str((grade_1 / result_max_grade) * 100) + ". Строк верно: " + str(grade_1) + " из " + str(max_grade_1)
+    if result_grade == 1:
+        return {'input_list': [{'ok': True, 'msg': json.dumps(response), 'grade_decimal': 1}]}
+    elif result_grade == 0:
+        return {'input_list': [{'ok': False, 'msg': json.dumps(response), 'grade_decimal': 0}]}
+    else:
+        return {'input_list': [{'ok': 'Partial', 'msg': json.dumps(response), 'grade_decimal': result_grade}]}
 
-    # print(max_grade_2)
-
-    response["grade_2"]["c"]["criteria_1"] = str((grade_2_c/max_grade_2)*100) + " так как попало " + str(calculate_percent(c, "above")) + "% всех размещенных букв примерно выше диагонали" + c["name"].upper()
-    response["grade_2"]["r"]["criteria_1"] = str((grade_2_r/max_grade_2)*100) + " так как попало " + str(calculate_percent(r, "above")) + "% всех размещенных букв примерно выше диагонали" + r["name"].upper()
-    response["grade_2"]["p"]["criteria_1"] = str((grade_2_p/max_grade_2)*100) + " так как попало " + str(calculate_percent(p, "below")) + "% всех размещенных букв примерно ниже диагонали" + p["name"].upper()
-    response["grade_2"]["i"]["criteria_1"] = str((grade_2_i/max_grade_2)*100) + " так как попало " + str(calculate_percent(i, "below")) + "% всех размещенных букв примерно ниже диагонали" + i["name"].upper()
-
-    print(response["grade_1"])
-    print(response["grade_2"]["c"])
-    print(response["grade_2"]["r"])
-    print(response["grade_2"]["p"])
-    print(response["grade_2"]["i"])
-
-    # print(msg)
-
-    # print(msg)
-
+    # print(response["grade_1"])
+    # print(response["grade_2"]["c"])
+    # print(response["grade_2"]["r"])
+    # print(response["grade_2"]["p"])
+    # print(response["grade_2"]["i"])
+    #
+    # print(response)
 
 answer_str = '''
 {
   "answer": 
-[["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"]]
+[["с","р","п","И","у","с","с","у","с","с","п","у"],["р","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"],["ц","р","п","И","у","с","с","у","с","с","п","у"]]
 }
                 '''
 
-check_answer(False, answer_str)
+print(check_answer(False, answer_str))
