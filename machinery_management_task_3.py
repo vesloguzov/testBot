@@ -62,69 +62,75 @@ operations = [
         "id": "operation_1",
         "title": u"Токарная 1",
         "duration": 1.6,
-        "type": "turning",
-        "weight": 0,
     },
     {
         "id": "operation_2",
         "title": u"Токарная 2",
         "duration": 1.7,
-        "type": "turning_1",
-        "weight": 1,
     },
     {
         "id": "operation_3",
         "title": u"Сверлильная",
         "duration": 1.3,
-        "type": "drilling",
-        "weight": 2,
     },
     {
         "id": "operation_4",
         "title": u"Фрезерная",
         "duration": 3.2,
-        "type": "milling",
-        "weight": 3,
     },
     {
         "id": "operation_5",
         "title": u"Шлифовальная",
         "duration": 2.7,
-        "type": "grinding",
-        "weight": 4,
+    }
+]
+
+operations = [
+    {
+        "id": "operation_1",
+        "title": u"Токарная",
+        "duration": 1.9,
+    },
+    {
+        "id": "operation_2",
+        "title": u"Сверлильная",
+        "duration": 1.1,
+    },
+    {
+        "id": "operation_3",
+        "title": u"Фрезерная",
+        "duration": 2.1,
+    },
+    {
+        "id": "operation_4",
+        "title": u"Шлифовальная",
+        "duration": 1.3,
     }
 ]
 
 # operations = [
 #     {
 #         "id": "operation_1",
-#         "title": u"Токарная",
-#         "duration": 1.9,
-#         "type": "turning",
-#          "weight": 0,
+#         "title": u"опер1",
+#         "duration": 1,
 #     },
 #     {
 #         "id": "operation_2",
-#         "title": u"Сверлильная",
-#         "duration": 1.1,
-#         "type": "drilling",
-#         "weight": 1,
+#         "title": u"опер2",
+#         "duration": 0.9,
 #     },
 #     {
 #         "id": "operation_3",
-#         "title": u"Фрезерная",
-#         "duration": 2.1,
-#         "type": "milling",
-#         "weight": 2
+#         "title": u"опер3",
+#         "duration": 1.1,
 #     },
 #     {
 #         "id": "operation_4",
-#         "title": u"Шлифовальная",
-#         "duration": 1.3,
-#         "type": "grinding",
-#         "weight": 3
+#         "title": u"опер4",
+#         "duration": 2.1,
 #     }
 # ]
+
 
 employees = {
     "employee_1": {
@@ -192,7 +198,10 @@ work_day = 2  # количество смен
 work_shift = 8  # количество часов в смене
 half_shift = 0.5  # пол смены
 defect_percent = 16  # процентов
-N_out = 16799.98966 # 12600  #  количество выпуск. деталей (N выпуска)
+N_out = 12600  #  16799.98966 # количество выпуск. деталей (N выпуска)
+# N_out = 23530
+
+
 tact = (month * work_day * work_shift * 60) / N_out  # такт мин/шт
 safety_stock = 5
 #  N_in = N_out/(1-defect_percent*100)  # количество запуск. деталей (N запуска) это еще разобраться как считать
@@ -203,8 +212,7 @@ max_time = work_shift * half_shift * 60  # узнать как назвать п
 workplaces = []
 
 for index, op in enumerate(operations):
-
-    # op["weight"] = operations_weight[op["type"]]["weight"]
+    op["weight"] = index
     op_workplace_len = math.ceil(op["duration"] / tact)
     for workplace_num in list(range(0, op_workplace_len)):
         workplace_congestion = round(op["duration"] / tact, 4)
@@ -218,7 +226,7 @@ for index, op in enumerate(operations):
             "type": op["id"],
             "workplace_num": workplace_num,
             "congestion": round(workplace_congestion * 100, 2),  # загрузка рабочего места в процентах
-            "work_time": round(workplace_congestion * max_time, 0)
+            "work_time": round(workplace_congestion * max_time, 1)
         }
         workplaces.append(workplace_item)
         # print("-----------------------", workplace_item)
@@ -233,7 +241,7 @@ for idx, w in enumerate(workplaces_groups):
     workplaces_groups[idx] = sorted(w, key=lambda i: i['weight'])
     for i, wp in enumerate(workplaces_groups[idx]):
         wp["employee"] = current_employee
-        wp["employee_title"] = employees[current_employee]["title"]
+        # wp["employee_title"] = employees[current_employee]["title"]
         if i == 0:
             wp["op_start"] = 0
             wp["op_len"] = wp['work_time']
@@ -254,17 +262,12 @@ for i, p in enumerate(periods_vals):
     if i > 0:
         periods.append(p - sorted(periods_vals)[i - 1])
 
-
 print(periods)
-
 
 workplaces = []
 for index, l in enumerate(workplaces_groups):
-    # print("______________________________________")
-    # print("Рабочий", index + 1, " - ", l[0]['employee_title'])
     for g in l:
         workplaces.append(g)
-        # print(g)
 
 operations_pairs = []
 for idx, operation in enumerate(operations):
@@ -306,19 +309,15 @@ for idx, operation in enumerate(operations):
 
         min_dynamic_value = min(new_item["zero_dynamic"])
         dynamic_value = 0
-        if min_dynamic_value <= 0:
+        if 0 >= min_dynamic_value:
             dynamic_value = math.ceil(abs(min_dynamic_value))
         dynamic_value = safety_stock + dynamic_value
         new_item["dynamic_value"] = dynamic_value
 
-
-
-for y in operations_pairs:
-    print(y)
+# for y in operations:
+#     print(y)
 
 print("----------------------------------------------------")
-
-
 
 student_data = {
     "operations": operations,
@@ -330,12 +329,12 @@ student_data = {
         "half_shift": half_shift,
         "defect_percent": defect_percent,
         "N_out": N_out,
-        "tact": tact,
+        # "tact": tact,
         "safety_stock": safety_stock,
         "max_time": max_time,
     },
-    "workplaces_len": len(workplaces),
+    "workplaces": [w["type"] for w in workplaces],
     "periods_len": len(periods),
     "operations_pairs": [list(y['pair'].keys()) for y in operations_pairs],
 }
-# print(student_data)
+print(student_data)

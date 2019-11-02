@@ -1,0 +1,163 @@
+import json
+
+subdivision_functions_count = 20
+subdivision_count = 12
+
+# выше диагонали - 1
+c = {
+    "letter": "c",
+    "name": u"c",
+    "above_diag": 0,
+    "below_diag": 0,
+    "sum": 0,
+}
+r = {
+    "letter": "r",
+    "name": u"r",
+    "above_diag": 0,
+    "below_diag": 0,
+    "sum": 0,
+}
+
+# ниже диагонали - 0
+p = {
+    "letter": "p",
+    "name": u"p",
+    "above_diag": 0,
+    "below_diag": 0,
+    "sum": 0,
+}
+i = {
+    "letter": "i",
+    "name": u"i",
+    "above_diag": 0,
+    "below_diag": 0,
+    "sum": 0,
+}
+
+# без разницы где
+u = {
+    "letter": "u",
+    "name": u"u",
+    "above_diag": 0,
+    "below_diag": 0,
+    "sum": 0,
+}
+s = {
+    "letter": "s",
+    "name": u"s",
+    "above_diag": 0,
+    "below_diag": 0,
+    "sum": 0,
+}
+
+in_every_row = [c, r, p, i]
+
+def check_answer(exp, ans):
+    student_answer = json.loads(ans)["answer"]
+    max_grade_1 = 50
+    max_grade_2 = 50
+
+    min_percent = 0.5
+
+    grade_1 = 0
+    grade_2 = 0
+
+    response = {
+        "criteria_1": {},
+        "criteria_2": {}
+    }
+
+    above = {
+        "first_half": {
+            "c": 0,
+            "r": 0,
+            "p": 0,
+            "i": 0
+        },
+        "second_half": {
+            "c": 0,
+            "r": 0,
+            "p": 0,
+            "i": 0
+        }
+    }
+    below = {
+        "first_half": {
+            "c": 0,
+            "r": 0,
+            "p": 0,
+            "i": 0
+        },
+        "second_half": {
+            "c": 0,
+            "r": 0,
+            "p": 0,
+            "i": 0
+        }
+    }
+
+    for row_num in list(range(0, subdivision_functions_count)):
+        student_row = [x.lower() for x in student_answer[row_num]]
+        if all((item in student_row) for item in [l["name"] for l in in_every_row]):
+            grade_1 += max_grade_1 / subdivision_functions_count
+
+        first_half = student_row[:int(len(student_row)/2)]
+        second_half = student_row[int(len(student_row)/2):]
+
+        if row_num >= subdivision_functions_count/2:
+            #  нижняя половина
+            for letter in in_every_row:
+                below["first_half"][letter["letter"]] += first_half.count(letter["letter"])
+                below["second_half"][letter["letter"]] += second_half.count(letter["letter"])
+        else:
+            #  верхняя половина
+            for letter in in_every_row:
+                above["first_half"][letter["letter"]] += first_half.count(letter["letter"])
+                above["second_half"][letter["letter"]] += second_half.count(letter["letter"])
+            pass
+
+    c_percent = round(above["first_half"]["c"] / (subdivision_functions_count / 2), 1)  # (above["first_half"]["c"] + above["second_half"]["c"])
+    r_percent = round(above["first_half"]["r"] / (subdivision_functions_count / 2), 1)  # (above["first_half"]["r"] + above["second_half"]["r"])
+
+    p_percent = round(below["second_half"]["p"] / (subdivision_functions_count / 2), 1)  # (below["first_half"]["p"] + below["second_half"]["p"])
+    i_percent = round(below["second_half"]["i"] / (subdivision_functions_count / 2), 1)  # (below["first_half"]["i"] + below["second_half"]["i"])
+
+    c_grade = 0 if min_percent > c_percent else c_percent * (max_grade_2/len(in_every_row))
+    r_grade = 0 if min_percent > r_percent else r_percent * (max_grade_2/len(in_every_row))
+    p_grade = 0 if min_percent > p_percent else p_percent * (max_grade_2/len(in_every_row))
+    i_grade = 0 if min_percent > i_percent else i_percent * (max_grade_2/len(in_every_row))
+
+    grade_2 = c_grade + r_grade + p_grade + i_grade
+
+    response["criteria_1"] = str(int(grade_1/max_grade_1 * subdivision_functions_count)) + " строк из " + str(subdivision_functions_count) + ' содержат "Ц", "Р", "П", "И". за это набрано ' + str(grade_1) + " из " + str(max_grade_1)
+
+    response["criteria_2"]["c"] = str(c_percent * 100) + "% букв Ц попало куда надо. За это набрали " + str(c_grade) + " из " + str((max_grade_2/len(in_every_row)))
+    response["criteria_2"]["r"] = str(r_percent * 100) + "% букв Р попало куда надо. За это набрали " + str(r_grade) + " из " + str((max_grade_2/len(in_every_row)))
+    response["criteria_2"]["p"] = str(p_percent * 100) + "% букв П попало куда надо. За это набрали " + str(p_grade) + " из " + str((max_grade_2/len(in_every_row)))
+    response["criteria_2"]["i"] = str(i_percent * 100) + "% букв И попало куда надо. За это набрали " + str(i_grade) + " из " + str((max_grade_2/len(in_every_row)))
+
+    result_grade = (grade_1 + grade_2)/(max_grade_1 + max_grade_2)
+
+    print("оценка 1: ", grade_1, " из ", max_grade_1)
+    print("оценка 2: ", grade_2, " из ", max_grade_2)
+    print("Итоговая оценка от 0 до 1: ", result_grade)
+
+    print("RESPONSE:_____________________________________________________")
+    print(response["criteria_1"])
+    print(response["criteria_2"]["c"])
+    print(response["criteria_2"]["r"])
+    print(response["criteria_2"]["p"])
+    print(response["criteria_2"]["i"])
+
+    if result_grade == 1:
+        return {'input_list': [{'ok': True, 'msg': json.dumps(response), 'grade_decimal': 1}]}
+    elif result_grade == 0:
+        return {'input_list': [{'ok': False, 'msg': json.dumps(response), 'grade_decimal': 0}]}
+    else:
+        return {'input_list': [{'ok': 'Partial', 'msg': json.dumps(response), 'grade_decimal': result_grade}]}
+
+answer_str = '''
+{"answer":[["c","r","","","","","","","","p","i",""],["c","r","","","","","","","","","i","p"],["","c","r","","","","","","","","i","p"],["","","","","","","","","c","r","i","p"],["","u","","r","","c","","","","","i","p"],["","","","","","","c","r","p","i","",""],["","s","","c","","r","","","","","i","p"],["","s","","r","","c","","","","p","","i"],["","","r","c","","","","","","","i","p"],["","","","r","","c","","","","","p","i"],["","","r","c","","","","","","","i","p"],["c","","r","","","u","u","u","u","p","i",""],["","c","r","","","u","s","s","u","p","i",""],["","c","r","","u","u","s","s","u","i","p",""],["","c","r","","","u","u","u","u","p","i",""],["","c","r","p","","","","","","","i",""],["","c","r","","","","","","","p","i",""],["","c","r","","","","","","","p","i",""],["","c","r","","","p","","","","","i",""],["","c","r","","","p","","","","","","i"]]}
+'''
+check_answer(False, answer_str)
