@@ -213,7 +213,7 @@ workplaces = []
 
 for index, op in enumerate(operations):
     op["weight"] = index
-    op_workplace_len = math.ceil(op["duration"] / tact)
+    op_workplace_len = int(math.ceil(op["duration"] / tact))
     for workplace_num in list(range(0, op_workplace_len)):
         workplace_congestion = round(op["duration"] / tact, 4)
 
@@ -225,7 +225,7 @@ for index, op in enumerate(operations):
             "weight": op["weight"],
             "type": op["id"],
             "workplace_num": workplace_num,
-            "congestion": round(workplace_congestion * 100, 2),  # загрузка рабочего места в процентах
+            "congestion": round(workplace_congestion * 100, 2),
             "work_time": round(workplace_congestion * max_time, 1)
         }
         workplaces.append(workplace_item)
@@ -262,7 +262,7 @@ for i, p in enumerate(periods_vals):
     if i > 0:
         periods.append(p - sorted(periods_vals)[i - 1])
 
-print(periods)
+# print(periods)
 
 workplaces = []
 for index, l in enumerate(workplaces_groups):
@@ -317,7 +317,7 @@ for idx, operation in enumerate(operations):
 # for y in operations:
 #     print(y)
 
-print("----------------------------------------------------")
+# print("----------------------------------------------------")
 
 student_data = {
     "operations": operations,
@@ -329,7 +329,6 @@ student_data = {
         "half_shift": half_shift,
         "defect_percent": defect_percent,
         "N_out": N_out,
-        # "tact": tact,
         "safety_stock": safety_stock,
         "max_time": max_time,
     },
@@ -338,3 +337,10 @@ student_data = {
     "operations_pairs": [list(y['pair'].keys()) for y in operations_pairs],
 }
 print(student_data)
+
+def check_answer(exp, ans):
+    student_answer = json.loads(ans)["answer"]
+    pass
+
+
+
