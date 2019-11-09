@@ -52,85 +52,6 @@ def get_overlap(a, b):
         return True
     return False
 
-# turning - Токарная
-# drilling - Сверлильная
-# milling - Фрезерная
-# grinding - Шлифовальная
-
-operations = [
-    {
-        "id": "operation_1",
-        "title": u"Токарная 1",
-        "duration": 1.6,
-    },
-    {
-        "id": "operation_2",
-        "title": u"Токарная 2",
-        "duration": 1.7,
-    },
-    {
-        "id": "operation_3",
-        "title": u"Сверлильная",
-        "duration": 1.3,
-    },
-    {
-        "id": "operation_4",
-        "title": u"Фрезерная",
-        "duration": 3.2,
-    },
-    {
-        "id": "operation_5",
-        "title": u"Шлифовальная",
-        "duration": 2.7,
-    }
-]
-
-operations = [
-    {
-        "id": "operation_1",
-        "title": u"Токарная",
-        "duration": 1.9,
-    },
-    {
-        "id": "operation_2",
-        "title": u"Сверлильная",
-        "duration": 1.1,
-    },
-    {
-        "id": "operation_3",
-        "title": u"Фрезерная",
-        "duration": 2.1,
-    },
-    {
-        "id": "operation_4",
-        "title": u"Шлифовальная",
-        "duration": 1.3,
-    }
-]
-
-# operations = [
-#     {
-#         "id": "operation_1",
-#         "title": u"опер1",
-#         "duration": 1,
-#     },
-#     {
-#         "id": "operation_2",
-#         "title": u"опер2",
-#         "duration": 0.9,
-#     },
-#     {
-#         "id": "operation_3",
-#         "title": u"опер3",
-#         "duration": 1.1,
-#     },
-#     {
-#         "id": "operation_4",
-#         "title": u"опер4",
-#         "duration": 2.1,
-#     }
-# ]
-
 
 employees = {
     "employee_1": {
@@ -191,23 +112,88 @@ employees = {
     }
 }
 
+variants = [
+    {
+        "operations": [
+            {
+                "id": "operation_1",
+                "title": u"Токарная 1",
+                "duration": 1.6,
+            },
+            {
+                "id": "operation_2",
+                "title": u"Токарная 2",
+                "duration": 1.7,
+            },
+            {
+                "id": "operation_3",
+                "title": u"Сверлильная",
+                "duration": 1.3,
+            },
+            {
+                "id": "operation_4",
+                "title": u"Фрезерная",
+                "duration": 3.2,
+            },
+            {
+                "id": "operation_5",
+                "title": u"Шлифовальная",
+                "duration": 2.7,
+            }
+        ],
+        "N_out": 16799.98966,
+        "safety_stock": 5,
+        "defect_percent": 16,
+    },
+    {
+        "operations": [
+            {
+                "id": "operation_1",
+                "title": u"Токарная",
+                "duration": 1.9,
+            },
+            {
+                "id": "operation_2",
+                "title": u"Сверлильная",
+                "duration": 1.1,
+            },
+            {
+                "id": "operation_3",
+                "title": u"Фрезерная",
+                "duration": 2.1,
+            },
+            {
+                "id": "operation_4",
+                "title": u"Шлифовальная",
+                "duration": 1.3,
+            }
+        ],
+        "N_out": 12600,
+        "safety_stock": 5,
+        "defect_percent": 16,
+    },
+]
+
+variant = variants[1]
+operations = variant["operations"]
+
 # print(employees)
 
 month = 21  # рабочих дней
 work_day = 2  # количество смен
 work_shift = 8  # количество часов в смене
 half_shift = 0.5  # пол смены
-defect_percent = 16  # процентов
-N_out = 12600  #  16799.98966 # количество выпуск. деталей (N выпуска)
+defect_percent = variant["defect_percent"]
+N_out = variant["N_out"]  # 16799.98966 # количество выпуск. деталей (N выпуска)
+safety_stock = variant["safety_stock"]
 # N_out = 23530
 
 
 tact = (month * work_day * work_shift * 60) / N_out  # такт мин/шт
-safety_stock = 5
+
 #  N_in = N_out/(1-defect_percent*100)  # количество запуск. деталей (N запуска) это еще разобраться как считать
 
 max_time = work_shift * half_shift * 60  # узнать как назвать переменную
-
 
 workplaces = []
 
@@ -230,7 +216,6 @@ for index, op in enumerate(operations):
         }
         workplaces.append(workplace_item)
         # print("-----------------------", workplace_item)
-
 
 workplaces_groups = first_fit(workplaces)
 
@@ -262,7 +247,10 @@ for i, p in enumerate(periods_vals):
     if i > 0:
         periods.append(p - sorted(periods_vals)[i - 1])
 
-# print(periods)
+# print("workplaces_groups:", )
+# for wg in workplaces_groups:
+#     print(wg)
+# print("---------------------------------------------------")
 
 workplaces = []
 for index, l in enumerate(workplaces_groups):
@@ -287,22 +275,25 @@ for idx, operation in enumerate(operations):
 
         for p_index, period in enumerate(periods_vals):
             if p_index > 0:
-                op_count_0 = len([o for o in current_workplaces_0 if get_overlap([periods_vals[p_index-1], period], [o["op_start"], o["op_end"]])])
+                op_count_0 = len([o for o in current_workplaces_0 if
+                                  get_overlap([periods_vals[p_index - 1], period], [o["op_start"], o["op_end"]])])
                 pair[operations[idx - 1]['id']]["KPPM"].append(op_count_0)
-                op_count_1 = len([o for o in current_workplaces_1 if get_overlap([periods_vals[p_index-1], period], [o["op_start"], o["op_end"]])])
+                op_count_1 = len([o for o in current_workplaces_1 if
+                                  get_overlap([periods_vals[p_index - 1], period], [o["op_start"], o["op_end"]])])
                 pair[operation['id']]["KPPM"].append(op_count_1)
-                out_0 = periods[p_index-1] / operations[idx-1]["duration"] * op_count_0  # round(,3)
-                out_1 = periods[p_index-1] / operation["duration"] * op_count_1  # round(,3)
+                out_0 = periods[p_index - 1] / operations[idx - 1]["duration"] * op_count_0  # round(,3)
+                out_1 = periods[p_index - 1] / operation["duration"] * op_count_1  # round(,3)
 
                 pair[operations[idx - 1]['id']]["out"].append(out_0)
                 pair[operation['id']]["out"].append(out_1)
-                new_item['change'].append(round(out_0-out_1, 3))  # round(,3)
+                new_item['change'].append(round(out_0 - out_1, 3))  # round(,3)
 
                 # этот момент возможно неверный
                 if p_index == 1:
-                    new_item['zero_dynamic'].append(round(0 + new_item['change'][p_index-1], 3))
+                    new_item['zero_dynamic'].append(round(0 + new_item['change'][p_index - 1], 3))
                 else:
-                    new_item['zero_dynamic'].append(round(new_item['zero_dynamic'][-1] + new_item['change'][p_index - 1], 3))
+                    new_item['zero_dynamic'].append(
+                        round(new_item['zero_dynamic'][-1] + new_item['change'][p_index - 1], 3))
 
         new_item["pair"] = pair
         operations_pairs.append(new_item)
@@ -336,11 +327,36 @@ student_data = {
     "periods_len": len(periods),
     "operations_pairs": [list(y['pair'].keys()) for y in operations_pairs],
 }
-print(student_data)
+# print(student_data)
+
+
+def comparison_numbers(student_number, correct_number, tol=0.05):
+    if type(student_number) == str:
+        student_number = student_number.replace(",", ".")
+    try:
+        st_num = float(student_number)
+        return tol >= abs(st_num - correct_number)
+    except ValueError:
+        return False
+
 
 def check_answer(exp, ans):
     student_answer = json.loads(ans)["answer"]
+    response = {
+        "tact_value": comparison_numbers(student_answer["tact"], tact)
+    }
+
+    for idx, wp in enumerate(sorted(workplaces, key=lambda k: k['weight'])):
+        print(wp["congestion"])
+        # , student_answer["workplaces"][idx]["congestion"])
+
+    # for st_wp in student_answer["workplaces"]:
+    #     print(st_wp)
+
+    print()
     pass
 
 
 
+st_answer = '{"answer":{"tact":1.6,"periods":[45,120,75],"workplaces":[{"type":"operation_1","congestion":100,"employee":"employee_1","work_time":240,"op_start":0,"op_end":240},{"type":"operation_1","congestion":18.75,"employee":"employee_2","work_time":45,"op_start":0,"op_end":45},{"type":"operation_2","congestion":68.75,"employee":"employee_3","work_time":165,"op_start":0,"op_end":165},{"type":"operation_3","congestion":100,"employee":"employee_4","work_time":240,"op_start":0,"op_end":240},{"type":"operation_3","congestion":31.25,"employee":"employee_3","work_time":75,"op_start":165,"op_end":75},{"type":"operation_4","congestion":81.25,"employee":"employee_2","work_time":195,"op_start":45,"op_end":195}],"operations_pairs":[{"dynamic_value":45,"changes":[6.459,-45.933,37.13],"dynamics":[51.459,5.526,42.656],"pair":[{"id":"operation_1","KPPM":[2,1,1],"out":[47.368,63.158,39.47]},{"id":"operation_2","KPPM":[1,1,0],"out":[40.909,109.091,2.34]}]},{"dynamic_value":0,"changes":[40.909,51.948,-71.429],"dynamics":[40.909,92.857,21.428],"pair":[{"id":"operation_2","KPPM":[1,1,0],"out":[40.909,109.091,0]},{"id":"operation_3","KPPM":[0,1,2],"out":[0,57.143,71.429]}]},{"dynamic_value":19,"changes":[21.429,-35.165,13.737],"dynamics":[40.429,5.264,19.001],"pair":[{"id":"operation_3","KPPM":[1,1,2],"out":[21.429,57.143,71.429]},{"id":"operation_4","KPPM":[0,1,1],"out":[0,92.308,57.692]}]}]}}'
+check_answer(False, st_answer)
