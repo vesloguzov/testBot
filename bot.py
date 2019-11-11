@@ -1,5 +1,8 @@
 import numpy
+import pysrt
 
-lol = [1,2,3,4,5]
+subs = pysrt.open('subs/1.srt')
+subs.shift(seconds=2.1)
+subs.save('subs/1_+2.1.srt', encoding='utf-8')
 
-print(sum(lol[:1]))
+print(subs)
