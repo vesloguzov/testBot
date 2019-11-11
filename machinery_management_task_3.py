@@ -340,21 +340,51 @@ def comparison_numbers(student_number, correct_number, tol=0.05):
         return False
 
 
+def workplaces_employees(tmp_workplaces):
+    unique_employees = []
+    for t_ind, t_wp in enumerate(tmp_workplaces):
+        if t_wp["employee"] not in unique_employees:
+            unique_employees.append(t_wp["employee"])
+
+    # print("unique_employees: ", unique_employees)
+    res = []
+    for unique_emp in unique_employees:
+        res_sub = []
+        for ind, w_emp in enumerate(tmp_workplaces):
+            if w_emp["employee"] == unique_emp:
+                res_sub.append(ind)
+        res.append(res_sub)
+    # print("res: ", res)
+    return sorted(res)
+
+
 def check_answer(exp, ans):
     student_answer = json.loads(ans)["answer"]
     response = {
         "tact_value": comparison_numbers(student_answer["tact"], tact)
     }
+    correct_workplaces = sorted(workplaces, key=lambda k: k['weight'])
 
-    for idx, wp in enumerate(sorted(workplaces, key=lambda k: k['weight'])):
-        print(wp["congestion"])
-        # , student_answer["workplaces"][idx]["congestion"])
+    work_time_equal = all(comparison_numbers(item["work_time"], student_answer["workplaces"][index]["work_time"]) for (index, item) in enumerate(correct_workplaces))
+    employees_equal = workplaces_employees(correct_workplaces) == workplaces_employees(student_answer["workplaces"])
+    operation_equal = [cw["type"] for cw in correct_workplaces] == [cw["type"] for cw in student_answer["workplaces"]]
 
+    response["workplaces_table"] = work_time_equal and employees_equal and operation_equal
+
+    # print(work_time_equal)
+    # print(employees_equal)
+    # print(operation_equal)
+
+
+    #
+    # for idx, wp in ):
+    #     print(wp["work_time"], wp["employee"],  student_answer["workplaces"][idx]["work_time"])
+    #     # , )
+    #
+    # print("-----------------------------------------")
+    #
     # for st_wp in student_answer["workplaces"]:
-    #     print(st_wp)
-
-    print()
-    pass
+    #     print(st_wp["congestion"], st_wp["employee"])
 
 
 
