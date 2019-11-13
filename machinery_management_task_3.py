@@ -174,10 +174,8 @@ variants = [
     },
 ]
 
-variant = variants[1]
+variant = variants[0]
 operations = variant["operations"]
-
-# print(employees)
 
 month = 21  # рабочих дней
 work_day = 2  # количество смен
@@ -187,7 +185,6 @@ defect_percent = variant["defect_percent"]
 N_out = variant["N_out"]  # 16799.98966 # количество выпуск. деталей (N выпуска)
 safety_stock = variant["safety_stock"]
 # N_out = 23530
-
 
 tact = (month * work_day * work_shift * 60) / N_out  # такт мин/шт
 
@@ -215,7 +212,6 @@ for index, op in enumerate(operations):
             "work_time": round(workplace_congestion * max_time, 1)
         }
         workplaces.append(workplace_item)
-        # print("-----------------------", workplace_item)
 
 workplaces_groups = first_fit(workplaces)
 
@@ -237,20 +233,12 @@ for idx, w in enumerate(workplaces_groups):
         if not wp["op_end"] in periods_vals:
             periods_vals.append(wp["op_end"])
 
-# период неизменной работы - ПНР
-
-# 0 45 165 240
 periods_vals = sorted(periods_vals)
 periods = []
-# print(periods_vals)
+
 for i, p in enumerate(periods_vals):
     if i > 0:
         periods.append(p - sorted(periods_vals)[i - 1])
-
-# print("workplaces_groups:", )
-# for wg in workplaces_groups:
-#     print(wg)
-# print("---------------------------------------------------")
 
 workplaces = []
 for index, l in enumerate(workplaces_groups):
@@ -305,11 +293,6 @@ for idx, operation in enumerate(operations):
         dynamic_value = safety_stock + dynamic_value
         new_item["dynamic_value"] = dynamic_value
 
-# for y in operations:
-#     print(y)
-
-# print("----------------------------------------------------")
-
 student_data = {
     "operations": operations,
     "employees": employees,
@@ -327,10 +310,24 @@ student_data = {
     "periods_len": len(periods),
     "operations_pairs": [list(y['pair'].keys()) for y in operations_pairs],
 }
-# print(student_data)
 
 
-def comparison_numbers(student_number, correct_number, tol=0.05):
+def workplaces_employees(tmp_workplaces):
+    unique_employees = []
+    for t_ind, t_wp in enumerate(tmp_workplaces):
+        if t_wp["employee"] not in unique_employees:
+            unique_employees.append(t_wp["employee"])
+    res = []
+    for unique_emp in unique_employees:
+        res_sub = []
+        for ind, w_emp in enumerate(tmp_workplaces):
+            if w_emp["employee"] == unique_emp:
+                res_sub.append(ind)
+        res.append(res_sub)
+    return sorted(res)
+
+
+def comparison_numbers(correct_number, student_number, tol=0.05):
     if type(student_number) == str:
         student_number = student_number.replace(",", ".")
     try:
@@ -340,53 +337,77 @@ def comparison_numbers(student_number, correct_number, tol=0.05):
         return False
 
 
-def workplaces_employees(tmp_workplaces):
-    unique_employees = []
-    for t_ind, t_wp in enumerate(tmp_workplaces):
-        if t_wp["employee"] not in unique_employees:
-            unique_employees.append(t_wp["employee"])
+def comparison_numbers_arrays(correct_array, student_array, tol=0.05):
+    return all(comparison_arrays(correct_array, student_array, tol=0.05))
 
-    # print("unique_employees: ", unique_employees)
-    res = []
-    for unique_emp in unique_employees:
-        res_sub = []
-        for ind, w_emp in enumerate(tmp_workplaces):
-            if w_emp["employee"] == unique_emp:
-                res_sub.append(ind)
-        res.append(res_sub)
-    # print("res: ", res)
-    return sorted(res)
+
+def comparison_arrays(correct_array, student_array, tol=0.05):
+
+    if len(correct_array) != len(student_array):
+        return [False for x in correct_array]
+    else:
+        ret_arr = []
+        for idx, c_a in enumerate(correct_array):
+            if comparison_numbers(c_a, student_array[idx], tol):
+                ret_arr.append(True)
+            else:
+                ret_arr.append(False)
+        return ret_arr
 
 
 def check_answer(exp, ans):
     student_answer = json.loads(ans)["answer"]
-    response = {
-        "tact_value": comparison_numbers(student_answer["tact"], tact)
-    }
     correct_workplaces = sorted(workplaces, key=lambda k: k['weight'])
+    response = {
+        "tact_value": False,
+        "workplaces_table": False,
+        "periods_table": False,
+        "operations_pairs": []
+    }
 
-    work_time_equal = all(comparison_numbers(item["work_time"], student_answer["workplaces"][index]["work_time"]) for (index, item) in enumerate(correct_workplaces))
+    tact_equal = comparison_numbers(tact, student_answer["tact"])
+    response["tact_value"] = tact_equal
+
+    work_time_equal = comparison_numbers_arrays([x["work_time"] for x in correct_workplaces], [x["work_time"] for x in student_answer["workplaces"]])
     employees_equal = workplaces_employees(correct_workplaces) == workplaces_employees(student_answer["workplaces"])
     operation_equal = [cw["type"] for cw in correct_workplaces] == [cw["type"] for cw in student_answer["workplaces"]]
 
     response["workplaces_table"] = work_time_equal and employees_equal and operation_equal
 
-    # print(work_time_equal)
-    # print(employees_equal)
-    # print(operation_equal)
+    response["periods_table"] = {
+        "periods": comparison_arrays(periods, student_answer["periods"]),
+        "result": comparison_numbers_arrays(periods, student_answer["periods"]),
+    }
+
+    for pair_index, op_corr in enumerate(operations_pairs):
+        op_res = {
+            "KPPM_1": comparison_arrays(op_corr["pair"][sorted(op_corr["pair"].keys())[0]]["KPPM"], student_answer["operations_pairs"][pair_index]["pair"][0]["KPPM"]),
+            "KPPM_2": comparison_arrays(op_corr["pair"][sorted(op_corr["pair"].keys())[1]]["KPPM"], student_answer["operations_pairs"][pair_index]["pair"][1]["KPPM"]),
+            "out_1":  comparison_arrays(op_corr["pair"][sorted(op_corr["pair"].keys())[0]]["out"], student_answer["operations_pairs"][pair_index]["pair"][0]["out"]),
+            "out_2":  comparison_arrays(op_corr["pair"][sorted(op_corr["pair"].keys())[1]]["out"], student_answer["operations_pairs"][pair_index]["pair"][1]["out"]),
+            "dynamic": comparison_numbers(op_corr["dynamic_value"], student_answer["operations_pairs"][pair_index]["dynamic_value"])
+        }
+        op_res["result"] = all(op_res["KPPM_1"]) and all(op_res["KPPM_2"]) and all(op_res["out_1"]) and all(op_res["out_2"]) and op_res["dynamic"]
+        response["operations_pairs"].append(op_res)
+
+    max_grade = 100
+    grade = 0
+
+    grade += 5 if response["tact_value"] else 0
+    grade += 30 if response["workplaces_table"] else 0
+    grade += 5 if response["periods_table"]["result"] else 0
+
+    for op_grade in response["operations_pairs"]:
+        if op_grade["result"]:
+            grade += 60 / len(response["operations_pairs"])
+
+    result_grade = grade / max_grade
+
+    print("result_grade: ", result_grade)
+
+    print(json.dumps(response))
 
 
-    #
-    # for idx, wp in ):
-    #     print(wp["work_time"], wp["employee"],  student_answer["workplaces"][idx]["work_time"])
-    #     # , )
-    #
-    # print("-----------------------------------------")
-    #
-    # for st_wp in student_answer["workplaces"]:
-    #     print(st_wp["congestion"], st_wp["employee"])
+st_answer = '{"answer":{"tact":0,"periods":[80,20,20,60,60],"workplaces":[{"type":"operation_1","congestion":100,"employee":"employee_7","work_time":240,"op_start":0,"op_end":240},{"type":"operation_1","congestion":33.33,"employee":"employee_5","work_time":80,"op_start":0,"op_end":80},{"type":"operation_2","congestion":100,"employee":"employee_8","work_time":240,"op_start":0,"op_end":240},{"type":"operation_2","congestion":41.67,"employee":"employee_6","work_time":100,"op_start":0,"op_end":100},{"type":"operation_3","congestion":100,"employee":"employee_9","work_time":240,"op_start":0,"op_end":240},{"type":"operation_3","congestion":8.33,"employee":"employee_6","work_time":20,"op_start":100,"op_end":120},{"type":"operation_4","congestion":100,"employee":"employee_10","work_time":240,"op_start":0,"op_end":240},{"type":"operation_4","congestion":100,"employee":"employee_11","work_time":240,"op_start":0,"op_end":240},{"type":"operation_4","congestion":66.67,"employee":"employee_5","work_time":160,"op_start":80,"op_end":240},{"type":"operation_5","congestion":100,"employee":"employee_12","work_time":240,"op_start":0,"op_end":240},{"type":"operation_5","congestion":100,"employee":"employee_13","work_time":240,"op_start":0,"op_end":240},{"type":"operation_5","congestion":25,"employee":"employee_6","work_time":60,"op_start":120,"op_end":180}],"operations_pairs":[{"dynamic_value":11,"changes":[5.882,-11.029,0.735,2.206,2.206],"dynamics":[16.882,5.853,6.588,8.794,11],"pair":[{"id":"operation_1","KPPM":[2,1,1,1,1],"out":[100,12.5,12.5,37.5,37.5]},{"id":"operation_2","KPPM":[2,2,1,1,1],"out":[94.1176,23.5294,11.7647,35.29411,35.29411]}]},{"dynamic_value":6,"changes":[32.579,8.145,-19.005,-10.86,-10.86],"dynamics":[38.579,46.724,27.719,16.859,5.999],"pair":[{"id":"operation_2","KPPM":[2,2,1,1,1],"out":[94.117647058823,23.5294117647,11.764705882,35.2941176,35.2941176]},{"id":"operation_3","KPPM":[1,1,2,1,1],"out":[61.538461,15.384615,30.76923,46.15384615,46.15384615]}]},{"dynamic_value":5,"changes":[11.538,15.385,12.019,-10.096,-10.096],"dynamics":[16.538,31.923,43.942,33.846,23.75],"pair":[{"id":"operation_3","KPPM":[1,1,2,1,1],"out":[61.538461538,15.384615384,30.76923,46.15384615,46.15384615]},{"id":"operation_4","KPPM":[2,3,3,3,3],"out":[50,0,18.75,56.25,56.25]}]},{"dynamic_value":17,"changes":[-9.259,3.935,3.935,-10.417,11.806],"dynamics":[7.741,11.676,15.611,5.194,17],"pair":[{"id":"operation_4","KPPM":[2,3,3,3,3],"out":[50,18.75,18.75,56.25,56.25]},{"id":"operation_5","KPPM":[2,2,2,3,2],"out":[59.2592592,14.81481481,14.81481481,66.666666,44.44444]}]}]}}'
 
-
-
-st_answer = '{"answer":{"tact":1.6,"periods":[45,120,75],"workplaces":[{"type":"operation_1","congestion":100,"employee":"employee_1","work_time":240,"op_start":0,"op_end":240},{"type":"operation_1","congestion":18.75,"employee":"employee_2","work_time":45,"op_start":0,"op_end":45},{"type":"operation_2","congestion":68.75,"employee":"employee_3","work_time":165,"op_start":0,"op_end":165},{"type":"operation_3","congestion":100,"employee":"employee_4","work_time":240,"op_start":0,"op_end":240},{"type":"operation_3","congestion":31.25,"employee":"employee_3","work_time":75,"op_start":165,"op_end":75},{"type":"operation_4","congestion":81.25,"employee":"employee_2","work_time":195,"op_start":45,"op_end":195}],"operations_pairs":[{"dynamic_value":45,"changes":[6.459,-45.933,37.13],"dynamics":[51.459,5.526,42.656],"pair":[{"id":"operation_1","KPPM":[2,1,1],"out":[47.368,63.158,39.47]},{"id":"operation_2","KPPM":[1,1,0],"out":[40.909,109.091,2.34]}]},{"dynamic_value":0,"changes":[40.909,51.948,-71.429],"dynamics":[40.909,92.857,21.428],"pair":[{"id":"operation_2","KPPM":[1,1,0],"out":[40.909,109.091,0]},{"id":"operation_3","KPPM":[0,1,2],"out":[0,57.143,71.429]}]},{"dynamic_value":19,"changes":[21.429,-35.165,13.737],"dynamics":[40.429,5.264,19.001],"pair":[{"id":"operation_3","KPPM":[1,1,2],"out":[21.429,57.143,71.429]},{"id":"operation_4","KPPM":[0,1,1],"out":[0,92.308,57.692]}]}]}}'
 check_answer(False, st_answer)
