@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json
 import math
 
@@ -186,7 +187,7 @@ N_out = variant["N_out"]  # 16799.98966 # количество выпуск. д�
 safety_stock = variant["safety_stock"]
 # N_out = 23530
 
-tact = (month * work_day * work_shift * 60) / N_out  # такт мин/шт
+tact = (month * work_day * work_shift * 60) / float(N_out)  # такт мин/шт
 
 #  N_in = N_out/(1-defect_percent*100)  # количество запуск. деталей (N запуска) это еще разобраться как считать
 
@@ -199,7 +200,6 @@ for index, op in enumerate(operations):
     op_workplace_len = int(math.ceil(op["duration"] / tact))
     for workplace_num in list(range(0, op_workplace_len)):
         workplace_congestion = round(op["duration"] / tact, 4)
-
         if workplace_congestion - workplace_num > 1:
             workplace_congestion = 1
         else:
@@ -212,6 +212,7 @@ for index, op in enumerate(operations):
             "work_time": round(workplace_congestion * max_time, 1)
         }
         workplaces.append(workplace_item)
+
 
 workplaces_groups = first_fit(workplaces)
 
@@ -258,17 +259,16 @@ for idx, operation in enumerate(operations):
         new_item['change'] = []
         new_item['zero_dynamic'] = []
 
-        current_workplaces_0 = [v for v in workplaces if (v["type"] == list(pair.keys())[0])]
-        current_workplaces_1 = [v for v in workplaces if (v["type"] == list(pair.keys())[1])]
+        current_workplaces_0 = [v for v in workplaces if (v["type"] == sorted(list(pair.keys()))[0])]
+        current_workplaces_1 = [v for v in workplaces if (v["type"] == sorted(list(pair.keys()))[1])]
 
         for p_index, period in enumerate(periods_vals):
             if p_index > 0:
-                op_count_0 = len([o for o in current_workplaces_0 if
-                                  get_overlap([periods_vals[p_index - 1], period], [o["op_start"], o["op_end"]])])
+                op_count_0 = len([o for o in current_workplaces_0 if get_overlap([periods_vals[p_index - 1], period], [o["op_start"], o["op_end"]])])
                 pair[operations[idx - 1]['id']]["KPPM"].append(op_count_0)
-                op_count_1 = len([o for o in current_workplaces_1 if
-                                  get_overlap([periods_vals[p_index - 1], period], [o["op_start"], o["op_end"]])])
+                op_count_1 = len([o for o in current_workplaces_1 if get_overlap([periods_vals[p_index - 1], period], [o["op_start"], o["op_end"]])])
                 pair[operation['id']]["KPPM"].append(op_count_1)
+
                 out_0 = periods[p_index - 1] / operations[idx - 1]["duration"] * op_count_0  # round(,3)
                 out_1 = periods[p_index - 1] / operation["duration"] * op_count_1  # round(,3)
 
@@ -293,6 +293,7 @@ for idx, operation in enumerate(operations):
         dynamic_value = safety_stock + dynamic_value
         new_item["dynamic_value"] = dynamic_value
 
+
 student_data = {
     "operations": operations,
     "employees": employees,
@@ -308,7 +309,7 @@ student_data = {
     },
     "workplaces": [w["type"] for w in workplaces],
     "periods_len": len(periods),
-    "operations_pairs": [list(y['pair'].keys()) for y in operations_pairs],
+    "operations_pairs": [sorted(list(y['pair'].keys())) for y in operations_pairs],
 }
 
 
@@ -399,15 +400,20 @@ def check_answer(exp, ans):
 
     for op_grade in response["operations_pairs"]:
         if op_grade["result"]:
-            grade += 60 / len(response["operations_pairs"])
+            grade += 60 / float(len(response["operations_pairs"]))
 
-    result_grade = grade / max_grade
+    result_grade = grade / float(max_grade)
+    msg = json.dumps(response)
 
-    print("result_grade: ", result_grade)
+    if result_grade == 1:
+        return {'input_list': [{'ok': True, 'msg': msg, 'grade_decimal': 1}]}
+    elif result_grade == 0:
+        return {'input_list': [{'ok': False, 'msg': msg, 'grade_decimal': 0}]}
+    else:
+        return {'input_list': [{'ok': 'Partial', 'msg': msg, 'grade_decimal': result_grade}]}
 
-    print(json.dumps(response))
 
+st_answer = '{"answer":{"tact":0,"periods":[80,20,20,60,60],"workplaces":[{"type":"operation_1","congestion":100,"employee":"employee_7","work_time":240,"op_start":0,"op_end":240},{"type":"operation_1","congestion":33.33,"employee":"employee_5","work_time":80,"op_start":0,"op_end":80},{"type":"operation_2","congestion":100,"employee":"employee_8","work_time":240,"op_start":0,"op_end":240},{"type":"operation_2","congestion":41.67,"employee":"employee_1","work_time":100,"op_start":0,"op_end":100},{"type":"operation_3","congestion":100,"employee":"employee_9","work_time":240,"op_start":0,"op_end":240},{"type":"operation_3","congestion":8.33,"employee":"employee_1","work_time":20,"op_start":100,"op_end":120},{"type":"operation_4","congestion":100,"employee":"employee_10","work_time":240,"op_start":0,"op_end":240},{"type":"operation_4","congestion":100,"employee":"employee_11","work_time":240,"op_start":0,"op_end":240},{"type":"operation_4","congestion":66.67,"employee":"employee_5","work_time":160,"op_start":80,"op_end":240},{"type":"operation_5","congestion":100,"employee":"employee_12","work_time":240,"op_start":0,"op_end":240},{"type":"operation_5","congestion":100,"employee":"employee_13","work_time":240,"op_start":0,"op_end":240},{"type":"operation_5","congestion":25,"employee":"employee_1","work_time":60,"op_start":0,"op_end":60}],"operations_pairs":[{"dynamic_value":11,"changes":[5.882,-11.029,0.735,2.206,2.206],"dynamics":[16.882,5.853,6.588,8.794,11],"pair":[{"id":"operation_1","KPPM":[2,1,1,1,1],"out":[100,12.5,12.5,37.5,37.5]},{"id":"operation_2","KPPM":[2,2,1,1,1],"out":[94.1176,23.5294,11.7647,35.29411,35.29411]}]},{"dynamic_value":6,"changes":[32.579,8.145,-19.005,-10.86,-10.86],"dynamics":[38.579,46.724,27.719,16.859,5.999],"pair":[{"id":"operation_2","KPPM":[2,2,1,1,1],"out":[94.117647058823,23.5294117647,11.764705882,35.2941176,35.2941176]},{"id":"operation_3","KPPM":[1,1,2,1,1],"out":[61.538461,15.384615,30.76923,46.15384615,46.15384615]}]},{"dynamic_value":5,"changes":[11.538,-3.365,12.019,-10.096,-10.096],"dynamics":[16.538,13.173,25.192,15.096,5],"pair":[{"id":"operation_3","KPPM":[1,1,2,1,1],"out":[61.538461538,15.384615384,30.76923,46.15384615,46.15384615]},{"id":"operation_4","KPPM":[2,3,3,3,3],"out":[50,18.75,18.75,56.25,56.25]}]},{"dynamic_value":17,"changes":[-9.259,3.935,3.935,-10.417,11.806],"dynamics":[7.741,11.676,15.611,5.194,17],"pair":[{"id":"operation_4","KPPM":[2,3,3,3,3],"out":[50,18.75,18.75,56.25,56.25]},{"id":"operation_5","KPPM":[2,2,2,3,2],"out":[59.2592592,14.81481481,14.81481481,66.666666,44.44444]}]}]}}'
 
-st_answer = '{"answer":{"tact":0,"periods":[80,20,20,60,60],"workplaces":[{"type":"operation_1","congestion":100,"employee":"employee_7","work_time":240,"op_start":0,"op_end":240},{"type":"operation_1","congestion":33.33,"employee":"employee_5","work_time":80,"op_start":0,"op_end":80},{"type":"operation_2","congestion":100,"employee":"employee_8","work_time":240,"op_start":0,"op_end":240},{"type":"operation_2","congestion":41.67,"employee":"employee_6","work_time":100,"op_start":0,"op_end":100},{"type":"operation_3","congestion":100,"employee":"employee_9","work_time":240,"op_start":0,"op_end":240},{"type":"operation_3","congestion":8.33,"employee":"employee_6","work_time":20,"op_start":100,"op_end":120},{"type":"operation_4","congestion":100,"employee":"employee_10","work_time":240,"op_start":0,"op_end":240},{"type":"operation_4","congestion":100,"employee":"employee_11","work_time":240,"op_start":0,"op_end":240},{"type":"operation_4","congestion":66.67,"employee":"employee_5","work_time":160,"op_start":80,"op_end":240},{"type":"operation_5","congestion":100,"employee":"employee_12","work_time":240,"op_start":0,"op_end":240},{"type":"operation_5","congestion":100,"employee":"employee_13","work_time":240,"op_start":0,"op_end":240},{"type":"operation_5","congestion":25,"employee":"employee_6","work_time":60,"op_start":120,"op_end":180}],"operations_pairs":[{"dynamic_value":11,"changes":[5.882,-11.029,0.735,2.206,2.206],"dynamics":[16.882,5.853,6.588,8.794,11],"pair":[{"id":"operation_1","KPPM":[2,1,1,1,1],"out":[100,12.5,12.5,37.5,37.5]},{"id":"operation_2","KPPM":[2,2,1,1,1],"out":[94.1176,23.5294,11.7647,35.29411,35.29411]}]},{"dynamic_value":6,"changes":[32.579,8.145,-19.005,-10.86,-10.86],"dynamics":[38.579,46.724,27.719,16.859,5.999],"pair":[{"id":"operation_2","KPPM":[2,2,1,1,1],"out":[94.117647058823,23.5294117647,11.764705882,35.2941176,35.2941176]},{"id":"operation_3","KPPM":[1,1,2,1,1],"out":[61.538461,15.384615,30.76923,46.15384615,46.15384615]}]},{"dynamic_value":5,"changes":[11.538,15.385,12.019,-10.096,-10.096],"dynamics":[16.538,31.923,43.942,33.846,23.75],"pair":[{"id":"operation_3","KPPM":[1,1,2,1,1],"out":[61.538461538,15.384615384,30.76923,46.15384615,46.15384615]},{"id":"operation_4","KPPM":[2,3,3,3,3],"out":[50,0,18.75,56.25,56.25]}]},{"dynamic_value":17,"changes":[-9.259,3.935,3.935,-10.417,11.806],"dynamics":[7.741,11.676,15.611,5.194,17],"pair":[{"id":"operation_4","KPPM":[2,3,3,3,3],"out":[50,18.75,18.75,56.25,56.25]},{"id":"operation_5","KPPM":[2,2,2,3,2],"out":[59.2592592,14.81481481,14.81481481,66.666666,44.44444]}]}]}}'
-
-check_answer(False, st_answer)
+check_result = check_answer(False, st_answer)
+print(check_result)
