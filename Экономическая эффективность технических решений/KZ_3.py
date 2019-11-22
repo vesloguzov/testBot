@@ -386,11 +386,11 @@ variants = [
     },  # 20
 ]
 
-coefficient = round(random.randint(10, 99) * 0.1, 1)
-# coefficient = 1
+# coefficient = round(random.randint(10, 99) * 0.1, 1)
+coefficient = 1
 
 variant = random.choice(variants)
-# variant = variants[0]
+variant = variants[4]
 
 contract_term = variant["contract_term"]
 planned_payback = variant["planned_payback"]
@@ -431,13 +431,13 @@ else:
     option_every_more_1 = False
     option_every_more_2 = True
 
-# print("Приведенные затраты (Зпр) В1", p_z_v1)
-#
-# print("Приведенные затраты (Зпр) В2", p_z_v2)
-#
-# print("Граница целесообразности", gr)
-#
-# print("ля внедрения рекомендую вариант", recommend)
+print("Приведенные затраты (Зпр) В1", p_z_v1)
+
+print("Приведенные затраты (Зпр) В2", p_z_v2)
+
+print("Граница целесообразности", gr)
+
+print("ля внедрения рекомендую вариант", recommend)
 #
 # print(option_recommend_1)
 # print(option_recommend_2)
