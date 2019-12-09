@@ -1,6 +1,5 @@
 import random
 
+main_coef = round(random.randint(11, 40) * 0.1, 1)
 
-lol = "1:2:3:4:5"
-
-print(reversed(lol))
+print("main_coef: ", main_coef)
