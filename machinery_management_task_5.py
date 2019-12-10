@@ -291,7 +291,7 @@ products = [{"operations": {"operation_1": {"model": 1, "rank": 2, "time": 5},
                             "operation_4": {"model": 11, "rank": 3, "time": 32},
                             "operation_6": {"model": 6, "rank": 4, "time": 44}}, "product_num": 30, "weight": 248,
              "consumption": 275, "material": 2, "blank_type": 1}
-            ]
+]
 
 # Резчик carver
 # Токарь turner
@@ -300,30 +300,38 @@ products = [{"operations": {"operation_1": {"model": 1, "rank": 2, "time": 5},
 # Долбёжник mortar
 # Протяжчик broach
 
+
+
 employees = {
     "carver": {
         "title": "Резчик",
-        "id": "carver"
+        "id": "carver",
+        "title_ru": "Rezchik"
     },
     "turner": {
         "title": "Токарь",
-        "id": "turner"
+        "id": "turner",
+        "title_ru": "Tokar'"
     },
     "grinder": {
         "title": "Шлифовщик",
-        "id": "grinder"
+        "id": "grinder",
+        "title_ru": "Schlifovschik"
     },
     "milling": {
         "title": "Фрезеровщик",
-        "id": "milling"
+        "id": "milling",
+        "title_ru": "Frezerovschik"
     },
     "mortar": {
         "title": "Долбёжник",
-        "id": "mortar"
+        "id": "mortar",
+        "title_ru": "Dolbezhnik"
     },
     "broach": {
         "title": "Протяжчик",
-        "id": "broach"
+        "id": "broach",
+        "title_ru": "Protyazhchik"
     }
 }
 
@@ -354,6 +362,25 @@ equipment = [
     {'equipment_title': u'Горизонтально-протяжный станок', 'equipment_num': 14, 'profession': 'broach',
      'equipment_model': '7B510'}]
 
+def get_product(num):
+    l = list(filter(lambda x: x["product_num"] == num, products))
+    if len(l) > 0:
+        return l[0]
+    else:
+        return None
+
+
+def get_equipment(num):
+    l = list(filter(lambda x: x["equipment_num"] == num, equipment))
+    if len(l) > 0:
+        return l[0]
+    else:
+        return None
+
+
+manufactured_products = []
+
+
 # часов в смене
 emp_hours = 8
 equ_hours = 8
@@ -379,7 +406,7 @@ load_coeff_display = int(load_coeff * 100)
 
 time_coeff = 1.1
 
-manufactured_products = [1, 2, 30]
+# manufactured_products = [1, 2, 30]
 
 products_1_count = 40000
 products_2_count = 20000
@@ -394,51 +421,88 @@ def unique(list1):
     return unique_list
 
 
-def get_product(num):
-    l = list(filter(lambda x: x["product_num"] == num, products))
-    if len(l) > 0:
-        return l[0]
-    else:
-        return None
 
 
-def get_equipment(num):
-    l = list(filter(lambda x: x["equipment_num"] == num, equipment))
-    if len(l) > 0:
-        return l[0]
-    else:
-        return None
-
-used_equipment = []
-used_employees = []
-
-for m_p_num in manufactured_products:
-    for operation in get_product(m_p_num)["operations"]:
-        op = get_product(m_p_num)["operations"][operation]
-        used_equipment.append(op["model"])
-        used_employees.append({"profession": get_equipment(op["model"])["profession"], "rank": op["rank"]})
-
-used_equipment = sorted(unique(used_equipment))
-used_equipment_count = len(used_equipment)
-
-used_employees = unique(used_employees)
-
-print(used_equipment)
-
-# for u_e in used_employees:
-#     print(employees[u_e["profession"]]["title"], u_e["rank"])
-
-table_1 = []
-
-for u_e in used_equipment:
-    str_u_e = {"schifr": u_e}
-
-    for product in manufactured_products:
-        print()
-
-    table_1.append({
-
-    })
+# used_equipment = []
+# used_employees = []
 
 
-    # print(x)
+
+# for m_p_num in manufactured_products:
+#     for operation in get_product(m_p_num)["operations"]:
+#         op = get_product(m_p_num)["operations"][operation]
+#         used_equipment.append(op["model"])
+#         used_employees.append({"profession": get_equipment(op["model"])["profession"], "rank": op["rank"]})
+#
+# used_equipment = sorted(unique(used_equipment))
+# used_equipment_count = len(used_equipment)
+#
+# used_employees = unique(used_employees)
+# used_employees_count = len(used_employees)
+#
+# table_1 = []
+# for u_e in used_equipment:
+#     str_u_e = {"equipment_num": u_e, "times": []}
+#     for product in manufactured_products:
+#         sum_time = 0
+#         current_product = get_product(product)
+#         for op in current_product["operations"]:
+#             if current_product["operations"][op]["model"] == u_e:
+#                 sum_time += current_product["operations"][op]["time"]
+#         str_u_e["times"].append(sum_time)
+#     table_1.append(str_u_e)
+#
+# table_2 = []
+# for e_u in table_1:
+#     str_u_e = {"equipment_num": e_u["equipment_num"], "times": []}
+#     for t_index, t in enumerate(e_u["times"]):
+#         if t_index == 0:
+#             new_val = math.ceil((products_1_count * t) / 60.0)
+#         elif t_index == 1:
+#             new_val = math.ceil((products_2_count * t) / 60.0)
+#         else:
+#             new_val = math.ceil((products_3_count * t) / 60.0)
+#         str_u_e["times"].append(new_val)
+#     table_2.append(str_u_e)
+#
+# table_3 = []
+# for e_u in table_2:
+#     str_u_e = {"equipment_num": e_u["equipment_num"], "equipment_count": 0}
+#     equipment_count_value = sum(e_u["times"]) / (equ_year_h * load_coeff * time_coeff)
+#     str_u_e["equipment_count"] = math.ceil(equipment_count_value)
+#     table_3.append(str_u_e)
+#
+# table_4 = []
+# for e_u in used_employees:
+#     str_u_e = {"employee": e_u, "times": []}
+#     # str_u_e["employee"]["title"] = employees[e_u["profession"]]["title"]
+#     for r in manufactured_products:
+#         product = get_product(r)
+#         sum_value = 0
+#         for op in product["operations"]:
+#             if e_u["profession"] == get_equipment(product["operations"][op]["model"])["profession"] and e_u["rank"] == product["operations"][op]["rank"]:
+#                 sum_value += product["operations"][op]["time"]
+#         str_u_e["times"].append(sum_value)
+#     table_4.append(str_u_e)
+#
+# table_5 = []
+# for e_u in table_4:
+#     str_u_e = {"employee": e_u["employee"], "times": []}
+#     # str_u_e["employee"]["title"] = employees[e_u["employee"]["profession"]]["title_ru"]
+#     for t_index, t in enumerate(e_u["times"]):
+#         if t_index == 0:
+#             new_val = math.ceil((products_1_count * t) / 60.0)
+#         elif t_index == 1:
+#             new_val = math.ceil((products_2_count * t) / 60.0)
+#         else:
+#             new_val = math.ceil((products_3_count * t) / 60.0)
+#         str_u_e["times"].append(new_val)
+#     table_5.append(str_u_e)
+#
+# table_6 = []
+# for e_u in table_5:
+#     str_u_e = {"employee": e_u["employee"], "employee_count": 0}
+#     str_u_e["employee"]["title"] = employees[e_u["employee"]["profession"]]["title_ru"]
+#     employee_count_value = sum(e_u["times"])
+#     str_u_e["count"] = math.ceil(employee_count_value / (emp_year_h * time_coeff))
+#     table_6.append(str_u_e)
