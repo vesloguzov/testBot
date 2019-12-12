@@ -2,79 +2,6 @@
 import json
 import math
 
-source = [[1, 3, 2, 1.5, 2, 1, 5, 2, 2, 16, 3, 11, 16, 3, 5, 22, 4, 7, 15, 4, 6, 8, 3],
-          [2, 3, 2, 8, 10, 1, 6, 2, 2, 48, 3, 11, 18, 3, 5, 30, 4, 7, 19, 4, 6, 11, 3],
-          [3, 3, 2, 16, 20, 1, 8, 2, 2, 80, 3, 11, 21, 3, 5, 37, 4, 7, 20, 4, 6, 16, 3],
-          [4, 3, 1, 18, 22, 1, 4, 2, 2, 80, 3, 2, 19, 3, 2, 85, 3, 2, 23, 4, 2, 62, 5],
-          [5, 3, 1, 21, 26, 1, 6, 2, 3, 67, 3, 2, 19, 3, 2, 90, 3, 2, 53, 4, 2, 6, 5],
-          [6, 3, 1, 101, 120, 1, 7, 2, 3, 36, 3, 3, 25, 3, 3, 95, 3, 3, 123, 4, 3, 16, 5],
-          [7, 3, 2, 1.6, 2, 1, 2, 2, 2, 12, 3, 2, 10, 3, 2, 9, 3, 2, 7, 3, 3, 44, 4],
-          [8, 3, 2, 1.4, 2, 1, 2, 2, 2, 12, 3, 2, 11, 3, 2, 9, 3, 2, 7, 3, 3, 47, 4],
-          [9, 3, 2, 2.2, 3, 1, 2, 2, 2, 13, 3, 2, 14, 3, 2, 9, 3, 2, 7, 3, 3, 50, 4],
-          [10, 3, 2, 3.2, 5, 1, 3, 2, 2, 19, 3, 2, 9, 3, 2, 62, 3, 3, 12, 3, 12, 27, 4],
-          [11, 3, 2, 6, 7, 1, 3, 2, 2, 20, 3, 2, 11, 3, 2, 77, 3, 3, 12, 3, 12, 47, 4],
-          [12, 3, 2, 10, 12, 1, 3, 2, 2, 22, 3, 2, 12, 3, 2, 110, 3, 2, 13, 3, 12, 87, 4],
-          [13, 3, 2, 1.3, 2, 1, 3, 2, 2, 14, 3, 2, 8, 3, 2, 6, 3, 2, 13, 3, 11, 69, 3],
-          [14, 3, 2, 2.3, 3, 1, 3, 2, 2, 15, 3, 2, 9, 3, 2, 7, 3, 2, 14, 3, 11, 87, 3],
-          [15, 3, 2, 5.5, 7, 1, 2, 2, 2, 10, 3, 2, 9, 3, 2, 12, 3, 6, 6, 3, 11, 13, 3],
-          [16, 3, 2, 2.4, 3, 1, 3, 2, 2, 11, 3, 2, 11, 3, 2, 14, 3, 6, 5, 3, 11, 17, 2],
-          [17, 3, 2, 20, 25, 1, 3, 3, 2, 8, 3, 2, 6, 3, 2, 7, 3, 14, 12, 3, 7, 36, 2],
-          [18, 3, 2, 21, 25, 1, 4, 3, 2, 6, 3, 2, 6, 3, 2, 10, 3, 14, 14, 3, 7, 38, 2],
-          [19, 1, 2, 2.2, 3, 1, 4, 3, 2, 10, 3, 2, 12, 3, 3, 10, 3, 14, 15, 3, 7, 15, 2],
-          [20, 1, 3, 4.8, 6, 2, 24, 3, 2, 35, 3, 2, 25, 3, 14, 2, 2, 9, 10, 4, 10, 12, 4],
-          [21, 1, 3, 1.3, 2, 1, 5, 2, 2, 56, 3, 9, 55, 4, 10, 60, 4, 14, 2, 2, 12, 10, 3],
-          [22, 1, 3, 2.7, 4, 1, 6, 2, 2, 69, 3, 9, 66, 4, 10, 60, 4, 14, 2, 2, 6, 8, 3],
-          [23, 3, 2, 2.1, 3, 1, 5, 2, 2, 33, 4, 2, 9, 4, 8, 55, 4, 11, 3, 4, 13, 7, 4],
-          [24, 2, 4, 1.2, 2, 2, 13, 2, 2, 19, 4, 8, 21, 4, 2, 11, 4, 7, 59, 4, 3, 4, 4],
-          [25, 1, 0, 22, 26, 2, 46, 3, 2, 29, 3, 2, 33, 3, 2, 69, 3, 2, 26, 3, 3, 27, 4],
-          [26, 1, 0, 6, 8, 3, 15, 3, 2, 35, 3, 2, 44, 3, 2, 72, 3, 2, 42, 3, 3, 37, 4],
-          [27, 3, 2, 1.4, 2, 1, 3, 2, 2, 43, 3, 2, 34, 4, 11, 51, 3, 13, 16, 3, 6, 12, 3],
-          [28, 3, 2, 1.3, 2, 1, 4, 2, 2, 40, 3, 3, 41, 4, 11, 95, 3, 13, 18, 3, 6, 18, 3],
-          [29, 1, 2, 105, 130, 3, 6, 2, 2, 116, 4, 3, 35, 4, 11, 32, 3, 6, 24, 3, 6, 135, 4],
-          [30, 1, 2, 248, 275, 3, 6, 2, 2, 102, 4, 3, 37, 4, 11, 32, 3, 6, 34, 3, 6, 44, 4]]
-for row in source:
-    d = {
-        "product_num": row[0],
-        "blank_type": row[1],
-        "material": row[2],
-        "weight": row[3],
-        "consumption": row[4],
-        "operations": {
-            "operation_1": {
-                "model": row[5],
-                "time": row[6],
-                "rank": row[7]
-            },
-            "operation_2": {
-                "model": row[8],
-                "time": row[9],
-                "rank": row[10]
-            },
-            "operation_3": {
-                "model": row[11],
-                "time": row[12],
-                "rank": row[13]
-            },
-            "operation_4": {
-                "model": row[14],
-                "time": row[15],
-                "rank": row[16]
-            },
-            "operation_5": {
-                "model": row[17],
-                "time": row[18],
-                "rank": row[19]
-            },
-            "operation_6": {
-                "model": row[20],
-                "time": row[21],
-                "rank": row[22]
-            }
-        }
-    }
-    # print(d)
-
-
 products = [{"operations": {"operation_1": {"model": 1, "rank": 2, "time": 5},
                             "operation_3": {"model": 11, "rank": 3, "time": 16},
                             "operation_2": {"model": 2, "rank": 3, "time": 16},
@@ -293,15 +220,6 @@ products = [{"operations": {"operation_1": {"model": 1, "rank": 2, "time": 5},
              "consumption": 275, "material": 2, "blank_type": 1}
 ]
 
-# Резчик carver
-# Токарь turner
-# Шлифовщик grinder
-# Фрезеровщик milling
-# Долбёжник mortar
-# Протяжчик broach
-
-
-
 employees = {
     "carver": {
         "title": "Резчик",
@@ -334,8 +252,7 @@ employees = {
         "title_ru": "Protyazhchik"
     }
 }
-
-equipment = [
+equipments = [
     {'equipment_title': u'Отрезная пила', 'equipment_num': 1, 'profession': 'carver', 'equipment_model': '8642'},
     {'equipment_title': u'Токарно-винторезный станок', 'equipment_num': 2, 'profession': 'turner',
      'equipment_model': '1610'},
@@ -362,23 +279,29 @@ equipment = [
     {'equipment_title': u'Горизонтально-протяжный станок', 'equipment_num': 14, 'profession': 'broach',
      'equipment_model': '7B510'}]
 
+
 def get_product(num):
-    l = list(filter(lambda x: x["product_num"] == num, products))
-    if len(l) > 0:
-        return l[0]
+    _p = list(filter(lambda x: x["product_num"] == num, products))
+    if len(_p) > 0:
+        return _p[0]
     else:
         return None
 
 
 def get_equipment(num):
-    l = list(filter(lambda x: x["equipment_num"] == num, equipment))
-    if len(l) > 0:
-        return l[0]
+    _e = list(filter(lambda x: x["equipment_num"] == num, equipments))
+    if len(_e) > 0:
+        return _e[0]
     else:
         return None
 
 
-manufactured_products = []
+# def unique(list1):
+#     unique_list = []
+#     for x in list1:
+#         if x not in unique_list:
+#             unique_list.append(x)
+#     return unique_list
 
 
 # часов в смене
@@ -402,107 +325,202 @@ emp_year_h = 1848
 equ_year_h = 3840
 
 load_coeff = 0.85
-load_coeff_display = int(load_coeff * 100)
 
 time_coeff = 1.1
 
-# manufactured_products = [1, 2, 30]
+products_count = [40000, 20000, 30000]
 
-products_1_count = 40000
-products_2_count = 20000
-products_3_count = 30000
-
-
-def unique(list1):
-    unique_list = []
-    for x in list1:
-        if x not in unique_list:
-            unique_list.append(x)
-    return unique_list
+products_1_count = products_count[0]
+products_2_count = products_count[1]
+products_3_count = products_count[2]
 
 
+variants = [[1, 2, 30], [2, 6, 29], [2, 5, 28], [2, 7, 20], [5, 9, 30], [9, 14, 28], [7, 14, 29], [11, 17, 29], [1, 6, 28], [2, 5, 29], [5, 14, 29], [9, 17, 30], [1, 2, 7], [7, 2, 28], [11, 14, 30], [2, 7, 14], [5, 9, 17], [1, 6, 29], [13, 14, 29], [6, 14, 29], [18, 21, 30], [14, 16, 30], [21, 23, 30], [13, 17, 29], [17, 25, 29], [25, 26, 29], [15, 16, 28], [13, 20, 28], [10, 24, 28], [13, 15, 30], [14, 18, 30], [18, 23, 30], [17, 21, 29], [19, 22, 29], [14, 27, 30], [23, 24, 29], [6, 21, 30], [7, 22, 29], [8, 21, 29], [9, 24, 29], [4, 7, 21], [6, 9, 28], [7, 14, 30], [10, 21, 29], [11, 17, 30], [12, 24, 29], [14, 16, 30], [15, 18, 29], [3, 24, 30], [6, 15, 30]]
+
+manufactured_products_numbers = variants[0]
+manufactured_products = []
+
+for mpn in manufactured_products_numbers:
+    current_product = get_product(mpn)
+    for op in current_product["operations"]:
+        current_product["operations"][op]["profession"] = get_equipment(current_product["operations"][op]["model"])["profession"]
+    manufactured_products.append(current_product)
+
+used_equipment = []
+used_employees = []
+
+for mp in manufactured_products:
+    for op in mp["operations"]:
+        if mp["operations"][op]["model"] not in used_equipment:
+            used_equipment.append(mp["operations"][op]["model"])
+        if {"profession": mp["operations"][op]["profession"], "rank": mp["operations"][op]["rank"]} not in used_employees:
+            used_employees.append({"profession": mp["operations"][op]["profession"], "rank": mp["operations"][op]["rank"]})
+
+used_equipment = sorted(used_equipment)
+used_equipment_len = len(used_equipment)
+used_employees_len = len(used_employees)
+equipment_data = {}
+employee_data = {}
+
+for equipment in used_equipment:
+    equipment_data["equipment_" + str(equipment)] = {}
+    equipment_data["equipment_" + str(equipment)]["table_1"] = []
+    equipment_data["equipment_" + str(equipment)]["table_2"] = []
+    equipment_data["equipment_" + str(equipment)]["table_3"] = 0
+    equipment_products_count = 0
+    for index, product in enumerate(manufactured_products):
+        sum_time = 0
+        for op in product["operations"]:
+            if product["operations"][op]["model"] == equipment:
+                sum_time += product["operations"][op]["time"]
+        equipment_data["equipment_" + str(equipment)]["table_1"].append(sum_time)
+        year_time = math.ceil((sum_time * products_count[index]) / 60.0)
+        equipment_data["equipment_" + str(equipment)]["table_2"].append(year_time)
+        equipment_products_count += year_time / (equ_year_h * load_coeff * time_coeff)
+    equipment_data["equipment_" + str(equipment)]["table_3"] = math.ceil(equipment_products_count)
+
+for employee in used_employees:
+    employee_title = employee["profession"] + "_" + str(employee["rank"])
+    employee_data[employee_title] = {}
+    employee_data[employee_title]["table_1"] = []
+    employee_data[employee_title]["table_2"] = []
+    employee_data[employee_title]["table_3"] = 0
+
+    for index, product in enumerate(manufactured_products):
+        sum_time = 0
+        for op in product["operations"]:
+            if product["operations"][op]["profession"] == employee["profession"]:
+                if product["operations"][op]["rank"] == employee["rank"]:
+                    sum_time += product["operations"][op]["time"]
+        employee_data[employee_title]["table_1"].append(sum_time)
+        year_time = math.ceil((sum_time * products_count[index]) / 60.0)
+        employee_data[employee_title]["table_2"].append(year_time)
+    employee_data[employee_title]["table_3"] = math.ceil(sum(employee_data[employee_title]["table_2"])/(emp_year_h * time_coeff))
 
 
-# used_equipment = []
-# used_employees = []
+# for x in equipment_data:
+#     print x, equipment_data[x]
+# print "------------------------------------------------------------------------------------"
+# for x in employee_data:
+#     print x, employee_data[x]
+# print "------------------------------------------------------------------------------------"
+
+student_data = {
+    "manufactured_products": manufactured_products,
+    "employees": employees,
+    "equipments": equipments,
+    "companion_data": {
+        "emp_hours": emp_hours,
+        "equ_hours": equ_hours,
+        "emp_workdays": emp_workdays,
+        "equ_workdays": equ_workdays,
+        "emp_days": emp_days,
+        "equ_days": equ_days,
+        "emp_month": emp_month,
+        "equ_month": equ_month,
+        "emp_year_h": emp_year_h,
+        "equ_year_h": equ_year_h,
+        "load_coeff": load_coeff,
+        "time_coeff": time_coeff,
+        "products_count": products_count,
+        "used_equipment_len": used_equipment_len,
+        "used_employees_len": used_employees_len
+    }
+}
+
+# print(json.dumps(student_data))
 
 
+def unique_list(inlist):
+    out_list = []
+    for val in inlist:
+        if not val in out_list:
+            out_list.append(val)
+    return out_list
 
-# for m_p_num in manufactured_products:
-#     for operation in get_product(m_p_num)["operations"]:
-#         op = get_product(m_p_num)["operations"][operation]
-#         used_equipment.append(op["model"])
-#         used_employees.append({"profession": get_equipment(op["model"])["profession"], "rank": op["rank"]})
-#
-# used_equipment = sorted(unique(used_equipment))
-# used_equipment_count = len(used_equipment)
-#
-# used_employees = unique(used_employees)
-# used_employees_count = len(used_employees)
-#
-# table_1 = []
-# for u_e in used_equipment:
-#     str_u_e = {"equipment_num": u_e, "times": []}
-#     for product in manufactured_products:
-#         sum_time = 0
-#         current_product = get_product(product)
-#         for op in current_product["operations"]:
-#             if current_product["operations"][op]["model"] == u_e:
-#                 sum_time += current_product["operations"][op]["time"]
-#         str_u_e["times"].append(sum_time)
-#     table_1.append(str_u_e)
-#
-# table_2 = []
-# for e_u in table_1:
-#     str_u_e = {"equipment_num": e_u["equipment_num"], "times": []}
-#     for t_index, t in enumerate(e_u["times"]):
-#         if t_index == 0:
-#             new_val = math.ceil((products_1_count * t) / 60.0)
-#         elif t_index == 1:
-#             new_val = math.ceil((products_2_count * t) / 60.0)
-#         else:
-#             new_val = math.ceil((products_3_count * t) / 60.0)
-#         str_u_e["times"].append(new_val)
-#     table_2.append(str_u_e)
-#
-# table_3 = []
-# for e_u in table_2:
-#     str_u_e = {"equipment_num": e_u["equipment_num"], "equipment_count": 0}
-#     equipment_count_value = sum(e_u["times"]) / (equ_year_h * load_coeff * time_coeff)
-#     str_u_e["equipment_count"] = math.ceil(equipment_count_value)
-#     table_3.append(str_u_e)
-#
-# table_4 = []
-# for e_u in used_employees:
-#     str_u_e = {"employee": e_u, "times": []}
-#     # str_u_e["employee"]["title"] = employees[e_u["profession"]]["title"]
-#     for r in manufactured_products:
-#         product = get_product(r)
-#         sum_value = 0
-#         for op in product["operations"]:
-#             if e_u["profession"] == get_equipment(product["operations"][op]["model"])["profession"] and e_u["rank"] == product["operations"][op]["rank"]:
-#                 sum_value += product["operations"][op]["time"]
-#         str_u_e["times"].append(sum_value)
-#     table_4.append(str_u_e)
-#
-# table_5 = []
-# for e_u in table_4:
-#     str_u_e = {"employee": e_u["employee"], "times": []}
-#     # str_u_e["employee"]["title"] = employees[e_u["employee"]["profession"]]["title_ru"]
-#     for t_index, t in enumerate(e_u["times"]):
-#         if t_index == 0:
-#             new_val = math.ceil((products_1_count * t) / 60.0)
-#         elif t_index == 1:
-#             new_val = math.ceil((products_2_count * t) / 60.0)
-#         else:
-#             new_val = math.ceil((products_3_count * t) / 60.0)
-#         str_u_e["times"].append(new_val)
-#     table_5.append(str_u_e)
-#
-# table_6 = []
-# for e_u in table_5:
-#     str_u_e = {"employee": e_u["employee"], "employee_count": 0}
-#     str_u_e["employee"]["title"] = employees[e_u["employee"]["profession"]]["title_ru"]
-#     employee_count_value = sum(e_u["times"])
-#     str_u_e["count"] = math.ceil(employee_count_value / (emp_year_h * time_coeff))
-#     table_6.append(str_u_e)
+def comparison_numbers(correct_number, student_number, tol=0.05):
+    if type(student_number) == str:
+        student_number = student_number.replace(",", ".")
+    try:
+        st_num = float(student_number)
+        return tol >= abs(st_num - correct_number)
+    except ValueError:
+        return False
+
+
+def comparison_numbers_arrays(correct_array, student_array, tol=0.05):
+    return all(comparison_arrays(correct_array, student_array, tol=0.05))
+
+
+def comparison_arrays(correct_array, student_array, tol=0.05):
+    if len(correct_array) != len(student_array):
+        return [False for x in correct_array]
+    else:
+        ret_arr = []
+        for idx, c_a in enumerate(correct_array):
+            if comparison_numbers(c_a, student_array[idx], tol):
+                ret_arr.append(True)
+            else:
+                ret_arr.append(False)
+        return ret_arr
+
+def check_answer(exp, ans):
+    student_answer = json.loads(ans)["answer"]
+    grade = 0
+    max_grade = 100
+    response = {
+        "used_equipment": [],
+        "used_employees": [],
+        "used_equipment_table_1": [],
+        "used_equipment_table_2": [],
+        "used_equipment_table_3": [],
+
+        "used_employees_table_1": [],
+        "used_employees_table_2": [],
+        "used_employees_table_3": [],
+    }
+
+    for item in map(lambda arg: arg["equipment"], student_answer["used_equipment"]):
+        response["used_equipment"].append(item in equipment_data.keys())
+
+    # сделать проверку профессий с разрядами
+    # for item in unique_list(map(lambda arg: arg["profession"] + "_" + str(arg["rank"]), student_answer["used_employees"])):
+    #     response["used_employees"].append(item in employee_data.keys())
+
+    # оборудование таблица 1 и 2 и 3
+    for item in student_answer["used_equipment"]:
+        if item["equipment"] in equipment_data.keys():
+            response["used_equipment_table_1"].append(comparison_arrays(equipment_data[item["equipment"]]["table_1"], item["table_1"]))
+            response["used_equipment_table_2"].append(comparison_arrays(equipment_data[item["equipment"]]["table_2"], item["table_2"]))
+            response["used_equipment_table_3"].append(comparison_numbers(equipment_data[item["equipment"]]["table_3"], item['table_3']))
+        else:
+            response["used_equipment_table_1"].append([False, False, False])
+            response["used_equipment_table_2"].append([False, False, False])
+            response["used_equipment_table_3"].append(False)
+
+    # рабочие таблица 1
+    for item in student_answer["used_employees"]:
+        item_emp_id = item['profession'] + "_" + str(item["rank"])
+
+        if item_emp_id in employee_data.keys():
+            print item_emp_id
+        else:
+            print "LOLLL"
+
+    # print()
+
+
+    msg = ''
+    result_grade = grade / float(max_grade)
+    if result_grade == 1:
+        return {'input_list': [{'ok': True, 'msg': msg, 'grade_decimal': 1}]}
+    elif result_grade == 0:
+        return {'input_list': [{'ok': False, 'msg': msg, 'grade_decimal': 0}]}
+    else:
+        return {'input_list': [{'ok': 'Partial', 'msg': msg, 'grade_decimal': result_grade}]}
+
+
+st_answer = '{"answer":{"used_equipment":[{"equipment":"equipment_11","table_1":[16,18,32],"table_2":[22,23,24],"table_3":10},{"equipment":"equipment_1","table_1":[5,6,0],"table_2":[25,26,27],"table_3":44},{"equipment":"equipment_2","table_1":[16,48,102],"table_2":[28,29,30],"table_3":45},{"equipment":"equipment_5","table_1":[22,30,0],"table_2":[31,32,33],"table_3":7},{"equipment":"","table_1":[8,11,78],"table_2":[34,35,36],"table_3":14},{"equipment":"equipment_7","table_1":[15,19,0],"table_2":[37,38,39],"table_3":48},{"equipment":"equipment_3","table_1":[0,0,43],"table_2":[40,41,41],"table_3":49}],"used_employees":[{"profession":"grinder","rank":4,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0},{"profession":"turner","rank":2,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0},{"profession":"turner","rank":2,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0},{"profession":"turner","rank":4,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0},{"profession":"milling","rank":3,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0},{"profession":"milling","rank":3,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0},{"profession":"grinder","rank":3,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0},{"profession":"carver","rank":2,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0}]}}'
+
+check_result = check_answer(False, st_answer)
+# print(check_result)

@@ -343,7 +343,6 @@ def comparison_numbers_arrays(correct_array, student_array, tol=0.05):
 
 
 def comparison_arrays(correct_array, student_array, tol=0.05):
-
     if len(correct_array) != len(student_array):
         return [False for x in correct_array]
     else:
