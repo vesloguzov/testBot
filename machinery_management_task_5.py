@@ -218,40 +218,41 @@ products = [{"operations": {"operation_1": {"model": 1, "rank": 2, "time": 5},
                             "operation_4": {"model": 11, "rank": 3, "time": 32},
                             "operation_6": {"model": 6, "rank": 4, "time": 44}}, "product_num": 30, "weight": 248,
              "consumption": 275, "material": 2, "blank_type": 1}
-]
+            ]
 
 employees = {
-    "carver": {
-        "title": "Резчик",
-        "id": "carver",
-        "title_ru": "Rezchik"
+    'carver': {
+        'title': u'Резчик',
+        'id': 'carver',
+        'title_ru': 'Rezchik'
     },
-    "turner": {
-        "title": "Токарь",
-        "id": "turner",
-        "title_ru": "Tokar'"
+    'turner': {
+        'title': u'Токарь',
+        'id': 'turner',
+        'title_ru': 'Tokar'
     },
-    "grinder": {
-        "title": "Шлифовщик",
-        "id": "grinder",
-        "title_ru": "Schlifovschik"
+    'grinder': {
+        'title': u'Шлифовщик',
+        'id': 'grinder',
+        'title_ru': 'Schlifovschik'
     },
-    "milling": {
-        "title": "Фрезеровщик",
-        "id": "milling",
-        "title_ru": "Frezerovschik"
+    'milling': {
+        'title': u'Фрезеровщик',
+        'id': 'milling',
+        'title_ru': 'Frezerovschik'
     },
-    "mortar": {
-        "title": "Долбёжник",
-        "id": "mortar",
-        "title_ru": "Dolbezhnik"
+    'mortar': {
+        'title': u'Долбёжник',
+        'id': 'mortar',
+        'title_ru': 'Dolbezhnik'
     },
-    "broach": {
-        "title": "Протяжчик",
-        "id": "broach",
-        "title_ru": "Protyazhchik"
+    'broach': {
+        'title': u'Протяжчик',
+        'id': 'broach',
+        'title_ru': 'Protyazhchik'
     }
 }
+
 equipments = [
     {'equipment_title': u'Отрезная пила', 'equipment_num': 1, 'profession': 'carver', 'equipment_model': '8642'},
     {'equipment_title': u'Токарно-винторезный станок', 'equipment_num': 2, 'profession': 'turner',
@@ -266,7 +267,8 @@ equipments = [
      'equipment_model': '3A161'},
     {'equipment_title': u'Зубофрезерный станок', 'equipment_num': 7, 'profession': 'milling',
      'equipment_model': '5A312'},
-    {'equipment_title': u'Зубофрезерный станок', 'equipment_num': 8, 'profession': 'milling', 'equipment_model': 'E311'},
+    {'equipment_title': u'Зубофрезерный станок', 'equipment_num': 8, 'profession': 'milling',
+     'equipment_model': 'E311'},
     {'equipment_title': u'Зубодолбежный полуавтомат', 'equipment_num': 9, 'profession': 'mortar',
      'equipment_model': '5140'},
     {'equipment_title': u'Зубозакругляющий станок', 'equipment_num': 10, 'profession': 'milling',
@@ -294,14 +296,6 @@ def get_equipment(num):
         return _e[0]
     else:
         return None
-
-
-# def unique(list1):
-#     unique_list = []
-#     for x in list1:
-#         if x not in unique_list:
-#             unique_list.append(x)
-#     return unique_list
 
 
 # часов в смене
@@ -334,8 +328,13 @@ products_1_count = products_count[0]
 products_2_count = products_count[1]
 products_3_count = products_count[2]
 
-
-variants = [[1, 2, 30], [2, 6, 29], [2, 5, 28], [2, 7, 20], [5, 9, 30], [9, 14, 28], [7, 14, 29], [11, 17, 29], [1, 6, 28], [2, 5, 29], [5, 14, 29], [9, 17, 30], [1, 2, 7], [7, 2, 28], [11, 14, 30], [2, 7, 14], [5, 9, 17], [1, 6, 29], [13, 14, 29], [6, 14, 29], [18, 21, 30], [14, 16, 30], [21, 23, 30], [13, 17, 29], [17, 25, 29], [25, 26, 29], [15, 16, 28], [13, 20, 28], [10, 24, 28], [13, 15, 30], [14, 18, 30], [18, 23, 30], [17, 21, 29], [19, 22, 29], [14, 27, 30], [23, 24, 29], [6, 21, 30], [7, 22, 29], [8, 21, 29], [9, 24, 29], [4, 7, 21], [6, 9, 28], [7, 14, 30], [10, 21, 29], [11, 17, 30], [12, 24, 29], [14, 16, 30], [15, 18, 29], [3, 24, 30], [6, 15, 30]]
+variants = [[1, 2, 30], [2, 6, 29], [2, 5, 28], [2, 7, 20], [5, 9, 30], [9, 14, 28], [7, 14, 29], [11, 17, 29],
+            [1, 6, 28], [2, 5, 29], [5, 14, 29], [9, 17, 30], [1, 2, 7], [7, 2, 28], [11, 14, 30], [2, 7, 14],
+            [5, 9, 17], [1, 6, 29], [13, 14, 29], [6, 14, 29], [18, 21, 30], [14, 16, 30], [21, 23, 30], [13, 17, 29],
+            [17, 25, 29], [25, 26, 29], [15, 16, 28], [13, 20, 28], [10, 24, 28], [13, 15, 30], [14, 18, 30],
+            [18, 23, 30], [17, 21, 29], [19, 22, 29], [14, 27, 30], [23, 24, 29], [6, 21, 30], [7, 22, 29], [8, 21, 29],
+            [9, 24, 29], [4, 7, 21], [6, 9, 28], [7, 14, 30], [10, 21, 29], [11, 17, 30], [12, 24, 29], [14, 16, 30],
+            [15, 18, 29], [3, 24, 30], [6, 15, 30]]
 
 manufactured_products_numbers = variants[0]
 manufactured_products = []
@@ -343,7 +342,8 @@ manufactured_products = []
 for mpn in manufactured_products_numbers:
     current_product = get_product(mpn)
     for op in current_product["operations"]:
-        current_product["operations"][op]["profession"] = get_equipment(current_product["operations"][op]["model"])["profession"]
+        current_product["operations"][op]["profession"] = get_equipment(current_product["operations"][op]["model"])[
+            "profession"]
     manufactured_products.append(current_product)
 
 used_equipment = []
@@ -353,8 +353,10 @@ for mp in manufactured_products:
     for op in mp["operations"]:
         if mp["operations"][op]["model"] not in used_equipment:
             used_equipment.append(mp["operations"][op]["model"])
-        if {"profession": mp["operations"][op]["profession"], "rank": mp["operations"][op]["rank"]} not in used_employees:
-            used_employees.append({"profession": mp["operations"][op]["profession"], "rank": mp["operations"][op]["rank"]})
+        if {"profession": mp["operations"][op]["profession"],
+            "rank": mp["operations"][op]["rank"]} not in used_employees:
+            used_employees.append(
+                {"profession": mp["operations"][op]["profession"], "rank": mp["operations"][op]["rank"]})
 
 used_equipment = sorted(used_equipment)
 used_equipment_len = len(used_equipment)
@@ -395,8 +397,8 @@ for employee in used_employees:
         employee_data[employee_title]["table_1"].append(sum_time)
         year_time = math.ceil((sum_time * products_count[index]) / 60.0)
         employee_data[employee_title]["table_2"].append(year_time)
-    employee_data[employee_title]["table_3"] = math.ceil(sum(employee_data[employee_title]["table_2"])/(emp_year_h * time_coeff))
-
+    employee_data[employee_title]["table_3"] = math.ceil(
+        sum(employee_data[employee_title]["table_2"]) / (emp_year_h * time_coeff))
 
 # for x in equipment_data:
 #     print x, equipment_data[x]
@@ -428,7 +430,7 @@ student_data = {
     }
 }
 
-# print(json.dumps(student_data))
+student_data_json = json.dumps(student_data, ensure_ascii=False).replace("\"", "'")
 
 
 def unique_list(inlist):
@@ -437,6 +439,7 @@ def unique_list(inlist):
         if not val in out_list:
             out_list.append(val)
     return out_list
+
 
 def comparison_numbers(correct_number, student_number, tol=0.05):
     if type(student_number) == str:
@@ -464,54 +467,115 @@ def comparison_arrays(correct_array, student_array, tol=0.05):
                 ret_arr.append(False)
         return ret_arr
 
+
 def check_answer(exp, ans):
     student_answer = json.loads(ans)["answer"]
-    grade = 0
-    max_grade = 100
-    response = {
-        "used_equipment": [],
-        "used_employees": [],
-        "used_equipment_table_1": [],
-        "used_equipment_table_2": [],
-        "used_equipment_table_3": [],
 
-        "used_employees_table_1": [],
-        "used_employees_table_2": [],
-        "used_employees_table_3": [],
+    response = {
+        "used_equipment": [False] * len(equipment_data.keys()),
+        "used_employees": [False] * len(employee_data.keys()),
+
+        "used_equipment_table_1": [[False, False, False]] * len(equipment_data.keys()),
+        "used_equipment_table_2": [[False, False, False]] * len(equipment_data.keys()),
+        "used_equipment_table_3": [False] * len(equipment_data.keys()),
+
+        "used_employees_table_1": [[False, False, False]] * len(employee_data.keys()),
+        "used_employees_table_2": [[False, False, False]] * len(employee_data.keys()),
+        "used_employees_table_3": [False] * len(employee_data.keys()),
     }
 
-    for item in map(lambda arg: arg["equipment"], student_answer["used_equipment"]):
-        response["used_equipment"].append(item in equipment_data.keys())
+    # оборудование таблица 1, 2, 3
+    for item in equipment_data.keys():
+        user_equipments_keys = list(map(lambda x: x["equipment"], student_answer["used_equipment"]))
+        if item in user_equipments_keys:
+            equ_index = user_equipments_keys.index(item)
+            response["used_equipment"][equ_index] = True
+            response["used_equipment_table_1"][equ_index] = comparison_arrays(equipment_data[item]["table_1"],
+                                                                              student_answer["used_equipment"][
+                                                                                  equ_index]["table_1"])
+            response["used_equipment_table_2"][equ_index] = comparison_arrays(equipment_data[item]["table_2"],
+                                                                              student_answer["used_equipment"][
+                                                                                  equ_index]["table_2"])
+            response["used_equipment_table_3"][equ_index] = comparison_numbers(equipment_data[item]["table_3"],
+                                                                               student_answer["used_equipment"][
+                                                                                   equ_index]["table_3"])
 
-    # сделать проверку профессий с разрядами
-    # for item in unique_list(map(lambda arg: arg["profession"] + "_" + str(arg["rank"]), student_answer["used_employees"])):
-    #     response["used_employees"].append(item in employee_data.keys())
+    # рабочие таблица 1, 2, 3
+    for item in employee_data.keys():
+        user_professions_keys = list(map(lambda x: x["profession_rank"], student_answer["used_employees"]))
+        if item in user_professions_keys:
+            emp_index = user_professions_keys.index(item)
+            response["used_employees"][emp_index] = True
+            response["used_employees_table_1"][emp_index] = comparison_arrays(employee_data[item]["table_1"],
+                                                                              student_answer["used_employees"][
+                                                                                  emp_index]["table_1"])
+            response["used_employees_table_2"][emp_index] = comparison_arrays(employee_data[item]["table_2"],
+                                                                              student_answer["used_employees"][
+                                                                                  emp_index]["table_2"])
+            response["used_employees_table_3"][emp_index] = comparison_numbers(employee_data[item]["table_3"],
+                                                                               student_answer["used_employees"][
+                                                                                   emp_index]["table_3"])
 
-    # оборудование таблица 1 и 2 и 3
-    for item in student_answer["used_equipment"]:
-        if item["equipment"] in equipment_data.keys():
-            response["used_equipment_table_1"].append(comparison_arrays(equipment_data[item["equipment"]]["table_1"], item["table_1"]))
-            response["used_equipment_table_2"].append(comparison_arrays(equipment_data[item["equipment"]]["table_2"], item["table_2"]))
-            response["used_equipment_table_3"].append(comparison_numbers(equipment_data[item["equipment"]]["table_3"], item['table_3']))
-        else:
-            response["used_equipment_table_1"].append([False, False, False])
-            response["used_equipment_table_2"].append([False, False, False])
-            response["used_equipment_table_3"].append(False)
+    msg = json.dumps(response)
 
-    # рабочие таблица 1
-    for item in student_answer["used_employees"]:
-        item_emp_id = item['profession'] + "_" + str(item["rank"])
+    # ОЦЕНИВАНИЕ:
 
-        if item_emp_id in employee_data.keys():
-            print item_emp_id
-        else:
-            print "LOLLL"
+    # 3 детали
+    # used_equipment_len используемого оборудования
+    # used_employees_len используемых работников
 
-    # print()
+    # всего 100 баллов
+    # за первые две таблицы 20 баллов за каждую
+    # остальные 6 таблиц по 10 баллов
+    # каждая строка оценивается целиком(!)
 
+    grade = 0
+    max_grade = 100
+    tables_main_max_grade = 20.0
+    tables_additional_max_grade = 10.0
 
-    msg = ''
+    for x in response["used_equipment"]:
+        if x:
+            grade += tables_main_max_grade / used_equipment_len
+
+    for x in response["used_employees"]:
+        if x:
+            grade += tables_main_max_grade / used_employees_len
+
+    # Оценки таблиц оборудования
+    for x in response["used_equipment_table_1"]:
+        if all(x):
+            grade += tables_additional_max_grade / used_equipment_len
+
+    for x in response["used_equipment_table_2"]:
+        if all(x):
+            grade += tables_additional_max_grade / used_equipment_len
+
+    for x in response["used_equipment_table_3"]:
+        if x:
+            grade += tables_additional_max_grade / used_equipment_len
+
+    # Оценки таблиц рабочих
+    for x in response["used_employees_table_1"]:
+        if all(x):
+            grade += tables_additional_max_grade / used_employees_len
+
+    for x in response["used_employees_table_2"]:
+        if all(x):
+            grade += tables_additional_max_grade / used_employees_len
+
+    for x in response["used_employees_table_3"]:
+        if x:
+            grade += tables_additional_max_grade / used_employees_len
+
+    grade = round(grade, 2)  # потестировать с округлениями
+
+    # print json.dumps(response)
+
     result_grade = grade / float(max_grade)
+
+    print result_grade
+
     if result_grade == 1:
         return {'input_list': [{'ok': True, 'msg': msg, 'grade_decimal': 1}]}
     elif result_grade == 0:
@@ -520,7 +584,7 @@ def check_answer(exp, ans):
         return {'input_list': [{'ok': 'Partial', 'msg': msg, 'grade_decimal': result_grade}]}
 
 
-st_answer = '{"answer":{"used_equipment":[{"equipment":"equipment_11","table_1":[16,18,32],"table_2":[22,23,24],"table_3":10},{"equipment":"equipment_1","table_1":[5,6,0],"table_2":[25,26,27],"table_3":44},{"equipment":"equipment_2","table_1":[16,48,102],"table_2":[28,29,30],"table_3":45},{"equipment":"equipment_5","table_1":[22,30,0],"table_2":[31,32,33],"table_3":7},{"equipment":"","table_1":[8,11,78],"table_2":[34,35,36],"table_3":14},{"equipment":"equipment_7","table_1":[15,19,0],"table_2":[37,38,39],"table_3":48},{"equipment":"equipment_3","table_1":[0,0,43],"table_2":[40,41,41],"table_3":49}],"used_employees":[{"profession":"grinder","rank":4,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0},{"profession":"turner","rank":2,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0},{"profession":"turner","rank":2,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0},{"profession":"turner","rank":4,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0},{"profession":"milling","rank":3,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0},{"profession":"milling","rank":3,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0},{"profession":"grinder","rank":3,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0},{"profession":"carver","rank":2,"table_1":[0,0,0],"table_2":[0,0,0],"table_3":0}]}}'
-
+st_answer = '{"answer":{"used_equipment":[{"equipment":"equipment_1","table_1":[5,6,0],"table_2":[3334,2000,0],"table_3":2},{"equipment":"equipment_3","table_1":[0,0,43],"table_2":[0,0,21500],"table_3":46},{"equipment":"equipment_2","table_1":[16,48,102],"table_2":[10667,16000,51000],"table_3":22},{"equipment":"equipment_7","table_1":[15,19,0],"table_2":[10000,6334,0],"table_3":5},{"equipment":"equipment_5","table_1":[22,30,0],"table_2":[14667,10000,0],"table_3":7},{"equipment":"equipment_11","table_1":[16,18,32],"table_2":[10667,6000,16000],"table_3":10},{"equipment":"equipment_12","table_1":[8,11,78],"table_2":[5334,3667,39000],"table_3":14}],"used_employees":[{"profession_rank":"turner_3","table_1":[16,48,0],"table_2":[10667,16000,12],"table_3":14},{"profession_rank":"turner_2","table_1":[0,0,6],"table_2":[0,0,3000],"table_3":2},{"profession_rank":"grinder_3","table_1":[8,11,34],"table_2":[5334,3667,17000],"table_3":13},{"profession_rank":"grinder_4","table_1":[22,30,44],"table_2":[14667,10000,22000],"table_3":23},{"profession_rank":"milling_3","table_1":[16,18,32],"table_2":[10667,6000,16000],"table_3":17},{"profession_rank":"milling_4","table_1":[15,19,0],"table_2":[10000,6334,0],"table_3":9},{"profession_rank":"turner_4","table_1":[0,0,139],"table_2":[0,0,69500],"table_3":35},{"profession_rank":"carver_2","table_1":[5,6,0],"table_2":[3334,2000,0],"table_3":3}]}}'
+# st_answer = '{"answer":{"used_equipment":[{"equipment":"equipment_1","table_1":[5,6,0],"table_2":[3334,2000,0],"table_3":2},{"equipment":"equipment_3","table_1":[0,0,43],"table_2":[0,0,21500],"table_3":6},{"equipment":"equipment_2","table_1":[16,48,102],"table_2":[10667,16000,51000],"table_3":22},{"equipment":"equipment_7","table_1":[15,19,0],"table_2":[10000,6334,0],"table_3":5},{"equipment":"equipment_5","table_1":[22,30,0],"table_2":[14667,10000,0],"table_3":7},{"equipment":"equipment_11","table_1":[16,18,32],"table_2":[10667,6000,16000],"table_3":10},{"equipment":"equipment_6","table_1":[8,11,78],"table_2":[5334,3667,39000],"table_3":14}],"used_employees":[{"profession_rank":"turner_3","table_1":[16,48,0],"table_2":[10667,16000,0],"table_3":14},{"profession_rank":"turner_2","table_1":[0,0,6],"table_2":[0,0,3000],"table_3":2},{"profession_rank":"grinder_3","table_1":[8,11,34],"table_2":[5334,3667,17000],"table_3":13},{"profession_rank":"grinder_4","table_1":[22,30,44],"table_2":[14667,10000,22000],"table_3":23},{"profession_rank":"milling_3","table_1":[16,18,32],"table_2":[10667,6000,16000],"table_3":17},{"profession_rank":"milling_4","table_1":[15,19,0],"table_2":[10000,6334,0],"table_3":9},{"profession_rank":"turner_4","table_1":[0,0,139],"table_2":[0,0,69500],"table_3":35},{"profession_rank":"carver_2","table_1":[5,6,0],"table_2":[3334,2000,0],"table_3":3}]}}'
 check_result = check_answer(False, st_answer)
-# print(check_result)
+print(check_result)
