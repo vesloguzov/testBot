@@ -94,6 +94,7 @@ variants = [
     }
 ]
 
+#random.choice(variants)
 user_data = variants[1]
 
 n = user_data["n"]
@@ -159,58 +160,88 @@ cells_1_len = len(cells_1_correct[0])
 cells_2_len = len(cells_2_correct[0])
 cells_3_len = len(cells_3_correct[0])
 
-# print(cells_1_correct)
-# print(cells_2_correct)
-# print(cells_3_correct)
+durations = [cells_1_len * n, cells_2_len * p, cells_3_len * p]
 
-# print(cells_1_len, 800/cells_1_len)
-# print(cells_2_len, 800/cells_2_len)
-# print(cells_3_len, 800/cells_3_len)
+student_data = {
+    "n": n,
+    "p": p,
+    "t1": t1,
+    "t2": t2,
+    "t3": t3,
+    "t4": t4,
+    "t5": t5,
+    "groups_len": groups_len,
+    "tables_len": [cells_1_len, cells_2_len, cells_3_len]
+}
 
-# student_data = {
-#     "n": n,
-#     "p": p,
-#     "t1": t1,
-#     "t2": t2,
-#     "t3": t3,
-#     "t4": t4,
-#     "t5": t5,
-#     "tables_len": [cells_1_len, cells_2_len, cells_3_len]
-# }
-#
-# student_data_json = json.dumps(student_data, ensure_ascii=False).replace("\"", "'")
-# # print(student_data_json)
-#
-# def check_answer(exp, ans):
-#     student_answer = json.loads(ans)["answer"]
-#     max_grade = 3
-#     student_correctness = {
-#         'table_1': False,
-#         'table_2': False,
-#         'table_3': False
-#     }
-#     grade = 0
-#
-#     if cells_1_correct.tolist() == student_answer['table_1']:
-#         grade += 1
-#         student_correctness['table_1'] = True
-#     if cells_2_correct.tolist() == student_answer['table_2']:
-#         grade += 1
-#         student_correctness['table_2'] = True
-#     if cells_3_correct.tolist() == student_answer['table_3']:
-#         grade += 1
-#         student_correctness['table_3'] = True
-#
-#     result_grade = grade / max_grade
-#     msg = json.dumps(student_correctness)
-#     if result_grade == 1:
-#         return {'input_list': [{'ok': True, 'msg': msg, 'grade_decimal': 1}]}
-#     elif result_grade == 0:
-#         return {'input_list': [{'ok': False, 'msg': msg, 'grade_decimal': 0}]}
-#     else:
-#         return {'input_list': [{'ok': 'Partial', 'msg': msg, 'grade_decimal': result_grade}]}
-#
-#
-# student_str = '{"answer":{"table_1":[[1,0,0,0,0,0,0,0],[0,1,1,0,0,0,0,0],[0,0,0,1,0,0,0,0],[0,0,0,0,1,1,1,0],[0,0,0,0,0,0,0,1]],"table_2":[[1,0,0,2,0,0,3,0,0,0,0,0,0,0],[0,1,1,0,2,2,0,3,3,0,0,0,0,0],[0,0,0,1,0,0,2,0,0,3,0,0,0,0],[0,0,0,0,1,1,1,2,2,2,3,3,3,0],[0,0,0,0,0,0,0,1,0,0,2,0,0,3]],"table_3":[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]}}'
+student_data_json = json.dumps(student_data, ensure_ascii=False).replace("\"", "'")
 
-# print(check_answer(1, student_str))
+def comparison_numbers(correct_number, student_number, tol=0.05):
+    if type(student_number) == str:
+        student_number = student_number.replace(",", ".")
+    try:
+        st_num = float(student_number)
+        return tol >= abs(st_num - correct_number)
+    except ValueError:
+        return False
+
+
+def comparison_numbers_arrays(correct_array, student_array, tol=0.05):
+    return all(comparison_arrays(correct_array, student_array, tol=0.05))
+
+
+def comparison_arrays(correct_array, student_array, tol=0.05):
+    if len(correct_array) != len(student_array):
+        return [False for x in correct_array]
+    else:
+        ret_arr = []
+        for idx, c_a in enumerate(correct_array):
+            if comparison_numbers(c_a, student_array[idx], tol):
+                ret_arr.append(True)
+            else:
+                ret_arr.append(False)
+        return ret_arr
+
+
+
+
+
+def check_answer(exp, ans):
+    student_answer = json.loads(ans)["answer"]
+    max_grade = 100.0
+    student_correctness = {
+        'table_1': False,
+        'table_2': False,
+        'table_3': False,
+        'durations': [False, False, False]
+    }
+    grade = 0
+
+    if cells_1_correct.tolist() == student_answer['table_1']:
+        grade += 25
+        student_correctness['table_1'] = True
+    if cells_2_correct.tolist() == student_answer['table_2']:
+        grade += 30
+        student_correctness['table_2'] = True
+    if cells_3_correct.tolist() == student_answer['table_3']:
+        grade += 30
+        student_correctness['table_3'] = True
+
+    student_correctness['durations'] = comparison_arrays(durations, student_answer["durations"])
+
+    for x in student_correctness['durations']:
+        if x:
+            grade += 5
+
+    result_grade = grade / max_grade
+    msg = json.dumps(student_correctness)
+    if result_grade == 1:
+        return {'input_list': [{'ok': True, 'msg': msg, 'grade_decimal': 1}]}
+    elif result_grade == 0:
+        return {'input_list': [{'ok': False, 'msg': msg, 'grade_decimal': 0}]}
+    else:
+        return {'input_list': [{'ok': 'Partial', 'msg': msg, 'grade_decimal': result_grade}]}
+
+student_str = '{"answer":{"table_1":[[1,1,1,1,1,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,1,1,1,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,1,1,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]],"table_2":[[1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,1,1,1,0,0,2,2,2,0,0,3,3,3,0,0,4,4,4,0,0,5,5,5,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,1,1,1,0,2,2,2,2,0,3,3,3,3,0,4,4,4,4,0,5,5,5,5,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,2,2,0,0,0,3,3,0,0,0,4,4,0,0,0,5,5,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,2,0,0,0,0,3,0,0,0,0,4,0,0,0,0,5]],"table_3":[[1,1,1,1,1,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,2,2,2,3,3,3,4,4,4,5,5,5,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,2,2,3,3,4,4,5,5,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,4,5]],"durations":["300","140","156"]}}'
+
+print(check_answer(1, student_str))
