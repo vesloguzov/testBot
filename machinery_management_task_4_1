@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import json
 
 subdivision_functions_count = 20
@@ -55,8 +57,9 @@ in_every_row = [c, r, p, i]
 
 def check_answer(exp, ans):
     student_answer = json.loads(ans)["answer"]
-    max_grade_1 = 50
-    max_grade_2 = 50
+    print student_answer
+    max_grade_1 = 50.0
+    max_grade_2 = 50.0
 
     min_percent = 0.5
 
@@ -117,11 +120,11 @@ def check_answer(exp, ans):
                 above["second_half"][letter["letter"]] += second_half.count(letter["letter"])
             pass
 
-    c_percent = round(above["first_half"]["c"] / (subdivision_functions_count / 2), 1)  # (above["first_half"]["c"] + above["second_half"]["c"])
-    r_percent = round(above["first_half"]["r"] / (subdivision_functions_count / 2), 1)  # (above["first_half"]["r"] + above["second_half"]["r"])
+    c_percent = round(above["first_half"]["c"] / (subdivision_functions_count / 2.0), 2)  # (above["first_half"]["c"] + above["second_half"]["c"])
+    r_percent = round(above["first_half"]["r"] / (subdivision_functions_count / 2.0), 2)  # (above["first_half"]["r"] + above["second_half"]["r"])
 
-    p_percent = round(below["second_half"]["p"] / (subdivision_functions_count / 2), 1)  # (below["first_half"]["p"] + below["second_half"]["p"])
-    i_percent = round(below["second_half"]["i"] / (subdivision_functions_count / 2), 1)  # (below["first_half"]["i"] + below["second_half"]["i"])
+    p_percent = round(below["second_half"]["p"] / (subdivision_functions_count / 2.0), 2)  # (below["first_half"]["p"] + below["second_half"]["p"])
+    i_percent = round(below["second_half"]["i"] / (subdivision_functions_count / 2.0), 2)  # (below["first_half"]["i"] + below["second_half"]["i"])
 
     c_grade = 0 if min_percent > c_percent else c_percent * (max_grade_2/len(in_every_row))
     r_grade = 0 if min_percent > r_percent else r_percent * (max_grade_2/len(in_every_row))
@@ -138,6 +141,7 @@ def check_answer(exp, ans):
     response["criteria_2"]["i"] = str(i_percent * 100) + "% букв И попало куда надо. За это набрали " + str(i_grade) + " из " + str((max_grade_2/len(in_every_row)))
 
     result_grade = (grade_1 + grade_2)/(max_grade_1 + max_grade_2)
+    result_grade = round(result_grade, 4)
 
     print("оценка 1: ", grade_1, " из ", max_grade_1)
     print("оценка 2: ", grade_2, " из ", max_grade_2)
@@ -158,6 +162,6 @@ def check_answer(exp, ans):
         return {'input_list': [{'ok': 'Partial', 'msg': json.dumps(response), 'grade_decimal': result_grade}]}
 
 answer_str = '''
-{"answer":[["c","r","","","","","","","","p","i",""],["c","r","","","","","","","","","i","p"],["","c","r","","","","","","","","i","p"],["","","","","","","","","c","r","i","p"],["","u","","r","","c","","","","","i","p"],["","","","","","","c","r","p","i","",""],["","s","","c","","r","","","","","i","p"],["","s","","r","","c","","","","p","","i"],["","","r","c","","","","","","","i","p"],["","","","r","","c","","","","","p","i"],["","","r","c","","","","","","","i","p"],["c","","r","","","u","u","u","u","p","i",""],["","c","r","","","u","s","s","u","p","i",""],["","c","r","","u","u","s","s","u","i","p",""],["","c","r","","","u","u","u","u","p","i",""],["","c","r","p","","","","","","","i",""],["","c","r","","","","","","","p","i",""],["","c","r","","","","","","","p","i",""],["","c","r","","","p","","","","","i",""],["","c","r","","","p","","","","","","i"]]}
+{"answer":[["c","","","","","","","","","","",""],["","","","","","","","","","","",""],["","","","","","","","","","","",""],["","c","","","","u","","","i","","","r"],["","","","","","","","s","","","",""],["","","","","","","","","","r","",""],["","","","","","","","","","","",""],["","r","","","","","","","","","",""],["","","i","","","","","","","p","",""],["","","","","","","","","","","","p"],["","","","","","","","","","","p",""],["","","","","","","","","","","i",""],["","","","","","","","","p","","",""],["","","","","","","p","","","","",""],["","","","","","","","","p","","",""],["","","","","","","","","","","p",""],["","","","","","","","p","","","i",""],["","","","","","","","","","p","",""],["","","r","","","","","","","","p",""],["","r","","","c","","","p","","i","",""]]}
 '''
 check_answer(False, answer_str)
