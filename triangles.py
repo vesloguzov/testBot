@@ -74,7 +74,7 @@ def check_triangles(expect, answer_given):
         response["comment"] = "Измерения треугольника проведены не верно! Проверьте ход Ваших действий."
         grade = 0
 
-    if abs((s_2 - s_1)) > s_2 * 0.1 or abs((s_2 - s_3)) > s_2 * 0.1:
+    if abs((s_2 - s_1)) > s_2 * 0.25 or abs((s_2 - s_3)) > s_2 * 0.25:
         response = {"S_1": False, "S_2": False, "S_3": False, "S_avg": False, "S_err": False, "comment": ""}
         response["comment"] = "Площади треугольников посчитаны не верно! Проверьте ход Ваших действий."
         grade = 0
