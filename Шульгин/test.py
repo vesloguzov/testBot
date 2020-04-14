@@ -1,115 +1,80 @@
 import pandas as pd
-from Шульгин.helpers.helpers import get_profile
+from openpyxl import load_workbook
+from openpyxl import Workbook
+from openpyxl.styles import Font
+from Шульгин.helpers.helpers import get_profile, get_leader_id, get_leader_id_progress
 
-df_progress = pd.read_excel('helpers/09.04 ИС УРФУ (1).xlsx')
-df_progress['Leader ID'] = df_progress['Leader ID'].astype(str)
+wb2 = load_workbook('итоговая выгрузка.v3 (2).xlsx')
+sheets = wb2.sheetnames
+ws = wb2[sheets[0]]
 
-examus = ["Ponkratova_E@chtz.ru",
-"standrey74@gmail.com",
-"i.matveeva_@mail.ru",
-"Paklinala@yandex.ru",
-"winxksuna@mail.ru",
-"akintsevaav@susu.ru",
-"svdanilova@lenta.ru",
-"i.matveeva_@mail.ru",
-"voytovichga@mail.ru",
-"ntb@chtz.ru",
-"orlov_ud@bk.ru",
-"winxksuna@mail.ru",
-"IrinaVishnevskaya1209@mail.ru",
-"akisseleva94@gmail.com",
-"taneeya@mail.ru",
-"513557@mail.ru",
-"punda59@mail.ru",
-"unatali@bk.ru",
-"varlamova_zn@mail.ru",
-"12345_686@mail.ru",
-"natasha_m92@mail.ru",
-"perevozchikovya@mail.ru",
-"kuzan41@mail.ru",
-"lazareva17@list.ru",
-"glimuko@rambler.ru",
-"verpetrova@yandex.ru",
-"fial2@yandex.ru",
-"alefkov@yandex.ru",
-"missis.dasha1997@mail.ru",
-"csukbcp2011@gmail.com",
-"elnik01@mail.ru",
-"eln.kostikova@gmail.com",
-"akhmadullina.yul@yandex.ru",
-"chernNP@mail.ru",
-"winxksuna@mail.ru",
-"natach_1966@mail.ru",
-"Schulgina@yandex.ru",
-"kartasheval@susu.ru",
-"varlamova_zn@mail.ru",
-"griga_ira@list.ru",
-"dvinin1981@mail.ru",
-"svetlana_minina@mail.ru",
-"kartasheval@susu.ru",
-"susmarin@mail.ru",
-"anatali06-78@mail.ru",
-"mem229@mail.ru",
-"standartelm@mail.ru",
-"nina_777s@mail.ru",
-"ignatieva_e@chtz.ru",
-"sasha-tingaev@rambler.ru",
-"fleyteng_m@chtz.ru",
-"lora-proyaeva@mail.ru",
-"gerasimovam@susu.ru",
-"bearandfly@gmail.com",
-"nadezhda-sh86@ya.ru",
-"_degi_@mail.ru",
-"ysav19@mail.ru",
-"vinantov@mail.ru",
-"dmzah@csu.ru",
-"lulunchik1@mail.ru",
-"serj.chernyshov@mail.ru",
-"baskakova_t@cntz.ru",
-"ilona-law@ya.ru",
-"o.temnikova@rambler.ru",
-"karasev.alexei2012@yandex.ru",
-"sunny_song@mail.ru",
-"natali_v70@mail.ru",
-"sega.kozh@mail.ru",
-"uliay030183@yandex.ru",
-"a.fedchenkov@yandex.com",
-"surinaaa@susu.ru",
-"demianenkots@susu.ru",
-"SVLos777@mail.ru",
-"vlad00767@mail.ru",
-"econ3812@gmail.com",
-"rolly55581@gmail.com",
-"valeriya131@yandex.ru",
-"vnb@bk.ru",
-"veritas45@mail.ru",
-"suharev_a@chtz.ru",
-"alena5757@mail.ru",
-"gollaiav@susu.ru",
-"kardvv@mail.ru",
-"pav-2010@mail.ru",
-"u.malygina@bk.ru",
-"larissavik@inbox.ru",
-"tugovaekaterina1997@gmail.com",
-"kovalchuklidia@yandex.ru",
-"ps.noc.m@gmail.com",
-"surinva@susu.ru",
-"stashkevich_dary@mail.ru",
-"9080818113@mail.ru",
-"zzhanbek@yandex.ru",
-"otimofeeva83@mail.ru",
-"v.sedakova@ugmk.com",
-"al.schtefan2011@yandex.ru",
-"kurgans2@mail.ru",
-"isupovjurij@rambler.ru",
-"andreeva_sv81@mail.ru"]
+questions = [
+    "Чему новому, как вам кажется, вы научились ?",
+    "Выберите из предложенного списка то, чему вы могли научиться / научились в рамках программы:",
+    "Поделитесь вашими комментариями или пожеланиями по поводу того, с чем вы познакомились?",
+    "Перечислите основные этапы деятельности, в которую вы были вовлечены и благодаря которой научились чему-то"
+]
 
-df = pd.read_excel('завершившие.xlsx')
+questions_2 = [
+    "Выявлять охраноспособные результаты интеллектуальной деятельности.",
+    "Принимать меры по правовой охране результатов интеллектуальной деятельности.",
+    "Управлять правами на результаты интеллектуальной деятельности.",
+    "Принимать меры по защите интеллектуальных прав в случае их нарушения."
+]
 
-lol = []
-for index, row in df.iterrows():
-    lol.append(row['email'].lower())
+res = []
 
-for x in examus:
-    if x.lower() not in lol:
-        print(x)
+def is_true(val):
+    if val.lower() in ["true"]:
+        return True
+    elif val.lower() in ["false"]:
+        return False
+    else:
+        print("OOOOO", val)
+
+for index in list(range(2, 130)):
+    username = ws['R'+str(index)].value
+    q_1 = ws['H'+str(index)].value
+    if q_1 is not None:
+        res.append([username, questions[0], q_1])
+    q_3 = ws['M'+str(index)].value
+    if q_3 is not None:
+        res.append([username, questions[2], q_3])
+    q_4 = ws['N'+str(index)].value
+    if q_4 is not None:
+        res.append([username, questions[3], q_4])
+    q_2 = ""
+    if is_true(ws['I'+str(index)].value):
+        q_2 += questions_2[0]+","
+    if is_true(ws['J'+str(index)].value):
+        q_2 += questions_2[1]+","
+    if is_true(ws['K'+str(index)].value):
+        q_2 += questions_2[2]+","
+    if is_true(ws['L'+str(index)].value):
+        q_2 += questions_2[3]
+
+    if len(q_2) > 0:
+        if q_2[-1] == ",":
+            q_2 = q_2[:-1]
+    # print(q_2)
+    if len(q_2) > 0:
+        res.append([username, questions[1], q_2])
+    #
+    # print(ws['H'+str(index)].value)
+    # print(ws['M' + str(index)].value)
+    # print(ws['N' + str(index)].value)
+
+
+print("______________________________")
+print(res)
+print(len(res))
+
+wb_new = Workbook()
+ws_new = wb_new.active
+
+for idx, l in enumerate(res):
+    ws_new['A'+str(idx+1)] = l[0]
+    ws_new['B' + str(idx + 1)] = l[1]
+    ws_new['C' + str(idx + 1)] = l[2]
+
+wb_new.save("1 запуск анкеты.xlsx")

@@ -7,10 +7,10 @@ from Шульгин.helpers.helpers import get_leader_id
 df = pd.read_excel('reflection_src.xlsx', sheet_name='Лист1')
 
 questions = [
-    "Перечислите основные этапы деятельности, в которую вы были вовлечены и благодаря которой научились чему-то",
-    "Поделитесь вашими комментариями или пожеланиями по поводу того, с чем вы познакомились?",
+    "Чему новому, как вам кажется, вы научились ?",
     "Выберите из предложенного списка то, чему вы могли научиться / научились в рамках программы:",
-    "Чему новому, как вам кажется, вы научились ?"
+    "Поделитесь вашими комментариями или пожеланиями по поводу того, с чем вы познакомились?",
+    "Перечислите основные этапы деятельности, в которую вы были вовлечены и благодаря которой научились чему-то"
 ]
 
 new_answers = {}
@@ -34,32 +34,57 @@ for t in new_answers.keys():
     if len(get_leader_id(t)) > 0:
         final_list[t] = new_answers[t]
 
+print(len(final_list.keys()))
+print(final_list)
+
 wb = Workbook()
 ws = wb.active
-ws['A1'] = 'Leader ID'
-ws['A1'].font = Font(bold=True)
-ws['B1'] = 'Дата прохождения рефлексии'
-ws['B1'].font = Font(bold=True)
-ws['C1'] = questions[0]
-ws['C1'].font = Font(bold=True)
-ws['D1'] = questions[1]
-ws['D1'].font = Font(bold=True)
-ws['E1'] = questions[2]
-ws['E1'].font = Font(bold=True)
-ws['F1'] = questions[3]
-ws['F1'].font = Font(bold=True)
 
-for index, l in enumerate(final_list.keys()):
-    ws['A'+str(index+2)] = get_leader_id(l)
-    ws['B' + str(index + 2)] = ""
-    ws['C'+str(index+2)] = new_answers[l][questions[0]]
-    ws['D'+str(index+2)] = new_answers[l][questions[1]]
-    ws['E'+str(index+2)] = new_answers[l][questions[2]]
-    ws['F'+str(index+2)] = new_answers[l][questions[3]]
+from openpyxl import load_workbook
+wb2 = load_workbook('Итог для ЦС.xlsx')
+sheets2 = wb2.sheetnames
+ws2 = wb2[sheets2[0]]
+
+ws2['F1'] = 'Leader ID'
+ws2['F1'].font = Font(bold=True)
+ws2['G1'] = 'Дата прохождения рефлексии'
+ws2['G1'].font = Font(bold=True)
+ws2['H1'] = questions[0]
+ws2['H1'].font = Font(bold=True)
+ws2['I1'] = questions[1]
+ws2['I1'].font = Font(bold=True)
+ws2['J1'] = questions[2]
+ws2['J1'].font = Font(bold=True)
+ws2['K1'] = questions[3]
+ws2['K1'].font = Font(bold=True)
+
+# 0ll = 0
+for index in list(range(2, 618)):
+    if ws2['E'+str(index)].value in final_list.keys():
+        # print(index)
+        ws2['F' + str(index)] = get_leader_id(ws2['E'+str(index)].value)
+        ws2['G' + str(index + 2)] = ""
+        ws2['H' + str(index)] = new_answers[ws2['E'+str(index)].value][questions[0]]
+        ws2['I' + str(index)] = new_answers[ws2['E'+str(index)].value][questions[1]]
+        ws2['J' + str(index)] = new_answers[ws2['E'+str(index)].value][questions[2]]
+        ws2['K' + str(index)] = new_answers[ws2['E'+str(index)].value][questions[3]]
+        # print(ws2['E'+str(index)].value)
+        # ll+=1
+# print(ll)
+
+
+#
+# for index, l in enumerate(final_list.keys()):
+#     ws['A'+str(index+2)] = get_leader_id(l)
+#     ws['B' + str(index + 2)] = ""
+#     ws['C'+str(index+2)] = new_answers[l][questions[0]]
+#     ws['D'+str(index+2)] = new_answers[l][questions[1]]
+#     ws['E'+str(index+2)] = new_answers[l][questions[2]]
+#     ws['F'+str(index+2)] = new_answers[l][questions[3]]
     # ws['G'+str(index+2)] = l
 
 
-wb.save("reflection_2035.xlsx")
+wb2.save("reflection_2035.xlsx")
 
 # -------------------------------------------------------
 
