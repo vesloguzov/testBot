@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import json
 import math
+import random
 
 
 def first_fit(list_items, max_size=100):
@@ -118,40 +119,8 @@ variants = [
         "operations": [
             {
                 "id": "operation_1",
-                "title": u"Токарная 1",
-                "duration": 1.6,
-            },
-            {
-                "id": "operation_2",
-                "title": u"Токарная 2",
-                "duration": 1.7,
-            },
-            {
-                "id": "operation_3",
-                "title": u"Сверлильная",
-                "duration": 1.3,
-            },
-            {
-                "id": "operation_4",
-                "title": u"Фрезерная",
-                "duration": 3.2,
-            },
-            {
-                "id": "operation_5",
-                "title": u"Шлифовальная",
-                "duration": 2.7,
-            }
-        ],
-        "N_out": 16799.98966,
-        "safety_stock": 5,
-        "defect_percent": 16,
-    },
-    {
-        "operations": [
-            {
-                "id": "operation_1",
                 "title": u"Токарная",
-                "duration": 1.9,
+                "duration": 2.1,
             },
             {
                 "id": "operation_2",
@@ -161,21 +130,102 @@ variants = [
             {
                 "id": "operation_3",
                 "title": u"Фрезерная",
-                "duration": 2.1,
+                "duration": 2.3,
             },
             {
                 "id": "operation_4",
                 "title": u"Шлифовальная",
-                "duration": 1.3,
+                "duration": 0.9,
             }
         ],
-        "N_out": 12600,
+        "N_out": 11600,
         "safety_stock": 5,
-        "defect_percent": 16,
+        "defect_percent": 8,
     },
+    {
+        "operations": [
+            {
+                "id": "operation_1",
+                "title": u"Токарная",
+                "duration": 1.4,
+            },
+            {
+                "id": "operation_2",
+                "title": u"Сверлильная",
+                "duration": 0.9,
+            },
+            {
+                "id": "operation_3",
+                "title": u"Фрезерная",
+                "duration": 3.1,
+            },
+            {
+                "id": "operation_4",
+                "title": u"Шлифовальная",
+                "duration": 2.6,
+            }
+        ],
+        "N_out": 9100,
+        "safety_stock": 5,
+        "defect_percent": 10,
+    },
+    {
+        "operations": [
+            {
+                "id": "operation_1",
+                "title": u"Токарная",
+                "duration": 1.3,
+            },
+            {
+                "id": "operation_2",
+                "title": u"Сверлильная",
+                "duration": 2.1,
+            },
+            {
+                "id": "operation_3",
+                "title": u"Фрезерная",
+                "duration": 1.9,
+            },
+            {
+                "id": "operation_4",
+                "title": u"Шлифовальная",
+                "duration": 1.1,
+            }
+        ],
+        "N_out": 11000,
+        "safety_stock": 5,
+        "defect_percent": 13,
+    },
+    {
+        "operations": [
+            {
+                "id": "operation_1",
+                "title": u"Токарная",
+                "duration": 4.2,
+            },
+            {
+                "id": "operation_2",
+                "title": u"Сверлильная",
+                "duration": 3.8,
+            },
+            {
+                "id": "operation_3",
+                "title": u"Фрезерная",
+                "duration": 2.6,
+            },
+            {
+                "id": "operation_4",
+                "title": u"Шлифовальная",
+                "duration": 2.2,
+            }
+        ],
+        "N_out": 5800,
+        "safety_stock": 5,
+        "defect_percent": 8,
+    }
 ]
 
-variant = variants[1]
+variant = random.choice(variants)
 operations = variant["operations"]
 
 month = 21  # рабочих дней
@@ -185,11 +235,10 @@ half_shift = 0.5  # пол смены
 defect_percent = variant["defect_percent"]
 N_out = variant["N_out"]  # 16799.98966 # количество выпуск. деталей (N выпуска)
 safety_stock = variant["safety_stock"]
-# N_out = 23530
+N_out_template = variant["N_out"]
+N_out = math.ceil(N_out/(1-defect_percent/100.0))
 
-tact = (month * work_day * work_shift * 60) / float(N_out)  # такт мин/шт
-
-#  N_in = N_out/(1-defect_percent*100)  # количество запуск. деталей (N запуска) это еще разобраться как считать
+tact = round((month * work_day * work_shift * 60) / float(N_out), 1)  # такт мин/шт
 
 max_time = work_shift * half_shift * 60  # узнать как назвать переменную
 
@@ -269,8 +318,8 @@ for idx, operation in enumerate(operations):
                 op_count_1 = len([o for o in current_workplaces_1 if get_overlap([periods_vals[p_index - 1], period], [o["op_start"], o["op_end"]])])
                 pair[operation['id']]["KPPM"].append(op_count_1)
 
-                out_0 = periods[p_index - 1] / operations[idx - 1]["duration"] * op_count_0  # round(,3)
-                out_1 = periods[p_index - 1] / operation["duration"] * op_count_1  # round(,3)
+                out_0 = round(periods[p_index - 1] / operations[idx - 1]["duration"] * op_count_0, 2)  # round(,3)
+                out_1 = round(periods[p_index - 1] / operation["duration"] * op_count_1, 2)  # round(,3)
 
                 pair[operations[idx - 1]['id']]["out"].append(out_0)
                 pair[operation['id']]["out"].append(out_1)
@@ -278,10 +327,10 @@ for idx, operation in enumerate(operations):
 
                 # этот момент возможно неверный
                 if p_index == 1:
-                    new_item['zero_dynamic'].append(round(0 + new_item['change'][p_index - 1], 3))
+                    new_item['zero_dynamic'].append(round(0 + new_item['change'][p_index - 1], 2))
                 else:
                     new_item['zero_dynamic'].append(
-                        round(new_item['zero_dynamic'][-1] + new_item['change'][p_index - 1], 3))
+                        round(new_item['zero_dynamic'][-1] + new_item['change'][p_index - 1], 2))
 
         new_item["pair"] = pair
         operations_pairs.append(new_item)
@@ -303,7 +352,7 @@ student_data = {
         "work_shift": work_shift,
         "half_shift": half_shift,
         "defect_percent": defect_percent,
-        "N_out": N_out,
+        "N_out": N_out_template,
         "safety_stock": safety_stock,
         "max_time": max_time,
     },
@@ -358,6 +407,7 @@ def comparison_arrays(correct_array, student_array, tol=0.05):
 def check_answer(exp, ans):
     student_answer = json.loads(ans)["answer"]
     correct_workplaces = sorted(workplaces, key=lambda k: k['weight'])
+
     response = {
         "tact_value": False,
         "workplaces_table": False,
