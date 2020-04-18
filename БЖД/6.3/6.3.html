@@ -1,0 +1,138 @@
+<problem>
+<style>
+        table.safety-table-6-3{
+      width: 100%;
+    }
+    table.safety-table-6-3 td{
+        border: 1px solid #c8c8c8;
+        padding: 0.25rem !important;
+        word-break: keep-all !important;
+    }
+
+    .task-6-3 .equation{
+        display: none !important;
+    }
+</style>
+<script type="loncapa/python">
+import random
+import math
+
+variants = [{'substance': 'Кислота серная \(H_2SO_4\)', 'harmful_substance': 20000, 'maximum_concentration': 1.0,
+             'room_volume': 20000},
+            {'substance': 'Углерода оксид \(CO\)', 'harmful_substance': 470000, 'maximum_concentration': 20.0,
+             'room_volume': 20000},
+            {'substance': 'Аммиак \(NH_3\)', 'harmful_substance': 520000, 'maximum_concentration': 20.0,
+             'room_volume': 20000},
+            {'substance': 'Кислота муравьиная \(HCOOH\)', 'harmful_substance': 3000, 'maximum_concentration': 1.0,
+             'room_volume': 2000},
+            {'substance': 'Нитроформ \(CH(NO_2)_3\)', 'harmful_substance': 100, 'maximum_concentration': 0.5,
+             'room_volume': 200},
+            {'substance': 'Сероуглерод \(CS_2\)', 'harmful_substance': 5000, 'maximum_concentration': 1.0,
+             'room_volume': 4000},
+            {'substance': 'Метанол \(CH_3OH\)', 'harmful_substance': 10000, 'maximum_concentration': 5.0,
+             'room_volume': 2000},
+            {'substance': 'Марганец \(Mn\)', 'harmful_substance': 600, 'maximum_concentration': 0.2,
+             'room_volume': 4000},
+            {'substance': 'Кислота азотная \(HNO_3\)', 'harmful_substance': 5000, 'maximum_concentration': 2.0,
+             'room_volume': 2000},
+            {'substance': 'Нитробензол \(C_6H_5NO_2\)', 'harmful_substance': 7000, 'maximum_concentration': 3.0,
+             'room_volume': 20000},
+            {'substance': 'Анилин \(C_6H_5NH_2\)', 'harmful_substance': 200, 'maximum_concentration': 0.1,
+             'room_volume': 2000},
+            {'substance': 'Этанол \(C_2H_5OH\)', 'harmful_substance': 250000, 'maximum_concentration': 1000.0,
+             'room_volume': 200},
+            {'substance': 'Бензол \(C_6H_6\)', 'harmful_substance': 4000, 'maximum_concentration': 15.0,
+             'room_volume': 200},
+            {'substance': 'Фенол \(C_6H_5OH\)', 'harmful_substance': 500, 'maximum_concentration': 0.3,
+             'room_volume': 2000},
+            {'substance': 'Ацетон \((CH_3)_2CO\)', 'harmful_substance': 430000, 'maximum_concentration': 200.0,
+             'room_volume': 2000},
+            {'substance': 'Азота оксид (в пересчете на \(NO_2\))', 'harmful_substance': 8000, 'maximum_concentration': 5.0,
+             'room_volume': 2000},
+            {'substance': 'Ртуть металлическая \(Hg\)', 'harmful_substance': 100, 'maximum_concentration': 0.01,
+             'room_volume': 10000},
+            {'substance': 'Бенз(а)пирен \(C_{20}H_{12}\)', 'harmful_substance': 5, 'maximum_concentration': 0.00015,
+             'room_volume': 20000},
+            {'substance': 'Медь \(Cu\)', 'harmful_substance': 3000, 'maximum_concentration': 1.0,
+             'room_volume': 2000},
+            {'substance': 'Никель \(Ni\)', 'harmful_substance': 200, 'maximum_concentration': 0.05,
+             'room_volume': 2000},
+            {'substance': 'Ангидрид хромовый \(CrO_3\)', 'harmful_substance': 20, 'maximum_concentration': 0.01,
+             'room_volume': 2000},
+            {'substance': 'Сероводород \(H_2S\)', 'harmful_substance': 400, 'maximum_concentration': 10.0,
+             'room_volume': 20},
+            {'substance': 'Ангидрид серный \(SO_3\)', 'harmful_substance': 100, 'maximum_concentration': 1.0,
+             'room_volume': 20},
+            {'substance': 'Кислота серная \(H_2SO_4\)', 'harmful_substance': 500, 'maximum_concentration': 1.0,
+             'room_volume': 200},
+            {'substance': 'Электрокорунд \(Al_2O_3\)', 'harmful_substance': 250, 'maximum_concentration': 6.0,
+             'room_volume': 20},
+            {'substance': 'Углерода оксид \(CO\)', 'harmful_substance': 30000, 'maximum_concentration': 20.0,
+             'room_volume': 1000},
+            {'substance': 'Бутанол \(C_4H_9OH\)', 'harmful_substance': 20000, 'maximum_concentration': 10.0,
+             'room_volume': 2000},
+            {'substance': 'Ангидрид сернистый \(SO_2\)', 'harmful_substance': 350, 'maximum_concentration': 10.0,
+             'room_volume': 20},
+            {'substance': 'Аммиак \(NH_3\)', 'harmful_substance': 55000, 'maximum_concentration': 20.0,
+             'room_volume': 2000},
+            {'substance': 'Ацетон \((CH_3)_2CO\)', 'harmful_substance': 350000, 'maximum_concentration': 200.0,
+             'room_volume': 2000}]
+
+variant = random.choice(variants)
+substance = variant['substance']
+harmful_substance = variant['harmful_substance']
+maximum_concentration = variant['maximum_concentration']
+room_volume = variant['room_volume']
+
+L_pr = math.ceil(harmful_substance/(maximum_concentration - 0.3 * maximum_concentration))
+K_r = math.ceil(L_pr/room_volume)
+
+</script>
+
+<div class="task-6-3">
+<p>Определить необходимое количество воздуха \((L_{пр})\) и кратность воздухообмена \((K_{p})\) общеобменной вентиляции, предназначенной для разбавления вредных веществ до санитарных норм.</p>
+<h2>Методические указания к решению задачи</h2>
+
+    <p><strong>1.</strong> По исходным данным определить количество воздуха, необходимое для разбавления вредных веществ до санитарных норм (ПДК):</p>
+\[ L_{} = \frac{G}{q_{уд}-q_{пр}} \ (м^{3}/ч), \ где \]
+    <p>\(L_{пр}\) – количество приточного воздуха, м<sup>3</sup>/ч;</p>
+    <p>\(G\) – количество поступающего вредного вещества, мг/ч;</p>
+    <p>\(q_{пр}, \ q_{уд}\) – концентрация вредного вещества в приточном и удаляемом воздухе, мг/м<sup>3</sup>.</p>
+
+    <p>Чтобы не было нарушения санитарных норм, концентрация \(q_{уд}\) не должна превышать предельно допустимую концентрацию, т.е. \(q_{уд} ≤ q_{ПДК}\).</p>
+
+    <p><strong>В расчетах принимаем \(q_{уд} \ = \ ПДК\).</strong></p>
+    <p>Концентрация \(q_{пр}\) должна быть по возможности минимальной (по санитарным нормам \(q_{пр} ≤ 0,3 \ ПДК\)).</p>
+    <p><strong>В расчетах принимаем \(q_{пр}= 0,3 \ ПДК\)</strong></p>
+
+    <p><strong>2.</strong> Определить кратность воздухообмена.</p>
+    <p>\(K_{р}\) - кратность воздухообмена показывает, сколько раз в течение часа меняется воздух в помещении, и определяется по формуле.</p>
+    \[ K_{р} = \frac{L_{пр}}{V_{пом}}, \ где \]
+
+    <p>где \(L_{пр}\) – количество приточного воздуха, м<sup>3</sup>/ч;</p>
+    <p>\(V_{пом}\) – объём помещения, м<sup>3</sup>.</p>
+
+    <p>При получении результата по первой и второй формуле округляем в большую сторону до целого числа (например, \(L_{пр} = 33571,4 \ м^3/ч\), записываем ответ - \(33572\) или \(К_{p} = 2,3\), записываем ответ \(3\); если кратность меньше \(1\), округляем до \(1\)).</p>
+
+    <h2>Исходные данные для расчета</h2>
+    <p>Вещество: <strong>$substance</strong></p>
+    <p>Количество поступающего вредного вещества \(G\) (мг/ч): <i><strong>$harmful_substance</strong></i></p>
+    <p>Предельно допустимая концентрация (мг/м<sup>3</sup>): <i><strong>$maximum_concentration</strong></i></p>
+    <p>Объём помещения (м<sup>3</sup>): <i><strong>$room_volume</strong></i></p>
+
+    <numericalresponse answer="$L_pr">
+            <label>Определите количество воздуха, необходимое для разбавления вредных веществ до санитарных норм:</label>
+
+        <description>Необходимо ввести только числовое значение</description>
+  <formulaequationinput trailing_text="м3/ч" />
+</numericalresponse>
+
+
+<numericalresponse answer="$K_r">
+    <label>Определите кратность воздухообмена:</label>
+  <formulaequationinput />
+</numericalresponse>
+
+</div>
+
+</problem>

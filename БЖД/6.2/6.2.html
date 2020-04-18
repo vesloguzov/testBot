@@ -1,0 +1,121 @@
+<problem>
+<style>
+        table.safety-table-6-2{
+      width: 100%;
+    }
+    table.safety-table-6-2 td{
+        border: 1px solid #c8c8c8;
+        padding: 0.25rem !important;
+        word-break: keep-all !important;
+    }
+</style>
+<script type="loncapa/python">
+# -*- coding: utf-8 -*-
+import random
+
+variants = [{"floor_type": "деревянный", "humidity": "60-70", "dust": True, "temperature": "36-40", "chemically_active": False, "touch": False, "answer": 3}, {"floor_type": "кафель", "humidity": "100", "dust": False, "temperature": "20-30", "chemically_active": False, "touch": False, "answer": 3}, {"floor_type": "деревянный", "humidity": "50-70", "dust": False, "temperature": "20-30", "chemically_active": False, "touch": False, "answer": 1}, {"floor_type": "цемент", "humidity": "50-70", "dust": True, "temperature": "20-30", "chemically_active": False, "touch": False, "answer": 3}, {"floor_type": "деревянный", "humidity": "50-70", "dust": True, "temperature": "20-30", "chemically_active": False, "touch": False, "answer": 2}, {"floor_type": "бетонный", "humidity": "40-60", "dust": False, "temperature": "20-30", "chemically_active": False, "touch": True, "answer": 3}, {"floor_type": "кафель", "humidity": "40-60", "dust": False, "temperature": "20-30", "chemically_active": True, "touch": False, "answer": 3}, {"floor_type": "деревянный", "humidity": "50-70", "dust": False, "temperature": "20-30", "chemically_active": False, "touch": False, "answer": 1}, {"floor_type": "кафель", "humidity": "76-80", "dust": False, "temperature": "20-30", "chemically_active": False, "touch": False, "answer": 3}, {"floor_type": "бетонный", "humidity": "40-60", "dust": False, "temperature": "20-30", "chemically_active": False, "touch": False, "answer": 2}, {"floor_type": "кафель", "humidity": "100", "dust": False, "temperature": "36-42", "chemically_active": False, "touch": False, "answer": 3}, {"floor_type": "цемент", "humidity": "50-70", "dust": False, "temperature": "20-35", "chemically_active": False, "touch": False, "answer": 2}, {"floor_type": "деревянный", "humidity": "50-70", "dust": True, "temperature": "36-40", "chemically_active": False, "touch": False, "answer": 3}, {"floor_type": "кафель", "humidity": "100", "dust": False, "temperature": "20-35", "chemically_active": False, "touch": False, "answer": 3}, {"floor_type": "деревянный", "humidity": "50-70", "dust": False, "temperature": "20-35", "chemically_active": False, "touch": False, "answer": 1}, {"floor_type": "цемент", "humidity": "50-70", "dust": False, "temperature": "20-35", "chemically_active": False, "touch": True, "answer": 3}, {"floor_type": "деревянный", "humidity": "50-70", "dust": False, "temperature": "20-35", "chemically_active": False, "touch": False, "answer": 1}, {"floor_type": "бетонный", "humidity": "40-60", "dust": True, "temperature": "20-35", "chemically_active": False, "touch": True, "answer": 3}, {"floor_type": "кафель", "humidity": "40-60", "dust": False, "temperature": "20-35", "chemically_active": True, "touch": False, "answer": 3}, {"floor_type": "деревянный", "humidity": "40-60", "dust": False, "temperature": "20-35", "chemically_active": False, "touch": False, "answer": 1}, {"floor_type": "кафель", "humidity": "40-60", "dust": False, "temperature": "20-35", "chemically_active": False, "touch": False, "answer": 2}, {"floor_type": "бетонный", "humidity": "40-60", "dust": False, "temperature": "20-35", "chemically_active": False, "touch": False, "answer": 2}, {"floor_type": "кафель", "humidity": "40-60", "dust": False, "temperature": "36-45", "chemically_active": False, "touch": False, "answer": 3}, {"floor_type": "цемент", "humidity": "50-75", "dust": False, "temperature": "20-35", "chemically_active": False, "touch": False, "answer": 2}, {"floor_type": "деревянный", "humidity": "50-75", "dust": True, "temperature": "36-45", "chemically_active": False, "touch": False, "answer": 3}, {"floor_type": "кафель", "humidity": "100", "dust": False, "temperature": "20-35", "chemically_active": False, "touch": False, "answer": 3}, {"floor_type": "деревянный", "humidity": "50-75", "dust": False, "temperature": "20-35", "chemically_active": False, "touch": False, "answer": 1}, {"floor_type": "цемент", "humidity": "50-75", "dust": False, "temperature": "20-35", "chemically_active": False, "touch": True, "answer": 3}, {"floor_type": "деревянный", "humidity": "50-75", "dust": False, "temperature": "20-35", "chemically_active": False, "touch": False, "answer": 1}, {"floor_type": "бетонный", "humidity": "40-60", "dust": False, "temperature": "36-45", "chemically_active": False, "touch": False, "answer": 3}]
+
+variant = random.choice(variants)
+
+floor_type = variant['floor_type']
+humidity = variant['humidity']
+dust = variant['dust']
+temperature = variant['temperature']
+chemically_active = variant['chemically_active']
+touch = variant['touch']
+answer = variant['answer']
+
+have = 'имеется'
+nohave = 'нет'
+
+dust_template = have if dust else nohave
+chemically_active_template = have if chemically_active else nohave
+touch_template = have if touch else nohave
+
+class_1 = False
+class_2 = False
+class_3 = False
+
+if answer == 1:
+    class_1 = True
+elif answer == 2:
+    class_2 = True
+else:
+    class_3 = True
+
+</script>
+    <p>Согласно правилам устройства электроустановок (ПУЭ), установлены три категории помещений по опасности поражения электрическим током (табл 1).</p>
+    <p style="text-align: right;"><strong>Таблица 1</strong></p>
+<table class="safety-table-6-2">
+  <caption>Классификация помещений по электроопасности [ПУЭ]</caption>
+<tbody>
+<tr>
+<td style="width: 30%; text-align: center !important;">
+<em>Категория помещения</em>
+</td>
+<td style="text-align: center !important;">
+<em>Характеристика помещения</em>
+</td>
+</tr>
+<tr>
+<td>
+Без повышенной опасности
+</td>
+<td>
+В помещении отсутствуют условия, создающие повышенную или особую опасность (см. п. 2 и 3)
+</td>
+</tr>
+<tr>
+<td>
+С повышенной опасностью
+</td>
+<td>
+Наличие <strong>одного</strong> из признаков:
+<ul>
+<li>сырость (относительная влажность воздуха длительно превышает \(75 \%\));</li>
+<li>токопроводящая пыль (металлическая, угольная и т.п.);</li>
+<li>токопроводящие полы (металлические, земляные, железобетонные, кирпичные и т.п.);</li>
+<li>высокая температура (температура длительно превышает \(+35 ^{\circ}С\));</li>
+<li>возможность одновременного прикосновения человека к имеющим соединение с землей металлоконструкциям зданий, технологическим аппаратам, механизмам и т.п., с одной стороны, и к металлическим корпусам электрооборудования – с другой.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Особо опасные
+</td>
+<td>
+Характеризуются наличием:
+<ul>
+<li>особой сырости: влажность воздуха близка к \(100 \%\):</li>
+<li>химически активной или органической среды (агрессивные пары, газы, жидкости, разрушающие изоляцию и токоведущие части электрооборудования);</li>
+<li>одновременно двух или более условий повышенной опасности (см. п. 2)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div>
+
+
+<h2>Исходные данные для расчета</h2>
+<p>Вид пола: <strong>$floor_type</strong></p>
+<p>Влажность: <strong>\($humidity \%\) </strong></p>
+<p>Наличие токопроводящей пыли: <strong>$dust_template</strong></p>
+<p>Температура: <strong>\($temperature ^{\circ}C\)</strong></p>
+<p>Химически активная среда: <strong>$chemically_active_template</strong></p>
+<p>Возможность одновременного прикосновение к металлическим корпусам оборудования и имеющим соединение с землей металлоконструкциям: <strong>$touch_template</strong></p>
+
+
+    <multiplechoiceresponse>
+<label>Определить категорию помещения по опасности поражения электрическим током:</label>
+<description>При определении категории обязательно просматривать и оценивать присутствие каждого признака (сырость, токопроводящая пыль, токопроводящий пол,  высокая температура и  т.д.) и сопоставлять с Таблицей 1.</description>
+<choicegroup type="MultipleChoice">
+    <choice correct="$class_1">1 категория (без повышенной опасности)</choice>
+    <choice correct="$class_2">2 категория (с повышенной опасностью)</choice>
+    <choice correct="$class_3">3 категория (особо опасное)</choice>
+  </choicegroup>
+</multiplechoiceresponse>
+
+    </div>
+</problem>
