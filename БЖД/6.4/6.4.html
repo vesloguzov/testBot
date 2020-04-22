@@ -1,0 +1,219 @@
+<problem>
+<style>
+        table.safety-table-6-4{
+      width: 100%;
+    }
+    table.safety-table-6-4 td{
+        border: 1px solid #c8c8c8;
+        padding: 0.35rem !important;
+        word-break: keep-all !important;
+    }
+</style>
+<script type="loncapa/python">
+
+import random
+
+variants = [{"voltage": "до 1000 В", "neutral_mode": "глухозаземленная", "network_symbol": "А1", "resistance_from": 3,
+             "resistance_to": 10, "answer": False},
+            {"voltage": "до 1000 В", "neutral_mode": "изолированная", "network_symbol": "Б1", "resistance_from": 1,
+             "resistance_to": 4, "answer": True},
+            {"voltage": "выше 1000 В", "neutral_mode": "изолированная", "network_symbol": "В", "resistance_from": 1,
+             "resistance_to": 10, "answer": True},
+            {"voltage": "выше 1000 В", "neutral_mode": "глухозаземленная", "network_symbol": "Г", "resistance_from": 1,
+             "resistance_to": 5, "answer": False},
+            {"voltage": "выше 1000 В", "neutral_mode": "изолированная", "network_symbol": "В", "resistance_from": 1,
+             "resistance_to": 10, "answer": True},
+            {"voltage": "до 1000 В", "neutral_mode": "изолированная", "network_symbol": "Б2", "resistance_from": 1,
+             "resistance_to": 10, "answer": True},
+            {"voltage": "выше 1000 В", "neutral_mode": "глухозаземленная", "network_symbol": "Г",
+             "resistance_from": 0.1, "resistance_to": 0.5, "answer": True},
+            {"voltage": "выше 1000 В", "neutral_mode": "изолированная", "network_symbol": "В", "resistance_from": 11,
+             "resistance_to": 15, "answer": False},
+            {"voltage": "до 1000 В", "neutral_mode": "глухозаземленная", "network_symbol": "А2", "resistance_from": 1,
+             "resistance_to": 4, "answer": True},
+            {"voltage": "выше 1000 В", "neutral_mode": "изолированная", "network_symbol": "Б1", "resistance_from": 5,
+             "resistance_to": 10, "answer": False},
+            {"voltage": "выше 1000 В", "neutral_mode": "глухозаземленная", "network_symbol": "Г", "resistance_from": 1,
+             "resistance_to": 5, "answer": False},
+            {"voltage": "выше 1000 В", "neutral_mode": "изолированная", "network_symbol": "В", "resistance_from": 1,
+             "resistance_to": 10, "answer": True},
+            {"voltage": "до 1000 В", "neutral_mode": "глухозаземленная", "network_symbol": "А3", "resistance_from": 1,
+             "resistance_to": 8, "answer": True},
+            {"voltage": "до 1000 В", "neutral_mode": "глухозаземленная", "network_symbol": "А1", "resistance_from": 5,
+             "resistance_to": 10, "answer": False},
+            {"voltage": "выше 1000 В", "neutral_mode": "изолированная", "network_symbol": "В", "resistance_from": 1,
+             "resistance_to": 10, "answer": True},
+            {"voltage": "выше 1000 В", "neutral_mode": "глухозаземленная", "network_symbol": "Г", "resistance_from": 1,
+             "resistance_to": 5, "answer": False},
+            {"voltage": "до 1000 В", "neutral_mode": "изолированная", "network_symbol": "Б1", "resistance_from": 1,
+             "resistance_to": 4, "answer": True},
+            {"voltage": "выше 1000 В", "neutral_mode": "изолированная", "network_symbol": "В", "resistance_from": 1,
+             "resistance_to": 10, "answer": True},
+            {"voltage": "выше 1000 В", "neutral_mode": "глухозаземленная", "network_symbol": "Г", "resistance_from": 1,
+             "resistance_to": 5, "answer": False},
+            {"voltage": "выше 1000 В", "neutral_mode": "изолированная", "network_symbol": "В", "resistance_from": 11,
+             "resistance_to": 15, "answer": False},
+            {"voltage": "до 1000 В", "neutral_mode": "глухозаземленная", "network_symbol": "А1", "resistance_from": 5,
+             "resistance_to": 10, "answer": False},
+            {"voltage": "до 1000 В", "neutral_mode": "изолированная", "network_symbol": "Б1", "resistance_from": 1,
+             "resistance_to": 4, "answer": True},
+            {"voltage": "до 1000 В", "neutral_mode": "глухозаземленная", "network_symbol": "А2", "resistance_from": 5,
+             "resistance_to": 10, "answer": False},
+            {"voltage": "до 1000 В", "neutral_mode": "изолированная", "network_symbol": "Б2", "resistance_from": 1,
+             "resistance_to": 10, "answer": True},
+            {"voltage": "до 1000 В", "neutral_mode": "глухозаземленная", "network_symbol": "А3", "resistance_from": 1,
+             "resistance_to": 8, "answer": True},
+            {"voltage": "выше 1000 В", "neutral_mode": "изолированная", "network_symbol": "В", "resistance_from": 1,
+             "resistance_to": 10, "answer": True},
+            {"voltage": "до 1000 В", "neutral_mode": "изолированная", "network_symbol": "Б1", "resistance_from": 1,
+             "resistance_to": 4, "answer": True},
+            {"voltage": "до 1000 В", "neutral_mode": "глухозаземленная", "network_symbol": "А1", "resistance_from": 3,
+             "resistance_to": 8, "answer": False},
+            {"voltage": "до 1000 В", "neutral_mode": "изолированная", "network_symbol": "Б2", "resistance_from": 11,
+             "resistance_to": 15, "answer": False},
+            {"voltage": "выше 1000 В", "neutral_mode": "глухозаземленная", "network_symbol": "Г", "resistance_from": 1,
+             "resistance_to": 5, "answer": False}]
+
+variant = random.choice(variants)
+
+if variant["resistance_from"] >= 1:
+    resistance = random.randrange(variant["resistance_from"], variant["resistance_to"] + 1, 1)
+else:
+    resistance = random.randrange(variant["resistance_from"]*10, (variant["resistance_to"]*10) + 1, 1)/10
+
+if variant['answer']:
+    answer_1 = True
+    answer_2 = False
+else:
+    answer_1 = False
+    answer_2 = True
+
+voltage = variant['voltage']
+neutral_mode = variant['neutral_mode']
+network_symbol = variant['network_symbol']
+</script>
+    <div>
+<p><strong>Цель работы:</strong> определить эффективность использования средств защиты при работе на электроустановках.</p>
+<p>При обслуживании производственного оборудования, использующего электрическую энергию, работающие прикасаются к нетоковедущим металлическим частям оборудования (например, работа на металлорежущем станке, приводом которого служит электродвигатель).</p>
+<p>В процессе эксплуатации электрооборудования происходит нарушение целостности изоляции проводов и обмоток машин. Чаще всего это происходит там, где электроустановки работают в неблагоприятных условиях: в сырых помещениях, при повышенной температуре, в атмосфере паров агрессивных веществ и т.п.</p>
+<p>Повреждение изоляции у электрооборудования неизбежно влечет за собой появление напряжения на металлических частях оборудования, и в результате этого работающий человек оказывается под воздействием электрического тока, что может привести к несчастному случаю.</p>
+<p>Одним из методов защиты в этих случаях является применение защитного заземления.</p>
+<p>Защитное заземление электроустановок следует выполнять при номинальном напряжении <strong>380 В</strong> и выше переменного тока и <strong>440 В</strong> и выше постоянного тока.</p>
+<p>На эффективность процесса заземления влияет сопротивление заземляющего устройства (\(R_з\)). В таблице 1 указаны нормативные значения сопротивления (Согласно ГОСТ 12.1.030-81) в зависимости от вида электроустановки (\(R_н\)).</p>
+
+<p style="text-align: right; font-weight: bold;">Таблица 1</p>
+<table class="safety-table-6-4">
+    <caption>Допустимые (нормативные) значения сопротивления защитного заземления в электрических сетях</caption>
+<tbody>
+<tr>
+<td style="text-align: center; font-style: italic;">
+Напряжение электрической сети
+</td>
+<td style="text-align: center; font-style: italic;">
+Режим нейтрали
+</td>
+<td style="text-align: center; font-style: italic;">
+Условное обозначение сети
+</td>
+<td style="text-align: center; font-style: italic;">
+Допустимое значение сопротивления \(R_{з}\), Ом
+</td>
+</tr>
+<tr>
+<td rowspan="3">
+до \(1000 \ В\)
+</td>
+<td rowspan="3">
+глухозаземленная
+</td>
+<td>
+А 1
+</td>
+<td>
+\(\le 2\) (для лин-го \(U = 660\) В)
+</td>
+</tr>
+<tr>
+<td>
+А 2
+</td>
+<td>
+\(\le 4\) (для лин-го \(U = 380\) В)
+</td>
+</tr>
+<tr>
+<td>
+А 3
+</td>
+<td>
+\(\le 8\) (для лин-го \(U = 220\) В)*
+</td>
+</tr>
+<tr>
+<td rowspan="2">
+до \(1000\) В
+</td>
+<td rowspan="2">
+изолированная
+</td>
+<td>
+Б 1
+</td>
+<td>
+\(\le 4\)
+</td>
+</tr>
+<tr>
+<td>
+Б 2
+</td>
+<td>
+\(\le 10\) (при мощности генератора, трансформатора \(\le 100\) кВА)
+</td>
+</tr>
+<tr>
+<td>
+выше \(1000\) В
+</td>
+<td>
+изолированная
+</td>
+<td>
+В
+</td>
+<td>
+\(\le 10\)
+</td>
+</tr>
+<tr>
+<td>
+выше \(1000\) В
+</td>
+<td>
+глухозаземленная
+</td>
+<td>
+Г
+</td>
+<td>
+\(\le 0,5\)
+</td>
+</tr>
+</tbody>
+</table>
+<p><i>* Линейные напряжения \(660\), \(380\) и \(220\) В приведены для трехфазного электрического тока; такие же значения сопротивления \(R_з\) установлены для линейных напряжений соответственно \(380\), \(220\) и \(127\) В однофазного электрического тока.</i></p>
+<h2>Исходные данные для расчета</h2>
+        <p>Напряжение электрической сети: <strong>$voltage</strong></p>
+        <p>Режим нейтрали: <strong>$neutral_mode</strong></p>
+        <p>Условное обозначение сети: <strong>$network_symbol</strong></p>
+        <p>Сопротивление заземлителя (\(R_{ф}\)): <strong>$resistance</strong></p>
+
+<multiplechoiceresponse>
+  <label>Сравните значение фактического (\(R_ф\)) и нормативного (\(R_н\)) значения сопротивления заземляющего устройства, указанного в <strong>таблице 1</strong> и сделайте вывод об эффективности использования защитного заземления. </label>
+<choicegroup type="MultipleChoice">
+    <choice correct="$answer_1">Эффективно использовать</choice>
+    <choice correct="$answer_2">Не эффективно использовать</choice>
+  </choicegroup>
+</multiplechoiceresponse>
+    </div>
+</problem>

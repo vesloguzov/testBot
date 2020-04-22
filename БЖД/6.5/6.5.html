@@ -1,0 +1,43 @@
+<problem>
+<script type="loncapa/python">
+import random
+
+variants = [{
+    "title": u"дисциплинарному", "answer": "D"},
+    {"title": u"административному", "answer": "A"},
+    {"title": u"материальному", "answer": "E"},
+    {"title": u"уголовному", "answer": "C"}]
+
+variant = variants[0]
+
+title = variant["title"]
+
+A_answer = False
+B_answer = False
+C_answer = False
+D_answer = False
+E_answer = False
+F_answer = False
+
+if variant["answer"] == "D":
+    D_answer = True
+elif variant["answer"] == "A":
+    A_answer = True
+elif variant["answer"] == "E":
+    E_answer = True
+else:
+    C_answer = True
+
+</script>
+<multiplechoiceresponse>
+    <label>Выберите, какая форма ответственности соответствует <strong>$title</strong> виду ответственности:</label>
+<choicegroup type="MultipleChoice" shuffle="true">
+    <choice correct="$A_answer">Штраф</choice>
+    <choice correct="$B_answer">Лишение премии</choice>
+    <choice correct="$C_answer">Лишение или ограничение свободы</choice>
+    <choice correct="$D_answer">Выговор</choice>
+    <choice correct="$E_answer">Возмещение ущерба, причиненного предприятию</choice>
+    <choice correct="$F_answer">Возмещение вреда, причиненного работнику</choice>
+  </choicegroup>
+</multiplechoiceresponse>
+</problem>

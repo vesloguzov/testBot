@@ -64,7 +64,7 @@ variants = [{'substance': 'Кислота серная \(H_2SO_4\)', 'harmful_su
             {'substance': 'Ацетон \((CH_3)_2CO\)', 'harmful_substance': 350000, 'maximum_concentration': 200.0,
              'room_volume': 2000}]
 
-variant = variants[9]
+variant = random.choice(variants)
 substance = variant['substance']
 harmful_substance = variant['harmful_substance']
 maximum_concentration = variant['maximum_concentration']
@@ -72,5 +72,3 @@ room_volume = variant['room_volume']
 
 L_pr = math.ceil(harmful_substance/(maximum_concentration - 0.3 * maximum_concentration))
 K_r = math.ceil(L_pr/room_volume)
-
-print(K_r)
